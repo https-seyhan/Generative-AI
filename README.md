@@ -10,7 +10,7 @@
 
   <b>  Art and Design:</b> In the context of GitHub repositories related to art or design, Generative AI can create new artworks, designs, or media based on existing examples. This can be particularly useful for artists or designers looking for inspiration or to create variations of their work.
 
-    Natural Language Processing (NLP): GitHub hosts numerous repositories with text-based data, such as code comments, documentation, or issue discussions. Generative AI models can be employed to create coherent and contextually relevant text, assisting with documentation or generating responses to certain prompts.
+ <b>   Natural Language Processing (NLP):</b> GitHub hosts numerous repositories with text-based data, such as code comments, documentation, or issue discussions. Generative AI models can be employed to create coherent and contextually relevant text, assisting with documentation or generating responses to certain prompts.
 
     Automated Testing: Generative AI can be used to create test cases and simulate user interactions, aiding developers in identifying potential bugs or issues in their code.
 
