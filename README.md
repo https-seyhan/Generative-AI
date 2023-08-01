@@ -1,3 +1,3 @@
 # Generative-AI
 ## NLP
-, Images, Audio, Video
+Images, Audio, Video
