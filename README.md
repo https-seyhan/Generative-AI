@@ -12,7 +12,7 @@
 
  <b>   Natural Language Processing (NLP):</b> GitHub hosts numerous repositories with text-based data, such as code comments, documentation, or issue discussions. Generative AI models can be employed to create coherent and contextually relevant text, assisting with documentation or generating responses to certain prompts.
 
-    Automated Testing: Generative AI can be used to create test cases and simulate user interactions, aiding developers in identifying potential bugs or issues in their code.
+<b>    Automated Testing:</b> Generative AI can be used to create test cases and simulate user interactions, aiding developers in identifying potential bugs or issues in their code.
 
     Collaborative Coding: Generative AI might facilitate collaborative coding efforts by assisting multiple developers in jointly working on a codebase. It could analyze the input from different contributors and generate code that combines their ideas or adheres to certain coding standards.
 ## NLP
