@@ -17,7 +17,7 @@
 <b>    Automated Testing:</b> Generative AI can be used to create test cases and simulate user interactions, aiding developers in identifying potential bugs or issues in their code.
 
 <b>    Collaborative Coding:</b> Generative AI might facilitate collaborative coding efforts by assisting multiple developers in jointly working on a codebase. It could analyze the input from different contributors and generate code that combines their ideas or adheres to certain coding standards.
-## NLP
+## Large Language Models (LLM)
 ## Images
 ## Audio
 ## Video
