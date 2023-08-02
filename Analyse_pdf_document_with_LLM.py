@@ -68,8 +68,7 @@ class Document:
     def __textAnalysis(self, text):   
         # Add law jargon and terms to stop words
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
-        'the', 'to', " \x0c", ' ', 'Mr.', 'Dr.', 'v', 'of', 'case', 'section', 'defence',
-        'trial', 'evidence', 'law', 'court', 'Court', 'criminal', 'Act', 'Article', 'UK','extradition', 'offence', 'information',
+        'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'wikileaks'
         ]
         for w in customize_stop_words:
