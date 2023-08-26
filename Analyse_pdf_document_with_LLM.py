@@ -241,7 +241,7 @@ class Document:
         plt.show()
 
     def __radar(self, words, title, subject):
-		print("radar Called !!!")
+        print("radar Called !!!")
         fig, axes = plt.subplots(figsize=(9, 9))
         fig.subplots_adjust(wspace=0.25, hspace=0.20, top=0.85, bottom=0.05)
         
