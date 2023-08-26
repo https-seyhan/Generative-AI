@@ -25,6 +25,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 #from sklearn.feature_extraction import stop_words
 from scipy import linalg
+import warnings
 
 sb.set_theme(style="whitegrid")
 np.set_printoptions(precision=1)
