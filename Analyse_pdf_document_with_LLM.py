@@ -223,6 +223,7 @@ class Document:
                 mainTopics[key] = self.weightsDict[key]
         tt = dict(sorted(mainTopics.items(), key=lambda item: item[1])) # sort topics with their idf
         x, y = zip(*tt.items()) # unpack a list of pairs into two tuples
+        print("Zip completed !!!")
         df = pd.DataFrame({"Topics":x, 
                           "Inverse Term Frequency Ranks":y})
         graph = sb.PairGrid(df, x_vars= ["Inverse Term Frequency Ranks"] , y_vars=["Topics"],
