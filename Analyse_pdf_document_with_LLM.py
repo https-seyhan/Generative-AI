@@ -108,7 +108,7 @@ class Document:
         self.__adjectiveAnalysis(adjectives)
 
     def __tokenizeDoco(self, doc):
-		print("TokenizeDoco Called !!!")
+        print("TokenizeDoco Called !!!")
         sents_list = []
         for sent in doc.sents:
             sents_list.append(sent.text)
