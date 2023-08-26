@@ -215,7 +215,7 @@ class Document:
         common_oths = oth_freq.most_common(10)
     
     def __plotTopics(self):
-		print("plotTopics Called !!!")
+        print("plotTopics Called !!!")
         mainTopics = {}
         for key in self.Topics:       
             if key in self.weightsDict:            
