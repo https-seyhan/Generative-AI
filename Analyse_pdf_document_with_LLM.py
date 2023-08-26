@@ -17,7 +17,7 @@ from pdfminer.pdfinterp import PDFResourceManager
 from pdfminer.pdfpage import PDFPage
 from spacy.matcher import PhraseMatcher, Matcher
 from spacy.tokens import Doc, Span, Token
-from spacy.lemmatizer import Lemmatizer
+#from spacy.lemmatizer import Lemmatizer
 from spacy.tokenizer import Tokenizer
 from spacy.lang.en import English
 from sklearn import decomposition
@@ -37,8 +37,10 @@ class Document:
     #nlp = spacy.load("en_core_web_sm")
     nlp = spacy.load("en_core_web_lg")
     tokenizer = Tokenizer(nlp.vocab)
-    nlp.add_pipe(nlp.create_pipe('sentencizer'))
-    os.chdir('/home/saul/Business')
+    nlp.add_pipe('sentencizer')
+    #nlp.add_pipe(nlp.add_pipe('sentencizer'))
+    #lemmatizer = nlp.pipeline[5]  # lemmatizer
+    os.chdir('/home/saul/Desktop/generative-AI')
     numberofTopics = 5
     svdTopics = []
     nmfTopics = []
@@ -66,7 +68,7 @@ class Document:
         self.__textAnalysis(text)
 
     def __textAnalysis(self, text):   
-        # Add law jargon and terms to stop words
+       
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'wikileaks'
@@ -310,4 +312,5 @@ class Document:
 
 if __name__ == '__main__':
     
-    courtdoco = Document("usaassangejudgement.pdf")
+    #courtdoco = Document("usaassangejudgement.pdf")
+    AIdoco = Document("economic_potential_of_generative_AI.pdf")
