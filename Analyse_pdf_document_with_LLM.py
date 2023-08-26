@@ -282,7 +282,7 @@ class Document:
         plt.show()
 
     def __bar(self, words, title, subject):
-
+		print("bar Called !!!")
         figs, ax = plt.subplots(figsize=(11, 7))
         graphdata = {}
         
