@@ -201,6 +201,7 @@ class Document:
         self.__bar(self.common_nouns, 'Top 10 Frequent Subjects', 'Subjects')
 
     def __adjectiveAnalysis(self, adjectives):
+		print("adjectiveAnalysis Called !!!")
         adj_freq = Counter(adjectives)
         self.common_adjs = adj_freq.most_common(10)    
         self.__radar(self.common_adjs, 'Top 10 Frequent Referrals', 'Referrals')
