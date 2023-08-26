@@ -176,6 +176,7 @@ class Document:
                 self.svdTopics.append(sent.text)        
 
     def __topicAnalysis(self):
+		print("topicAnalysis Called !!!")
         self.Topics = set(self.ldaTopics) & set(self.nmfTopics) & set(self.svdTopics)
 
     def __get_topics(self, vector, vocab):
