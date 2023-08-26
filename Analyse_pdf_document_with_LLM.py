@@ -40,7 +40,7 @@ class Document:
     nlp.add_pipe('sentencizer')
     #nlp.add_pipe(nlp.add_pipe('sentencizer'))
     #lemmatizer = nlp.pipeline[5]  # lemmatizer
-    os.chdir('/home/saul/Desktop/generative-AI')
+    os.chdir('/home/saul/Desktop/generative-AI/document_analysis')
     numberofTopics = 5
     svdTopics = []
     nmfTopics = []
