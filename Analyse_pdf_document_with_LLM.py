@@ -237,7 +237,7 @@ class Document:
         # Add Patches
         p1 = patches.Rectangle((3.7, 1.5), width=0.55, height=5, alpha=.2, facecolor='blue')
         p2 = patches.Rectangle((4.6, 10.5), width=.3, height=2, alpha=.2, facecolor='blue')
-       
+        print("Patches Completed !!!")
         plt.gca().add_patch(p1)
         plt.gca().add_patch(p2)
         plt.title('Topics of the Document', weight='bold', fontdict={'size':11})
