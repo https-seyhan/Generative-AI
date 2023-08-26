@@ -56,6 +56,7 @@ class Document:
 
     def __convertToText(self, fileName):
         list = []
+        print("Working Directory :", os.getcwd())
         with open(fileName, 'rb') as fh:
             for page in PDFPage.get_pages(fh, 
                                         caching=True,
