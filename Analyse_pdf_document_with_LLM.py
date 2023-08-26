@@ -70,7 +70,7 @@ class Document:
         self.__textAnalysis(text)
 
     def __textAnalysis(self, text):   
-       
+		print(" Text Analysis Called !!!")
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'wikileaks'
@@ -106,6 +106,7 @@ class Document:
         self.__adjectiveAnalysis(adjectives)
 
     def __tokenizeDoco(self, doc):
+		print("TokenizeDoco Called !!!")
         sents_list = []
         for sent in doc.sents:
             sents_list.append(sent.text)
