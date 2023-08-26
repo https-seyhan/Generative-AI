@@ -72,7 +72,7 @@ class Document:
         self.__textAnalysis(text)
 
     def __textAnalysis(self, text):
-		print("textAnalysis Called !!!")
+        print("textAnalysis Called !!!")
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'wikileaks'
