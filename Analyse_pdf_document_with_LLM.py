@@ -229,9 +229,10 @@ class Document:
         print("Dataframe Completed !!!")
         graph = sb.PairGrid(df, x_vars= ["Inverse Term Frequency Ranks"] , y_vars=["Topics"],
                           height=10, aspect= 0.8)
+        print("graph Completed !!!")
         graph.map(sb.stripplot, size=12, orient="h", jitter=False,
               palette="flare_r", linewidth=1, edgecolor="w")
-
+        print("map completed !!!")
     
         # Add Patches
         p1 = patches.Rectangle((3.7, 1.5), width=0.55, height=5, alpha=.2, facecolor='blue')
@@ -242,6 +243,7 @@ class Document:
         plt.title('Topics of Court Decision', weight='bold', fontdict={'size':11})
         plt.subplots_adjust(left = 0.16, bottom=0.16, top=0.9)
         plt.show()
+        print("show Completed !!!")
 
     def __radar(self, words, title, subject):
         print("radar Called !!!")
