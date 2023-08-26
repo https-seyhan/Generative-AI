@@ -189,7 +189,7 @@ class Document:
 
         # Get Bag of Words (BoW) of top 10 words
     def __verbAnalysis(self, verbs):
-		print("verbAnalysis Called !!!")
+        print("verbAnalysis Called !!!")
         verb_freq = Counter(verbs)
         self.common_verbs = verb_freq.most_common(10)
         self.__radar(self.common_verbs, 'Top 10 Frequent Actions', 'Actions')
