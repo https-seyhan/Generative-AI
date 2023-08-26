@@ -208,6 +208,7 @@ class Document:
         self.__bar(self.common_adjs, 'Top 10 Frequent Referrals', 'Referrals' )
 
     def __otherAnalysis(self, others):
+		print("otherAnalysis Called !!!")
         oth_freq = Counter(others)
         common_oths = oth_freq.most_common(10)
     
