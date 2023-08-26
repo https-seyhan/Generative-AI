@@ -194,6 +194,7 @@ class Document:
         self.__bar(self.common_verbs, 'Top 10 Frequent Actions', 'Actions')
 
     def __nounAnalysis(self, nouns):
+		print("nounAnalysis Called !!!")
         noun_freq = Counter(nouns)
         self.common_nouns = noun_freq.most_common(10)       
         self.__radar(self.common_nouns, 'Top 10 Frequent Subjects', 'Subjects')
