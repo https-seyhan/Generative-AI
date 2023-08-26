@@ -135,7 +135,7 @@ class Document:
         self.__tokenizeTopics(topics, "SVD")
 
     def __NMFDecomp(self, doc):
-		print("NMFDecomp Called !!!")
+        print("NMFDecomp Called !!!")
         sents_list = []
         bow_vector = CountVectorizer(min_df =0.001, max_df=0.95, stop_words='english') # Convert a collection of text documents to a matrix of token counts        
         for sent in doc.sents:
