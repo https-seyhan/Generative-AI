@@ -240,7 +240,7 @@ class Document:
        
         plt.gca().add_patch(p1)
         plt.gca().add_patch(p2)
-        plt.title('Topics of Court Decision', weight='bold', fontdict={'size':11})
+        plt.title('Topics of the Document', weight='bold', fontdict={'size':11})
         plt.subplots_adjust(left = 0.16, bottom=0.16, top=0.9)
         plt.show()
         print("show Completed !!!")
