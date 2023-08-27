@@ -75,7 +75,7 @@ class Document:
         print("textAnalysis Called !!!")
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
-        '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative'
+        '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative', 'new', 'percent', 'use', 'generate'
         ]
         for w in customize_stop_words:
             self.nlp.vocab[w].is_stop = True
@@ -97,7 +97,7 @@ class Document:
         self.__NMFDecomp(cleanDoc)
         self.__LDADecomp(cleanDoc)
         self.__topicAnalysis()
-        self.__plotTopics()
+        #self.__plotTopics()
         nouns = [t.lemma_ for t in cleanDoc if t.pos_ == "NOUN"]
         verbs = [t.lemma_ for t in cleanDoc if t.pos_ =="VERB"]
         adjectives = [t.lemma_ for t in cleanDoc if t.pos_ == "ADJ"]
