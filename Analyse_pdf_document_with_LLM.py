@@ -77,7 +77,7 @@ class Document:
         print("textAnalysis Called !!!")
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
-        '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative', 'new', 'percent', 'use', 'generate', 'high', 'base', 'database','include', '©', 'McKinsey'
+        '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative', 'new', 'percent', 'use', 'generate', 'high', 'base', 'database','include', '©', 'McKinsey', 'based'
         ]
         for w in customize_stop_words:
             self.nlp.vocab[w].is_stop = True
