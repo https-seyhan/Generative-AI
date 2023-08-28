@@ -55,8 +55,13 @@ class Document:
     Topics = {}
     weightsDict = {}
 
-    def __init__(self, fileName):   
+    def __init__(self, fileName):  
+        self.__create_file_folder(fileName) 
         self.__convertToText(fileName)
+    
+    def __create_file_folder(self, fileName):
+        fileN = fileName.split('.')[0]
+        print("File Name : ", fileN)
 
     def __convertToText(self, fileName):
         list = []
