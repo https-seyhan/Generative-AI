@@ -63,6 +63,8 @@ class Document:
         fileN = fileName.split('.')[0]
         print("File Name : ", fileN)
         print("Current Directory ", os.getcwd())
+        # Create folder
+        os.mkdir(fileN)
 
     def __convertToText(self, fileName):
         list = []
