@@ -241,7 +241,7 @@ class Document:
         print("plotTopics Called !!!")
         mainTopics = {}
         for key in self.Topics:  
-            print("key : ", key)
+            
             if key in self.weightsDict:            
                 mainTopics[key] = self.weightsDict[key]
         tt = dict(sorted(mainTopics.items(), key=lambda item: item[1])) # sort topics with their idf
