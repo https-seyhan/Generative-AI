@@ -265,9 +265,9 @@ class Document:
         plt.gca().add_patch(p2)
         plt.title('Topics of the Document', weight='bold', fontdict={'size':11})
         plt.subplots_adjust(left = 0.16, bottom=0.16, top=0.9)
-        plt.savefig('Topics' + '_radar.png')
+        plt.savefig('Topics' + '.png')
         print("Subplot completed !!!")
-        plt.show()
+        #plt.show()
         print("show Completed !!!")
 
     def __radar(self, words, title, subject):
