@@ -120,7 +120,7 @@ class Document:
         self.__NMFDecomp(cleanDoc)
         self.__LDADecomp(cleanDoc)
         self.__topicAnalysis()
-        #self.__plotTopics()
+        self.__plotTopics()
         nouns = [t.lemma_ for t in cleanDoc if t.pos_ == "NOUN"]
         verbs = [t.lemma_ for t in cleanDoc if t.pos_ =="VERB"]
         adjectives = [t.lemma_ for t in cleanDoc if t.pos_ == "ADJ"]
@@ -265,6 +265,7 @@ class Document:
         plt.gca().add_patch(p2)
         plt.title('Topics of the Document', weight='bold', fontdict={'size':11})
         plt.subplots_adjust(left = 0.16, bottom=0.16, top=0.9)
+        plt.savefig('Topics' + '_radar.png')
         print("Subplot completed !!!")
         plt.show()
         print("show Completed !!!")
