@@ -91,7 +91,7 @@ class Document:
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative', 'new', 'percent', 'use', 'generate', 'high', 'base', 'database','include', '©', 'McKinsey', 'based',
-        'work', 'activity', 'activities', 'https', 'org', 'datum', 'human', 'ethics', 'ethical'
+        'work', 'activity', 'activities', 'https', 'org', 'datum', 'human', 'ethics', 'ethical', '2016', '2014', '37'
         ]
         for w in customize_stop_words:
             self.nlp.vocab[w].is_stop = True
@@ -105,7 +105,7 @@ class Document:
         #remove stop wods 
         cleanDoc = [t.text for t in doc if t.is_stop != True and t.whitespace_ != True and t.text.isspace() != True and t.is_punct != True 
         and t.pos != "-PRON-"]
-        print ("Clean Doc :", cleanDoc)
+        # ("Clean Doc :", cleanDoc)
         csv_writer = csv.writer(sys.stdout, delimiter='\t')
         csv_writer.writerows(cleanDoc)
         with open(r'/home/saul/Desktop/generative-AI/document_analysis/words.txt', 'w') as fp:
@@ -362,5 +362,7 @@ if __name__ == '__main__':
 
     #AIdoco = Document("economic_potential_of_generative_AI.pdf")
     #AIdoco = Document("ethics_AI.pdf")
-    AIdoco = Document("limitations_of_math_in_ml.pdf")
+    #AIdoco = Document("limitations_of_math_in_ml.pdf")
+    AIdoco = Document("Attention_is_all_you_need.pdf")
+    
     
