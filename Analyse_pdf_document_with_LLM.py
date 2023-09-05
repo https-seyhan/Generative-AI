@@ -1,4 +1,4 @@
-import warnings; warnings.filterwarnings(action='once')
+
 import pandas as pd
 import csv
 import sys
@@ -29,6 +29,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from scipy import linalg
 import warnings
 warnings.filterwarnings('ignore')
+import warnings; warnings.filterwarnings(action='once')
 
 sb.set_theme(style="whitegrid")
 np.set_printoptions(precision=1)
