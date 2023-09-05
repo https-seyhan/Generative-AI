@@ -81,6 +81,7 @@ class Document:
                                         check_extractable=True):
                 self.page_interpreter.process_page(page)
             text = self.file_handle.getvalue() # whole document in text
+            print('Text ', text)
             list.append(text)
         self.converter.close()
         self.file_handle.close()
@@ -322,7 +323,8 @@ class Document:
         
         for _ in range(len(words)):
             
-            graphdata[words[_][0]]= [words[_][1]]
+            graphdata[words[_][0]]= [words
+            [_][1]]
         
         dataframe = pd.DataFrame(graphdata)
         categories=list(dataframe)[0:]
