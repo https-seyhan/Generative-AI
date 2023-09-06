@@ -82,7 +82,14 @@ class Document:
                 self.page_interpreter.process_page(page)
             text = self.file_handle.getvalue() # whole document in text
             #print('Text ', text)
+            
             list.append(text)
+        csv_writer = csv.writer(sys.stdout, delimiter='\t')
+        with open(r'/home/saul/Desktop/generative-AI/document_analysis/text.txt', 'w') as fp:
+            for item in text:
+                # write each item on a new line
+                fp.write("%s\n" % item)
+            
         self.converter.close()
         self.file_handle.close()
         self.__textAnalysis(text)
