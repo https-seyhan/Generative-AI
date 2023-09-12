@@ -114,13 +114,6 @@ class Document:
         cleanDoc = [t.text for t in doc if t.is_stop != True and t.whitespace_ != True and t.text.isspace() != True and t.is_punct != True 
         and t.pos != "-PRON-"]
         # ("Clean Doc :", cleanDoc)
-        csv_writer = csv.writer(sys.stdout, delimiter='\t')
-        csv_writer.writerows(cleanDoc)
-        with open(r'/home/saul/Desktop/generative-AI/document_analysis/words.txt', 'w') as fp:
-            for item in cleanDoc:
-                # write each item on a new line
-                fp.write("%s\n" % item)
-            print('Done !!!')
         
         # convert List to String not include strings less then 3
         listToStr = ' '.join([str(elem) for elem in cleanDoc if len(elem) > 2]) 
