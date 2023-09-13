@@ -88,6 +88,7 @@ class Document:
         with open(r'/home/saul/Desktop/generative-AI/document_analysis/text.txt', 'w') as fp:
             for item in text:
                 # write each item on a new line
+                item = item + ' '
                 fp.write("%s\n" % item)
             
         self.converter.close()
