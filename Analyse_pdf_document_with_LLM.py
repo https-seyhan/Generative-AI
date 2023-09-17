@@ -82,7 +82,7 @@ class Document:
                                         check_extractable=True):
                 self.page_interpreter.process_page(page)
             text = self.file_handle.getvalue() # whole document in text
-            #print('Text ', text)
+            print('Text ', text)
             
             list.append(text)
             print(list)
