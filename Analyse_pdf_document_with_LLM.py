@@ -13,7 +13,7 @@ import os
 import spacy
 from collections import Counter
 from math import pi
-
+import pdfminer
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.pdfinterp import PDFResourceManager
