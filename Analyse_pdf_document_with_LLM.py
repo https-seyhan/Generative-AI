@@ -13,6 +13,7 @@ import os
 import spacy
 from collections import Counter
 from math import pi
+
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.pdfinterp import PDFResourceManager
@@ -33,6 +34,8 @@ import warnings; warnings.filterwarnings(action='once')
 
 sb.set_theme(style="whitegrid")
 np.set_printoptions(precision=1)
+laparams = pdfminer.layout.LAParams()
+setattr(laparams, 'all_texts', True)
 
 class Document:
     # Class attributes
