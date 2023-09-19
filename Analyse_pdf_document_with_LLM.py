@@ -94,7 +94,8 @@ class Document:
             for item in text:
                 # write each item on a new line
                 #item = item + ' '
-                fp.write("%s\n" % item)
+                #fp.write("%s\n" % item)
+                fp.write("%s" % item)
             
         self.converter.close()
         self.file_handle.close()
