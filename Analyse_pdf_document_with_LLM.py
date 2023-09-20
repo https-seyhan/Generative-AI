@@ -107,7 +107,7 @@ class Document:
                 #fp.write("%s" % item)
             
         self.converter.close()
-        self.file_handle.close()
+        self.fake_file_handle.close()
         self.__textAnalysis(text)
 
     def __textAnalysis(self, text):
