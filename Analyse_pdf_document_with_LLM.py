@@ -80,6 +80,10 @@ class Document:
         print("Working Directory :", os.getcwd())
         print("All files in the  :", os. listdir())
         
+        # Perform layout analysis for all text
+        laparams = pdfminer.layout.LAParams()
+        setattr(laparams, 'all_texts', True)
+        
         fake_file_handle = io.StringIO()
         converter = TextConverter(resource_manager, fake_file_handle, laparams=laparams)
         page_interpreter = PDFPageInterpreter(resource_manager, converter)
