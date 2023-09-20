@@ -40,9 +40,9 @@ setattr(laparams, 'all_texts', True)
 class Document:
     # Class attributes
     resource_manager = PDFResourceManager()
-    file_handle = io.StringIO()
-    converter = TextConverter(resource_manager, file_handle)
-    page_interpreter = PDFPageInterpreter(resource_manager, converter)
+    #file_handle = io.StringIO()
+    #converter = TextConverter(resource_manager, file_handle)
+    #page_interpreter = PDFPageInterpreter(resource_manager, converter)
     #nlp = spacy.load("en_core_web_sm")
     nlp = spacy.load("en_core_web_lg")
     tokenizer = Tokenizer(nlp.vocab)
@@ -79,6 +79,11 @@ class Document:
         list = []
         print("Working Directory :", os.getcwd())
         print("All files in the  :", os. listdir())
+        
+        fake_file_handle = io.StringIO()
+        converter = TextConverter(resource_manager, fake_file_handle, laparams=laparams)
+        page_interpreter = PDFPageInterpreter(resource_manager, converter)
+    
         with open(fileName, 'rb') as fh:
             for page in PDFPage.get_pages(fh, 
                                         caching=True,
@@ -94,8 +99,8 @@ class Document:
             for item in text:
                 # write each item on a new line
                 #item = item + ' '
-                #fp.write("%s\n" % item)
-                fp.write("%s" % item)
+                fp.write("%s\n" % item)
+                #fp.write("%s" % item)
             
         self.converter.close()
         self.file_handle.close()
