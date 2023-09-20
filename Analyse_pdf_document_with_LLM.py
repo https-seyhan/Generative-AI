@@ -84,7 +84,7 @@ class Document:
         laparams = pdfminer.layout.LAParams()
         setattr(laparams, 'all_texts', True)
         
-        fake_file_handle = io.StringIO()
+        self.fake_file_handle = io.StringIO()
         converter = TextConverter(self.resource_manager, fake_file_handle, laparams=laparams)
         self.page_interpreter = PDFPageInterpreter(self.resource_manager, converter)
     
