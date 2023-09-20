@@ -86,7 +86,7 @@ class Document:
         
         self.fake_file_handle = io.StringIO()
         self.converter = TextConverter(self.resource_manager, self.fake_file_handle, laparams=laparams)
-        self.page_interpreter = PDFPageInterpreter(self.resource_manager, converter)
+        self.page_interpreter = PDFPageInterpreter(self.resource_manager, self.converter)
     
         with open(fileName, 'rb') as fh:
             for page in PDFPage.get_pages(fh, 
