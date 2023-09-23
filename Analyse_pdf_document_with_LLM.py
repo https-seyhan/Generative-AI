@@ -381,6 +381,7 @@ if __name__ == '__main__':
     #AIdoco = Document("economic_potential_of_generative_AI.pdf")
     #AIdoco = Document("ethics_AI.pdf")
     #AIdoco = Document("limitations_of_math_in_ml.pdf")
-    AIdoco = Document("Attention_is_all_you_need.pdf")
+    #AIdoco = Document("Attention_is_all_you_need.pdf")
+    AIdoco = Document("approching_any_ml_problem.pdf")
     
     
