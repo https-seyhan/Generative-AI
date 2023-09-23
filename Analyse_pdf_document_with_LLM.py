@@ -227,6 +227,7 @@ class Document:
         num_top_words=10
         top_words = lambda t: [vocab[i] for i in np.argsort(t)[:-num_top_words-1:-1]]
         topic_words = ([top_words(t) for t in vector])
+        print("Topics ", topic_words)
         return [' '.join(t) for t in topic_words]   
 
         # Get Bag of Words (BoW) of top 10 words
