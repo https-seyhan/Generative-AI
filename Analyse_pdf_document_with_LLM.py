@@ -283,7 +283,8 @@ class Document:
         print("Patches Completed !!!")
         plt.gca().add_patch(p1)
         plt.gca().add_patch(p2)
-        plt.title('Topics of the Document', weight='bold', fontdict={'size':11})
+        #plt.title('Topics of the Document', weight='bold', fontdict={'size':11})
+        plt.title('Predicted Technology Trends of 2024-25 based on the LLM model', weight='bold', fontdict={'size':11})
         plt.subplots_adjust(left = 0.16, bottom=0.16, top=0.9)
         plt.savefig('Topics' + '.png')
         print("Subplot completed !!!")
@@ -383,6 +384,7 @@ if __name__ == '__main__':
     #AIdoco = Document("ethics_AI.pdf")
     #AIdoco = Document("limitations_of_math_in_ml.pdf")
     #AIdoco = Document("Attention_is_all_you_need.pdf")
-    AIdoco = Document("approching_any_ml_problem.pdf")
+    #AIdoco = Document("approching_any_ml_problem.pdf")
+    AIdoco = Document("technology_trends_outlook_2023.pdf")
     
     
