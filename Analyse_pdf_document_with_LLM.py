@@ -115,7 +115,8 @@ class Document:
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative', 'new', 'percent', 'use', 'generate', 'high', 'base', 'database','include', '©', 'McKinsey', 'based',
-        'work', 'activity', 'activities', 'https', 'org', 'datum', 'human', 'ethics', 'ethical', '2016', '2014', '37', '<', '>', 'eos', 'attention', 'model', '25', 'english', 'german'
+        'work', 'activity', 'activities', 'https', 'org', 'datum', 'human', 'ethics', 'ethical', '2016', '2014', '37', '<', '>', 'eos', 'attention', 'model', '25', 'english', 'german',
+        '62', '12', '107'
         ]
         for w in customize_stop_words:
             self.nlp.vocab[w].is_stop = True
@@ -385,6 +386,8 @@ if __name__ == '__main__':
     #AIdoco = Document("limitations_of_math_in_ml.pdf")
     #AIdoco = Document("Attention_is_all_you_need.pdf")
     #AIdoco = Document("approching_any_ml_problem.pdf")
-    AIdoco = Document("technology_trends_outlook_2023.pdf")
+    #AIdoco = Document("technology_trends_outlook_2023.pdf")
+    #AIdoco = Document("mml-book_printed.pdf")
+    AIdoco = Document("Beel_0-311312.pdf")
     
     
