@@ -112,10 +112,11 @@ class Document:
 
     def __textAnalysis(self, text):
         print("textAnalysis Called !!!")
+        doc = self.nlp(text)
         customize_stop_words = ['a.', 'b.', 'c.', 'i.', 'ii', 'iii', 
         'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative', 'new', 'percent', 'use', 'generate', 'high', 'base', 'database','include', '©', 'McKinsey', 'based',
-        'work', 'activity', 'activities', 'https', 'org', 'datum', 'human', 'ethics', 'ethical', '2016', '2014', '37', '<', '>', 'eos', 'attention', 'model', '25', 'english', 'german',
+        'work', 'activity', 'activities', 'https', 'org', 'datum', 'human', 'ethics', 'ethical', '2016', '2014', '37', '<', '>', 'eos', 'attention', 'model', '25', 'English', 'German',
         '62', '12', '107', 'model', 'models', 25, 'wsj'
         ]
         for w in customize_stop_words:
@@ -126,11 +127,12 @@ class Document:
         ]
         for w in customize_non_punct:
             self.nlp.vocab[w].is_punct = False    
-        doc = self.nlp(text)
+        
         #remove stop wods 
         cleanDoc = [t.text for t in doc if t.is_stop != True and t.whitespace_ != True and t.text.isspace() != True and t.is_punct != True 
         and t.pos != "-PRON-"]
         # ("Clean Doc :", cleanDoc)
+        print("Clean Doc :", cleanDoc)
         
         # convert List to String not include strings less then 3
         listToStr = ' '.join([str(elem) for elem in cleanDoc if len(elem) > 2]) 
