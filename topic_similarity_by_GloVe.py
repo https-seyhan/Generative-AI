@@ -4,7 +4,7 @@ import spacy
 nlp = spacy.load('en_core_web_md')
 
 # List of words
-word_list = ['translation', 'values', 'layers', 'transformer', 'recurrent', 'input', 'output', 'positions', 'sequence',  'self', 'decoder', 'encoder', 'training', 'neural', 'keys', 'bleu', 'product', 'dot', 'arxiv', 'layer', 'table']
+word_list = ['translation', 'values', 'transformer', 'recurrent', 'input', 'output', 'positions', 'sequence',  'self', 'decoder', 'encoder', 'training', 'neural', 'keys', 'bleu', 'product', 'dot', 'arxiv', 'layer', 'table']
 
 # Calculate similarity between pairs of words
 similar_word_pairs = []
