@@ -232,6 +232,7 @@ class Document:
         print("NMF Topics ", self.nmfTopics)
         print("SVD Topics ", self.svdTopics)
         print("Type of Topics ", type(self.Topics))
+        print("Topics : ", self.Topics)
 
     def __get_topics(self, vector, vocab):
         num_top_words=10
