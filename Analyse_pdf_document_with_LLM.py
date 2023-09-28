@@ -223,6 +223,9 @@ class Document:
     def __topicAnalysis(self):
         print("topicAnalysis Called !!!")
         self.Topics = set(self.ldaTopics) & set(self.nmfTopics) & set(self.svdTopics)
+        print("LDA Topics ", self.ldaTopics)
+        print("NMF Topics ", self.nmfTopics)
+        print("SVD Topics ", self.svdTopics)
 
     def __get_topics(self, vector, vocab):
         num_top_words=10
