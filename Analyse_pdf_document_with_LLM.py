@@ -231,7 +231,7 @@ class Document:
         print("LDA Topics ", self.ldaTopics)
         print("NMF Topics ", self.nmfTopics)
         print("SVD Topics ", self.svdTopics)
-        print("Type of Topics ", type(self.Topics)
+        print("Type of Topics ", type(self.Topics))
 
     def __get_topics(self, vector, vocab):
         num_top_words=10
