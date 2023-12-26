@@ -48,9 +48,13 @@ class RE:
 			else:
 				# initializing the count
 				frequency[item] = 1
+		#sort frequencies
+		sorted_freq = sorted(frequency.items(), key=lambda x:x[1], reverse=True)
+		sorted_freq  = dict(sorted_freq )
+
 		#printing the frequency
-		print(frequency)
-		return frequency
+		print(sorted_freq)
+		return sorted_freq
 
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
