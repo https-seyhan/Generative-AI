@@ -7,6 +7,7 @@ class RE:
 	def __init__(self):
 		self.bold_text = []
 		os.chdir('/home/saul/Desktop/generative-AI/RE/')
+		print(os.getcwd())
 		
 	def get_bold_text_from_odt(odt_file):
 		print(odt_file)
@@ -33,7 +34,7 @@ class RE:
 		return bold_text
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
-#print(os.getcwd())
+#
 re = RE()
 #odt_file = 'Gen_AI_Real_estate.odt'
 #bold_text_in_odt = get_bold_text_from_odt(odt_file)
