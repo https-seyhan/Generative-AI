@@ -30,11 +30,28 @@ class RE:
 						# Get the text content of the span
 						text = ''.join(span.itertext())
 						self.bold_text.append(text)
-		self.__get_subject_freq(self.bold_text)
+		subject_freqs = self.__get_subject_freq(self.bold_text)
 		return self.bold_text
 		
-	def __get_subject_freq(self, strong):
-		print('Calculate field frequencies', strong)
+	def __get_subject_freq(self, topics):
+		print('Calculate field frequencies', topics)
+
+		
+		frequency = {}
+
+		# iterating over the list
+		for item in topics:
+			# checking the element in dictionary
+			if item in frequency:
+				# incrementing the counr
+				frequency[item] += 1
+			else:
+				# initializing the count
+				frequency[item] = 1
+		#printing the frequency
+		print(frequency)
+		return frequency
+
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
