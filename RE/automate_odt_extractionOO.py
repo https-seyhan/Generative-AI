@@ -32,6 +32,9 @@ class RE:
 						self.bold_text.append(text)
 
 		return self.bold_text
+		
+	def get_subject_freq(self):
+		print('Calculate field frequencies')
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
