@@ -9,7 +9,7 @@ class RE:
 		os.chdir('/home/saul/Desktop/generative-AI/RE/')
 		print(os.getcwd())
 		
-	def get_bold_text_from_odt(odt_file):
+	def get_bold_text_from_odt(self, odt_file):
 		print(odt_file)
 		#bold_text = []
 
@@ -29,13 +29,15 @@ class RE:
 					if 'strong' in style_name.lower():
 						# Get the text content of the span
 						text = ''.join(span.itertext())
-						bold_text.append(text)
+						self.bold_text.append(text)
 
-		return bold_text
+		return self.bold_text
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
+odt_file = 'Gen_AI_Real_estate.odt'
 re = RE()
+strong_in_odt = re.get_bold_text_from_odt(odt_file)
 #odt_file = 'Gen_AI_Real_estate.odt'
 #bold_text_in_odt = get_bold_text_from_odt(odt_file)
 #print(bold_text_in_odt)
