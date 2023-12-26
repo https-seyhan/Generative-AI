@@ -38,6 +38,4 @@ class RE:
 odt_file = 'Gen_AI_Real_estate.odt'
 re = RE()
 strong_in_odt = re.get_bold_text_from_odt(odt_file)
-
-
-#print(bold_text_in_odt)
+print(strong_in_odt)
