@@ -31,6 +31,7 @@ class RE:
 						text = ''.join(span.itertext())
 						self.bold_text.append(text)
 		subject_freqs = self.__get_subject_freq(self.bold_text)
+		self.__convert_dict_to_dataframe(subject_freqs)
 		return self.bold_text
 		
 	def __get_subject_freq(self, topics):
@@ -53,7 +54,8 @@ class RE:
 		#printing the frequency
 		print(sorted_freq)
 		return sorted_freq
-
+	def __convert_dict_to_dataframe(self, freq):
+		print(freq)
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
