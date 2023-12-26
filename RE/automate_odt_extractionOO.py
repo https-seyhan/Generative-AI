@@ -34,9 +34,7 @@ class RE:
 		return self.bold_text
 		
 	def __get_subject_freq(self, topics):
-		print('Calculate field frequencies', topics)
 
-		
 		frequency = {}
 
 		# iterating over the list
