@@ -63,6 +63,7 @@ class RE:
 		freq_dataframe = pd.DataFrame(list(freq.items()))
 		freq_dataframe.columns =['Name', 'Freq']
 		print(freq_dataframe.head())
+		freq_dataframe.to_csv('subject_freq.csv', index=False)
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
