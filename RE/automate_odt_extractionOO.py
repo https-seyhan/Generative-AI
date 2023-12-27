@@ -31,6 +31,7 @@ class RE:
 						# Get the text content of the span
 						text = ''.join(span.itertext())
 						self.bold_text.append(text)
+		print(self.bold_text)
 		subject_freqs = self.__get_subject_freq(self.bold_text)
 		self.__convert_dict_to_dataframe(subject_freqs)
 		return self.bold_text
