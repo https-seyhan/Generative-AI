@@ -1,6 +1,7 @@
 
 import zipfile
 import xml.etree.ElementTree as ET
+import pandas as pd
 import os
 
 class RE:
@@ -57,8 +58,8 @@ class RE:
 		return sorted_freq
 		
 	def __convert_dict_to_dataframe(self, freq):
-		#print(freq)
-		print('FREQ')
+		print(freq)
+		freq_dataframe = pd.DataFrame(list(freq.items()))
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
