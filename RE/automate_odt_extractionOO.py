@@ -50,12 +50,15 @@ class RE:
 		#sort frequencies
 		sorted_freq = sorted(frequency.items(), key=lambda x:x[1], reverse=True)
 		sorted_freq  = dict(sorted_freq )
+		self.__convert_dict_to_dataframe(sorted_freq)
 
 		#printing the frequency
 		print(sorted_freq)
 		return sorted_freq
+		
 	def __convert_dict_to_dataframe(self, freq):
-		print(freq)
+		#print(freq)
+		print('FREQ')
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
