@@ -54,11 +54,11 @@ class RE:
 		self.__convert_dict_to_dataframe(sorted_freq)
 
 		#printing the frequency
-		print(sorted_freq)
+		p#rint(sorted_freq)
 		return sorted_freq
 		
 	def __convert_dict_to_dataframe(self, freq):
-		print(freq)
+		#print(freq)
 		freq_dataframe = pd.DataFrame(list(freq.items()))
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
