@@ -60,6 +60,7 @@ class RE:
 	def __convert_dict_to_dataframe(self, freq):
 		#print(freq)
 		freq_dataframe = pd.DataFrame(list(freq.items()))
+		print(freq_dataframe.head())
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
