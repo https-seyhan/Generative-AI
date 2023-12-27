@@ -54,7 +54,7 @@ class RE:
 		self.__convert_dict_to_dataframe(sorted_freq)
 
 		#printing the frequency
-		p#rint(sorted_freq)
+		#print(sorted_freq)
 		return sorted_freq
 		
 	def __convert_dict_to_dataframe(self, freq):
