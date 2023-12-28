@@ -3,6 +3,7 @@ import zipfile
 import xml.etree.ElementTree as ET
 import pandas as pd
 import os
+import matplotlib.pyplot as plt
 
 class RE:
 	def __init__(self):
@@ -31,8 +32,9 @@ class RE:
 						# Get the text content of the span
 						text = ''.join(span.itertext())
 						self.bold_text.append(text)
+		print(self.bold_text)
 		subject_freqs = self.__get_subject_freq(self.bold_text)
-		self.__convert_dict_to_dataframe(subject_freqs)
+		
 		return self.bold_text
 		
 	def __get_subject_freq(self, topics):
@@ -60,11 +62,15 @@ class RE:
 	def __convert_dict_to_dataframe(self, freq):
 		#print(freq)
 		freq_dataframe = pd.DataFrame(list(freq.items()))
+		freq_dataframe.columns =['Name', 'Freq']
 		print(freq_dataframe.head())
+		#freq_dataframe.to_csv('subject_freq.csv', index=False)
+		freq_dataframe.to_csv('cb_freq.csv', index=False)
 
 	#os.chdir('/home/saul/Desktop/generative-AI/RE/')
 #
-odt_file = 'Gen_AI_Real_estate.odt'
+#odt_file = 'Gen_AI_Real_estate.odt'
+odt_file = 'use_of_cb_in_re_AU.odt'
 re = RE()
 strong_in_odt = re.get_bold_text_from_odt(odt_file)
 #print(strong_in_odt)
