@@ -1,6 +1,4 @@
-# Install the ChatterBot library if you haven't already
-# pip install chatterbot
-# pip install chatterbot_corpus
+
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
