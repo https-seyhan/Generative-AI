@@ -17,16 +17,28 @@ class RE:
 
 		# Open the ODT file as a zip archive
 		with zipfile.ZipFile(odt_file, 'r') as odt_zip:
+			print('ODT_ZIP ', odt_zip)
 			# Extract content.xml from the ODT archive
 			with odt_zip.open('content.xml') as content_file:
 				# Parse content.xml using ElementTree
 				tree = ET.parse(content_file)
 				root = tree.getroot()
+				print('Root Tag ', root.tag)
+				print('Root Attrib ', root.attrib)
+				#for body in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}body'):
+				for child in root:
+					print(child.tag, child.attrib)
+					for body in child.iter('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}body'):
+						print('BODY ', body)
+						print(body.attrib.get('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}body', ''))
 
 				# Find all text:span elements with a text:style-name attribute containing "emphasis"
 				for span in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}span'):
-					print('span :', span)
+					#print('span :', span)
+					#print('root :', root)
 					style_name = span.attrib.get('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name', '')
+					#unknown = root.attrib.get('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-content')
+					#print('unkown :', unknown)
 					#print('style_name :', style_name.lower())
                 
 					if 'strong' in style_name.lower():
@@ -59,7 +71,7 @@ class RE:
 		#self.__convert_dict_to_dataframe(sorted_freq)
 
 		#printing the frequency
-		print(sorted_freq)
+		#print(sorted_freq)
 		return sorted_freq
 		
 	def __convert_dict_to_dataframe(self, freq):
