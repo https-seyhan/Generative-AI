@@ -26,6 +26,7 @@ class RE:
 				# Find all text:span elements with a text:style-name attribute containing "emphasis"
 				for span in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}span'):
 					print('span :', span)
+					print('root :', root)
 					style_name = span.attrib.get('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name', '')
 					#print('style_name :', style_name.lower())
                 
