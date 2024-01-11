@@ -17,18 +17,23 @@ class RE:
 
 		# Open the ODT file as a zip archive
 		with zipfile.ZipFile(odt_file, 'r') as odt_zip:
+			#print('ODT_ZIP ', odt_zip)
 			# Extract content.xml from the ODT archive
 			with odt_zip.open('content.xml') as content_file:
+				print(content_file)
 				# Parse content.xml using ElementTree
 				tree = ET.parse(content_file)
+				print('Tree ', tree)
 				root = tree.getroot()
+				print('Loc ', root[0].text)
 				print('Root Tag ', root.tag)
-				print('Root Attrib ', root.attrib)
+				#print('Root Attrib ', root.attrib)
 				#for body in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}body'):
 				for child in root:
 					print(child.tag, child.attrib)
 					for body in child.iter('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}body'):
-						print('BODY')
+						#print('BODY ', body)
+						print(body.attrib.get('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}body', ''))
 
 				# Find all text:span elements with a text:style-name attribute containing "emphasis"
 				for span in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}span'):
