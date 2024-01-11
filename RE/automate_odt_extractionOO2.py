@@ -22,10 +22,13 @@ class RE:
 				# Parse content.xml using ElementTree
 				tree = ET.parse(content_file)
 				root = tree.getroot()
-				
+				print('Root Tag ', root.tag)
+				print('Root Attrib ', root.attrib)
+				#for body in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}body'):
 				for child in root:
 					print(child.tag, child.attrib)
-					
+					for body in child.iter('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}body'):
+						print('BODY')
 
 				# Find all text:span elements with a text:style-name attribute containing "emphasis"
 				for span in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}span'):
