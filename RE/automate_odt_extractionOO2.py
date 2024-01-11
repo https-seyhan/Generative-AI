@@ -22,12 +22,18 @@ class RE:
 				# Parse content.xml using ElementTree
 				tree = ET.parse(content_file)
 				root = tree.getroot()
+				
+				for child in root:
+					print(child.tag, child.attrib)
+					
 
 				# Find all text:span elements with a text:style-name attribute containing "emphasis"
 				for span in root.iter('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}span'):
-					print('span :', span)
-					print('root :', root)
+					#print('span :', span)
+					#print('root :', root)
 					style_name = span.attrib.get('{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name', '')
+					#unknown = root.attrib.get('{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-content')
+					#print('unkown :', unknown)
 					#print('style_name :', style_name.lower())
                 
 					if 'strong' in style_name.lower():
@@ -60,7 +66,7 @@ class RE:
 		#self.__convert_dict_to_dataframe(sorted_freq)
 
 		#printing the frequency
-		print(sorted_freq)
+		#print(sorted_freq)
 		return sorted_freq
 		
 	def __convert_dict_to_dataframe(self, freq):
