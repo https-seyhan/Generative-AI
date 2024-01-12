@@ -13,7 +13,7 @@ class RE:
 		self.__merge_files()
 		
 	def __merge_files(self):
-		os.system('ooo_cat USE_CASE_*.odt -o ALL_USE_CASES_test.odt')
+		os.system('ooo_cat USE_CASE_*.odt -o ALL_USE_CASES_test3.odt')
 		
 	def get_bold_text_from_odt(self, odt_file):
 		print(odt_file)
