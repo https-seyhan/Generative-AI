@@ -10,7 +10,7 @@ class RE:
 		self.bold_text = []
 		os.chdir('/home/saul/Desktop/generative-AI/RE/')
 		print(os.getcwd())
-		self.__merge_files(self)
+		self.__merge_files()
 		
 	def __merge_files(self):
 		os.system('ooo_cat USE_CASE_*.odt -o ALL_USE_CASES_test.odt')
