@@ -116,7 +116,7 @@ class Document:
         'the', 'to', " \x0c", 'of',
         '“', '-v-', 'A.', 'B.', '(', ')', 'wlr', 'potential', 'generative', 'new', 'percent', 'use', 'generate', 'high', 'base', 'database','include', '©', 'McKinsey', 'based',
         'work', 'activity', 'activities', 'https', 'org', 'datum', 'human', 'ethics', 'ethical', '2016', '2014', '37', '<', '>', 'eos', 'attention', 'model', '25', 'English', 'German',
-        '62', '12', '107', 'model', 'models', 25, 'wsj', 'arxiv', 'xxx', 'xxxx'
+        '62', '12', '107', 'model', 'models', 25, 'wsj', 'arxiv', 'xxx', 'xxxx', 'XXX'
         ]
         for w in customize_stop_words:
             self.nlp.vocab[w].is_stop = True
