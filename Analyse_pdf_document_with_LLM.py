@@ -139,20 +139,20 @@ class Document:
         # convert List to String not include strings less then 3
         listToStr = ' '.join([str(elem) for elem in cleanDoc if len(elem) > 2]) 
         cleanDoc = self.nlp(listToStr)
-        self.__tokenizeDoco(cleanDoc)
-        self.__svdDecomp(cleanDoc)
-        self.__NMFDecomp(cleanDoc)
-        self.__LDADecomp(cleanDoc)
-        self.__topicAnalysis()
-        self.__plotTopics()
+        #self.__tokenizeDoco(cleanDoc)
+        #self.__svdDecomp(cleanDoc)
+        #self.__NMFDecomp(cleanDoc)
+        #self.__LDADecomp(cleanDoc)
+        #self.__topicAnalysis()
+        #self.__plotTopics()
         nouns = [t.lemma_ for t in cleanDoc if t.pos_ == "NOUN"]
         verbs = [t.lemma_ for t in cleanDoc if t.pos_ =="VERB"]
         adjectives = [t.lemma_ for t in cleanDoc if t.pos_ == "ADJ"]
         others = [t.lemma_ for t in cleanDoc if t.pos_ != "VERB" and t.pos_ != "NOUN" and t.pos_ != "ADJ" and t.pos_ != "NUM" 
         and t.pos != "-PRON-"]
-        self.__verbAnalysis(verbs)
-        self.__nounAnalysis(nouns)
-        self.__adjectiveAnalysis(adjectives)
+        #self.__verbAnalysis(verbs)
+        #self.__nounAnalysis(nouns)
+        #self.__adjectiveAnalysis(adjectives)
 
     def __tokenizeDoco(self, doc):
         print("TokenizeDoco Called !!!")
