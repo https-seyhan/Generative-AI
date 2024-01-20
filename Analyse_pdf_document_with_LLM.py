@@ -97,7 +97,7 @@ class Document:
             print('Text ', text)
             
             list.append(text)
-            print(list)
+            #print(list)
         csv_writer = csv.writer(sys.stdout, delimiter='\t')
         with open(r'/home/saul/Desktop/generative-AI/document_analysis/text.txt', 'w') as fp:
             for item in text:
