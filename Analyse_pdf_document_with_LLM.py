@@ -29,8 +29,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 #from sklearn.feature_extraction import stop_words
 from scipy import linalg
 import warnings
-warnings.filterwarnings('ignore')
-import warnings; warnings.filterwarnings(action='once')
+warnings.filterwarnings("ignore")
 
 sb.set_theme(style="whitegrid")
 np.set_printoptions(precision=1)
