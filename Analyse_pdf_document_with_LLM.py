@@ -140,7 +140,7 @@ class Document:
         listToStr = ' '.join([str(elem) for elem in cleanDoc if len(elem) > 2]) 
         cleanDoc = self.nlp(listToStr)
         #print("Clean Doc :", cleanDoc)
-        #self.__tokenizeDoco(cleanDoc)
+        self.__tokenizeDoco(cleanDoc)
         #self.__svdDecomp(cleanDoc)
         #self.__NMFDecomp(cleanDoc)
         #self.__LDADecomp(cleanDoc)
@@ -152,7 +152,7 @@ class Document:
         others = [t.lemma_ for t in cleanDoc if t.pos_ != "VERB" and t.pos_ != "NOUN" and t.pos_ != "ADJ" and t.pos_ != "NUM" 
         and t.pos != "-PRON-"]
         print("Verbs :", verbs)
-        self.__verbAnalysis(verbs)
+        #self.__verbAnalysis(verbs)
         #self.__nounAnalysis(nouns)
         #self.__adjectiveAnalysis(adjectives)
 
