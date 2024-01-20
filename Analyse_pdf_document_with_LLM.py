@@ -107,7 +107,7 @@ class Document:
             
         self.converter.close()
         self.fake_file_handle.close()
-        #self.__textAnalysis(text)
+        self.__textAnalysis(text)
 
     def __textAnalysis(self, text):
         print("textAnalysis Called !!!")
