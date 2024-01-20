@@ -141,7 +141,7 @@ class Document:
         cleanDoc = self.nlp(listToStr)
         #print("Clean Doc :", cleanDoc)
         #self.__tokenizeDoco(cleanDoc)
-        #self.__svdDecomp(cleanDoc)
+        self.__svdDecomp(cleanDoc)
         #self.__NMFDecomp(cleanDoc)
         #self.__LDADecomp(cleanDoc)
         #self.__topicAnalysis()
