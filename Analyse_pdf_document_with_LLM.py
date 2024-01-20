@@ -134,11 +134,12 @@ class Document:
         and t.pos != "-PRON-"]
         ("Clean Doc :", cleanDoc)
         
-        print("Clean Doc :", cleanDoc)
+        #print("Clean Doc :", cleanDoc)
         
         # convert List to String not include strings less then 3
         listToStr = ' '.join([str(elem) for elem in cleanDoc if len(elem) > 2]) 
         cleanDoc = self.nlp(listToStr)
+        print("Clean Doc :", cleanDoc)
         #self.__tokenizeDoco(cleanDoc)
         #self.__svdDecomp(cleanDoc)
         #self.__NMFDecomp(cleanDoc)
