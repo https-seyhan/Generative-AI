@@ -170,6 +170,9 @@ class Document:
         max_val = transformed_model.max(axis=0).toarray().ravel()
         sort_by_tfidf = max_val.argsort()
         feature_names = np.array(tfidf_vector.get_feature_names())
+        #convert list to dataframe
+        features = pd.DataFrame(feature_name, columns=['feature'])
+        features.to_csv('document_features.csv', index= False)
         print('Feature Names : ', feature_names)
 
     def __svdDecomp(self, doc):
