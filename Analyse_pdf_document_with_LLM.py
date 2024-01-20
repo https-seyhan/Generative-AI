@@ -132,7 +132,7 @@ class Document:
         #remove stop words 
         cleanDoc = [t.text for t in doc if t.is_stop != True and t.whitespace_ != True and t.text.isspace() != True and t.is_punct != True 
         and t.pos != "-PRON-"]
-        # ("Clean Doc :", cleanDoc)
+        ("Clean Doc :", cleanDoc)
         
         print("Clean Doc :", cleanDoc)
         
