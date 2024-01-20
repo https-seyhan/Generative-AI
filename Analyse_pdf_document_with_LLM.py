@@ -166,6 +166,7 @@ class Document:
         model = tfidf_vector.fit(sents_list)
         transformed_model = model.transform(sents_list) #Transform documents to document-term matrix.
         self.weightsDict = dict(zip(model.get_feature_names(), tfidf_vector.idf_))
+        print(self.weightsDict)
         #Weight of words per document
         max_val = transformed_model.max(axis=0).toarray().ravel()
         sort_by_tfidf = max_val.argsort()
