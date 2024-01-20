@@ -151,7 +151,7 @@ class Document:
         adjectives = [t.lemma_ for t in cleanDoc if t.pos_ == "ADJ"]
         others = [t.lemma_ for t in cleanDoc if t.pos_ != "VERB" and t.pos_ != "NOUN" and t.pos_ != "ADJ" and t.pos_ != "NUM" 
         and t.pos != "-PRON-"]
-        print("Verbs :", verbs)
+        #print("Verbs :", verbs)
         #self.__verbAnalysis(verbs)
         #self.__nounAnalysis(nouns)
         #self.__adjectiveAnalysis(adjectives)
@@ -170,6 +170,7 @@ class Document:
         max_val = transformed_model.max(axis=0).toarray().ravel()
         sort_by_tfidf = max_val.argsort()
         feature_names = np.array(tfidf_vector.get_feature_names())
+        print('Feature Names : ', feature_names)
 
     def __svdDecomp(self, doc):
         print("svdDecomp Called !!!")
