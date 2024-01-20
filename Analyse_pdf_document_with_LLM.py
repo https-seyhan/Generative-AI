@@ -140,7 +140,7 @@ class Document:
         listToStr = ' '.join([str(elem) for elem in cleanDoc if len(elem) > 2]) 
         cleanDoc = self.nlp(listToStr)
         #print("Clean Doc :", cleanDoc)
-        self.__tokenizeDoco(cleanDoc)
+        #self.__tokenizeDoco(cleanDoc)
         #self.__svdDecomp(cleanDoc)
         #self.__NMFDecomp(cleanDoc)
         #self.__LDADecomp(cleanDoc)
