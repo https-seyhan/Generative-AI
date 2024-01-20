@@ -77,8 +77,8 @@ class Document:
 
     def __convertToText(self, fileName):
         list = []
-        print("Working Directory :", os.getcwd())
-        print("All files in the  :", os. listdir())
+        #print("Working Directory :", os.getcwd())
+        #print("All files in the  :", os. listdir())
         
         # Perform layout analysis for all text
         laparams = pdfminer.layout.LAParams()
