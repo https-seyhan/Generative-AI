@@ -1,3 +1,4 @@
+#Generate random property data to be used for Generative AI RE project
 import random
 
 class PropertyGenerator:
