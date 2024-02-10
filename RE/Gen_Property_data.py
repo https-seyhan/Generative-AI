@@ -6,9 +6,9 @@ class PropertyGenerator:
         self.property_category = ['Residential Property', 'Commercial Property', 'Investment Properties',
                                   'Rural and Agricultural Properties', 'Special Purpose Properties', 'Vacant Land',
                                   'Strata Title Properties']
-        self.property_types = ["Apartments/Units", "House", "Duplex", "Townhouse", 'Terrace', 'granny flat','Villa','Office Space',
+        self.property_types = ["Apartments/Units", "House", "Duplex", "Townhouse", 'Terrace', 'Granny Flat','Villa','Office Space',
                                'Retail Shops', 'Industrial Space','Hotels/Motels', 'Restaurants/Cafes', 'Residential Investment Property',
-                               'Commercial Investment Properties', 'Educational Institution']
+                               'Commercial Investment Properties', 'Educational Institution', 'Medical Facility']
         self.locations = ["Downtown", "Suburb", "Countryside"]
         self.features = ["Swimming Pool", "Garden", "Garage", "Fireplace"]
 
