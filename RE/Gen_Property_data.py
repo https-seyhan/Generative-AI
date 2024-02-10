@@ -3,6 +3,9 @@ import random
 
 class PropertyGenerator:
     def __init__(self):
+        self.property_category = ['Residential Property', 'Commercial Property', 'Investment Properties',
+                                  'Rural and Agricultural Properties', 'Special Purpose Properties', 'Vacant Land',
+                                  'Strata Title Properties']
         self.property_types = ["Apartment", "House", "Condo", "Townhouse"]
         self.locations = ["Downtown", "Suburb", "Countryside"]
         self.features = ["Swimming Pool", "Garden", "Garage", "Fireplace"]
