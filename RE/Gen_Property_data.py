@@ -11,6 +11,7 @@ class PropertyGenerator:
         self.features = ["Swimming Pool", "Garden", "Garage", "Fireplace"]
 
     def generate_property(self):
+        property_category = random.choice(self.property_category)
         property_type = random.choice(self.property_types)
         location = random.choice(self.locations)
         bedrooms = random.randint(1, 5)
