@@ -7,7 +7,8 @@ class PropertyGenerator:
                                   'Rural and Agricultural Properties', 'Special Purpose Properties', 'Vacant Land',
                                   'Strata Title Properties']
         self.property_types = ["Apartments/Units", "House", "Duplex", "Townhouse", 'Terrace', 'granny flat','Villa','Office Space',
-                               'Retail Shops', 'Industrial Space','Hotels/Motels', 'Restaurants/Cafes', 'Residential Investment Property']
+                               'Retail Shops', 'Industrial Space','Hotels/Motels', 'Restaurants/Cafes', 'Residential Investment Property',
+                               'Commercial Investment Properties']
         self.locations = ["Downtown", "Suburb", "Countryside"]
         self.features = ["Swimming Pool", "Garden", "Garage", "Fireplace"]
 
