@@ -8,7 +8,7 @@ class PropertyGenerator:
                                   'Strata Title Properties']
         self.property_types = ["Apartments/Units", "House", "Duplex", "Townhouse", 'Terrace', 'Granny Flat','Villa','Office Space',
                                'Retail Shops', 'Industrial Space','Hotels/Motels', 'Restaurants/Cafes', 'Residential Investment Property',
-                               'Commercial Investment Properties', 'Educational Institution', 'Medical Facility', 'Mixed-Use Property']
+                               'Commercial Investment Properties', 'Educational Institution', 'Medical Facility', 'Mixed-Use Property', 'Government-Owned Property']
         self.locations = ["Downtown", "Suburb", "Countryside"]
         self.features = ["Swimming Pool", "Garden", "Garage", "Fireplace"]
 
