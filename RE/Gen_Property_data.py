@@ -20,6 +20,7 @@ class PropertyGenerator:
         features = random.sample(self.features, k=random.randint(1, len(self.features)))
 
         property_data = {
+            "Category": property_category,
             "Type": property_type,
             "Location": location,
             "Bedrooms": bedrooms,
