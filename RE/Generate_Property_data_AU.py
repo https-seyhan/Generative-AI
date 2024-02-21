@@ -47,11 +47,11 @@ generated_listings = generator.generate_property_listings(5)
 def save_data_to_json(key, value, listings):
     listObj = {}
     
-    print(f"{key}: {value}")
+    #print(f"{key}: {value}")
     with open('data.json') as propery_dat:
         listObj = json.load(propery_dat)
         
-    listObj ['item'] = listings
+    listObj.update(listings)
     print(listObj)
 
     with open('data.json', 'w') as json_file:
