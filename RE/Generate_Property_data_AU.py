@@ -52,7 +52,7 @@ def save_data_to_json(key, value, listings):
         listObj = json.load(propery_dat)
         
     listObj ['item'] = listings
-        
+    print(listObj)    
 
 # Display generated listings
 for i, listing in enumerate(generated_listings, 1):
