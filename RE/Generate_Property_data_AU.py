@@ -48,8 +48,10 @@ def save_data_to_json(key, value, listings):
     listObj = []
     print('PRINTING')
     print(f"{key}: {value}")
-    with open('property_data.json', 'w') as f:
-        listObj = json.load(listing)
+    with open('data.json') as propery_dat:
+        listObj = json.load(propery_dat)
+        
+
         
 
 # Display generated listings
