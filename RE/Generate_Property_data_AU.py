@@ -1,5 +1,6 @@
 #Generate random property data to be used for Generative AI RE project
 import random
+import json
 
 class PropertyGenerator:
     def __init__(self):
