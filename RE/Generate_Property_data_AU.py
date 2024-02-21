@@ -50,5 +50,5 @@ for i, listing in enumerate(generated_listings, 1):
         save_data_to_json(key, value)
     print("\n")
 
-def save_data_to_json(lkey, value):
+def save_data_to_json(key, value):
     print(f"{key}: {value}")
