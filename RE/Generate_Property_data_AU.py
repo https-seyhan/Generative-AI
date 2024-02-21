@@ -42,17 +42,17 @@ class PropertyGenerator:
 generator = PropertyGenerator()
 generated_listings = generator.generate_property_listings(5)
 
-def save_data_to_json(key, value):
+def save_data_to_json(key, value, listings):
     print('PRINTING')
     print(f"{key}: {value}")
     with open('data.json', 'w') as f:
-        json.dump(data, f)
+        json.dump(listings, f)
 
 # Display generated listings
 for i, listing in enumerate(generated_listings, 1):
     print(f"Property {i}:")
     for key, value in listing.items():
         #print(f"{key}: {value}")
-        save_data_to_json(key, value)
+        save_data_to_json(key, value, listing)
     print("\n")
 
