@@ -49,7 +49,7 @@ def save_data_to_json(key, value):
 for i, listing in enumerate(generated_listings, 1):
     print(f"Property {i}:")
     for key, value in listing.items():
-        print(f"{key}: {value}")
+        #print(f"{key}: {value}")
         save_data_to_json(key, value)
     print("\n")
 
