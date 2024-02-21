@@ -5,6 +5,7 @@ import os
 
 class PropertyGenerator:
     def __init__(self):
+        os.chdir('/home/saul/Desktop/generative-AI/RE')
         self.property_category = ['Residential Property', 'Commercial Property', 'Investment Properties',
                                   'Rural and Agricultural Properties', 'Special Purpose Properties', 'Vacant Land',
                                   'Strata Title Properties']
@@ -46,7 +47,7 @@ generated_listings = generator.generate_property_listings(5)
 def save_data_to_json(key, value, listings):
     print('PRINTING')
     print(f"{key}: {value}")
-    with open('data.json', 'w') as f:
+    with open('property_data.json', 'w') as f:
         json.dump(listings, f)
 
 # Display generated listings
