@@ -9,6 +9,6 @@ print(tokens)
 token_ids = tokenizer.convert_tokens_to_ids(tokens)
 print(token_ids)
 
-
+#with encode 
 token_ids = tokenizer.encode("This is an example of the bert tokenizer")
 print(token_ids)
