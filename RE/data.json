@@ -1,0 +1,23 @@
+{
+    "Category": "Residential Property",
+    "Type": "Educational Institution",
+    "Location": "Downtown",
+    "Bedrooms": 5,
+    "Bathrooms": 2,
+    "Price": 649067,
+    "Features": [
+        "Swimming Pool",
+        "Fireplace"
+    ],
+    "item": {
+        "Category": "Special Purpose Properties",
+        "Type": "Mixed-Use Property",
+        "Location": "Suburb",
+        "Bedrooms": 4,
+        "Bathrooms": 2,
+        "Price": 123279,
+        "Features": [
+            "Garage"
+        ]
+    }
+}
