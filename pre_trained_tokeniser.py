@@ -1,5 +1,6 @@
 from transformers import BertTokenizer
 
+#pre-trained bert-base-uncased tokenizer to tokenize a sample sentence
 tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 tokens = tokenizer.tokenize("Ask users about their preferences (e.g., location, budget, property type)")
 print(tokens)
