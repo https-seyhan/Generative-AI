@@ -4,5 +4,6 @@ tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 tokens = tokenizer.tokenize("Ask users about their preferences (e.g., location, budget, property type)")
 print(tokens)
 
+#convert_tokens_to_ids 
 token_ids = tokenizer.convert_tokens_to_ids(tokens)
 print(token_ids)
