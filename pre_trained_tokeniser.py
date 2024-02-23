@@ -12,3 +12,6 @@ print(token_ids)
 #with encode 
 token_ids = tokenizer.encode("This is an example of the bert tokenizer")
 print(token_ids)
+
+tokens = tokenizer.convert_ids_to_tokens(token_ids)
+print(tokens)
