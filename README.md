@@ -5,8 +5,7 @@
 
 
 ## Generative AI & GitHub:
-
-  <b> Data Augmentation:</b> Generative AI can be used to augment datasets for various machine learning tasks hosted on GitHub. By generating synthetic data, it can help increase the diversity and size of the training data, improving the robustness of machine learning models.
+Data Augmentation: Generative AI can be used to augment datasets for various machine learning tasks hosted on GitHub. By generating synthetic data, it can help increase the diversity and size of the training data, improving the robustness of machine learning models.
 
    <b> Code Generation:</b> Generative AI can be used to generate code snippets, functions, or even entire programs based on existing code repositories on GitHub. This could assist developers by automating repetitive tasks or providing them with code suggestions.
 
