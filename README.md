@@ -29,6 +29,8 @@ Large language models refer to advanced artificial intelligence models that are 
         T5, introduced in 2019, is a versatile language model capable of performing a wide range of NLP tasks by framing them as text-to-text tasks. It has been used for tasks such as translation, summarization, question answering, and more.</p>
 <p>    <b>XLNet:</b>
         XLNet, introduced by Google in 2019, is designed to overcome some limitations of previous models like BERT by utilizing permutation-based training. It achieves state-of-the-art results on various NLP benchmarks.</p>
+        <p>    RoBERTa (Robustly optimized BERT approach) by Facebook AI:
+        RoBERTa is an optimized version of BERT, introduced by Facebook AI in 2019. It uses larger mini-batches, dynamic masking, and longer training to improve performance on various NLP tasks.</p>
 ## Images
 ## Audio
 ## Video
