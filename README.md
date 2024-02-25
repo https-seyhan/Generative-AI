@@ -37,11 +37,7 @@ Large language models refer to advanced artificial intelligence models that are 
    +  <b>Relative Positional Encodings:</b> XLNet uses relative positional encodings to capture the position of tokens relative to each other in a sequence. This allows the model to understand the order of tokens without relying solely on absolute positional encodings.<br>
    + <b>Training Strategy:</b> XLNet is trained using a combination of autoregressive language modeling and permutation language modeling objectives. This training strategy helps the model learn bidirectional context and capture dependencies between tokens effectively.<br></p>
 <p>XLNet has demonstrated state-of-the-art performance on various natural language processing tasks, including language modeling, text classification, question answering, and machine translation. Its ability to capture bidirectional context while still maintaining the advantages of autoregressive models has made it a widely used and influential language model in the NLP research community.
-   
-
-
 </p>
-
-        <p>    <b>RoBERTa (Robustly optimized BERT approach) by Facebook AI:</b>
+<p><b>RoBERTa (Robustly optimized BERT approach) by Facebook AI:</b>
         RoBERTa is an optimized version of BERT, introduced by Facebook AI in 2019. It uses larger mini-batches, dynamic masking, and longer training to improve performance on various NLP tasks.</p>
 
