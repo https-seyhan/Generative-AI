@@ -32,7 +32,7 @@ Large language models refer to advanced artificial intelligence models that are 
 
    +  <b>Permutation Language Modeling (PLM):</b> Unlike BERT, which uses masked language modeling (MLM) where certain tokens are masked and the model predicts them, XLNet employs PLM during training. In PLM, instead of masking tokens, the model learns to predict the probability of a token given the order of all other tokens in the sequence. This allows XLNet to capture bidirectional context information without relying on left-to-right or right-to-left reading directions.<br>
 
-   +  <b>Transformer Architecture:</b> Like many other contemporary language models, XLNet is based on the Transformer architecture, which consists of self-attention mechanisms and feedforward neural networks. This architecture enables XLNet to model dependencies between words in a sequence more effectively, capturing long-range dependencies and contextual information.<br>
+   +  <b>Transformer Architecture:</b> Like many other contemporary language models, XLNet is based on the Transformer architecture, which consists of self-attention mechanisms and feedforward neural networks(all information is only passed forward.). This architecture enables XLNet to model dependencies between words in a sequence more effectively, capturing long-range dependencies and contextual information.<br>
    +  <b>Segment-Level Recurrence Mechanism:</b> XLNet introduces a segment-level recurrence mechanism to capture dependencies between segments of text. This mechanism helps the model retain information across segments, allowing it to better understand and generate coherent text.
    
    </p>
