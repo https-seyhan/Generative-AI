@@ -27,7 +27,8 @@ Large language models refer to advanced artificial intelligence models that are 
         BERT was introduced in 2018 and is designed to understand the context of words in a sentence by considering both their left and right context. It has been influential in various NLP tasks, including question answering, sentiment analysis, and more.</p>
 <p> <b>T5 (Text-To-Text Transfer Transformer) by Google:</b>
         T5, introduced in 2019, is a versatile language model capable of performing a wide range of NLP tasks by framing them as text-to-text tasks. It has been used for tasks such as translation, summarization, question answering, and more.</p>
-
+<p>    <b>XLNet:</b>
+        XLNet, introduced by Google in 2019, is designed to overcome some limitations of previous models like BERT by utilizing permutation-based training. It achieves state-of-the-art results on various NLP benchmarks.</p>
 ## Images
 ## Audio
 ## Video
