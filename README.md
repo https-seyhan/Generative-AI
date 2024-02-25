@@ -20,7 +20,7 @@ Data Augmentation: Generative AI can be used to augment datasets for various mac
 Large language models refer to advanced artificial intelligence models that are trained on vast amounts of text data to understand and generate human-like text. These models have millions or even billions of parameters, enabling them to capture complex linguistic patterns and generate coherent and contextually relevant responses. Some of the notable large language models include:<br><br>
    <b> GPT (Generative Pre-trained Transformer) series by OpenAI:</b><br>
    - <b>GPT-1:</b> Introduced in 2018, it was one of the pioneering large-scale language models.<br>
-   <b>GPT-2:</b> Released in 2019, GPT-2 was a significant advancement, featuring 1.5 billion parameters.
+   - <b>GPT-2:</b> Released in 2019, GPT-2 was a significant advancement, featuring 1.5 billion parameters.
 
 ## Images
 ## Audio
