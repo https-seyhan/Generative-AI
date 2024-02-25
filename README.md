@@ -31,6 +31,4 @@ Large language models refer to advanced artificial intelligence models that are 
         XLNet, introduced by Google in 2019, is designed to overcome some limitations of previous models like BERT by utilizing permutation-based training. It achieves state-of-the-art results on various NLP benchmarks.</p>
         <p>    <b>RoBERTa (Robustly optimized BERT approach) by Facebook AI:</b>
         RoBERTa is an optimized version of BERT, introduced by Facebook AI in 2019. It uses larger mini-batches, dynamic masking, and longer training to improve performance on various NLP tasks.</p>
-## Images
-## Audio
-## Video
+
