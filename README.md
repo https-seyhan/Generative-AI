@@ -25,6 +25,8 @@ Large language models refer to advanced artificial intelligence models that are 
 +   <b>GPT-3:</b> Released in 2020, GPT-3 is one of the largest language models to date, with 175 billion parameters, enabling it to perform a wide range of natural language processing tasks with remarkable fluency.<br>
 <p><b>BERT (Bidirectional Encoder Representations from Transformers) by Google:</b>
         BERT was introduced in 2018 and is designed to understand the context of words in a sentence by considering both their left and right context. It has been influential in various NLP tasks, including question answering, sentiment analysis, and more.</p>
+<p> <b>T5 (Text-To-Text Transfer Transformer) by Google:</b>
+        T5, introduced in 2019, is a versatile language model capable of performing a wide range of NLP tasks by framing them as text-to-text tasks. It has been used for tasks such as translation, summarization, question answering, and more.</p>
 
 ## Images
 ## Audio
