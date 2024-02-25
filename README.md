@@ -32,8 +32,15 @@ Large language models refer to advanced artificial intelligence models that are 
 
    +  <b>Permutation Language Modeling (PLM):</b> Unlike BERT, which uses masked language modeling (MLM) where certain tokens are masked and the model predicts them, XLNet employs PLM during training. In PLM, instead of masking tokens, the model learns to predict the probability of a token given the order of all other tokens in the sequence. This allows XLNet to capture bidirectional context information without relying on left-to-right or right-to-left reading directions.<br>
 
-   +  <b>Transformer Architecture:</b> Like many other contemporary language models, XLNet is based on the Transformer architecture, which consists of self-attention mechanisms and feedforward neural networks. This architecture enables XLNet to model dependencies between words in a sequence more effectively, capturing long-range dependencies and contextual information.<br></p>
-<p>XLNet has demonstrated state-of-the-art performance on various natural language processing tasks, including language modeling, text classification, question answering, and machine translation. Its ability to capture bidirectional context while still maintaining the advantages of autoregressive models has made it a widely used and influential language model in the NLP research community.</p>
+   +  <b>Transformer Architecture:</b> Like many other contemporary language models, XLNet is based on the Transformer architecture, which consists of self-attention mechanisms and feedforward neural networks. This architecture enables XLNet to model dependencies between words in a sequence more effectively, capturing long-range dependencies and contextual information.<br>
+   +  <b>Segment-Level Recurrence Mechanism:</b> XLNet introduces a segment-level recurrence mechanism to capture dependencies between segments of text. This mechanism helps the model retain information across segments, allowing it to better understand and generate coherent text.
+   
+   </p>
+<p>XLNet has demonstrated state-of-the-art performance on various natural language processing tasks, including language modeling, text classification, question answering, and machine translation. Its ability to capture bidirectional context while still maintaining the advantages of autoregressive models has made it a widely used and influential language model in the NLP research community.
+   
+
+
+</p>
 
         <p>    <b>RoBERTa (Robustly optimized BERT approach) by Facebook AI:</b>
         RoBERTa is an optimized version of BERT, introduced by Facebook AI in 2019. It uses larger mini-batches, dynamic masking, and longer training to improve performance on various NLP tasks.</p>
