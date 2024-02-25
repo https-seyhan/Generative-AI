@@ -30,15 +30,7 @@ Large language models refer to advanced artificial intelligence models that are 
 <p>    <b>XLNet:</b>
         XLNet is a state-of-the-art language model introduced by Google Research in 2019. It is designed to overcome some limitations of previous models like BERT (Bidirectional Encoder Representations from Transformers) by introducing a new training objective called Permutation Language Modeling (PLM). XLNet aims to capture bidirectional context while still being able to model long-range dependencies effectively. Here's a breakdown of its key features and components:
 
-    + <b>Permutation Language Modeling (PLM):</b> Unlike BERT, which uses masked language modeling (MLM) where certain tokens are masked and the model predicts them, XLNet employs PLM during training. In PLM, instead of masking tokens, the model learns to predict the probability of a token given the order of all other tokens in the sequence. This allows XLNet to capture bidirectional context information without relying on left-to-right or right-to-left reading directions.
 
-    Transformer Architecture: Like many other contemporary language models, XLNet is based on the Transformer architecture, which consists of self-attention mechanisms and feedforward neural networks. This architecture enables XLNet to model dependencies between words in a sequence more effectively, capturing long-range dependencies and contextual information.
-
-    Segment-Level Recurrence Mechanism: XLNet introduces a segment-level recurrence mechanism to capture dependencies between segments of text. This mechanism helps the model retain information across segments, allowing it to better understand and generate coherent text.
-
-    Relative Positional Encodings: XLNet uses relative positional encodings to capture the position of tokens relative to each other in a sequence. This allows the model to understand the order of tokens without relying solely on absolute positional encodings.
-
-    Training Strategy: XLNet is trained using a combination of autoregressive language modeling and permutation language modeling objectives. This training strategy helps the model learn bidirectional context and capture dependencies between tokens effectively.
 
 XLNet has demonstrated state-of-the-art performance on various natural language processing tasks, including language modeling, text classification, question answering, and machine translation. Its ability to capture bidirectional context while still maintaining the advantages of autoregressive models has made it a widely used and influential language model in the NLP research community.</p>
         <p>    <b>RoBERTa (Robustly optimized BERT approach) by Facebook AI:</b>
