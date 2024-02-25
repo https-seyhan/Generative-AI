@@ -19,9 +19,9 @@ Data Augmentation: Generative AI can be used to augment datasets for various mac
 ## Large Language Models (LLM)
 Large language models refer to advanced artificial intelligence models that are trained on vast amounts of text data to understand and generate human-like text. These models have millions or even billions of parameters, enabling them to capture complex linguistic patterns and generate coherent and contextually relevant responses. Some of the notable large language models include:<br><br>
    <b> GPT (Generative Pre-trained Transformer) series by OpenAI:</b><br>
-   - <b>GPT-1:</b> Introduced in 2018, it was one of the pioneering large-scale language models.<br>
-   - <b>GPT-2:</b> Released in 2019, GPT-2 was a significant advancement, featuring 1.5 billion parameters.<br>
-   - <b>GPT-3:</b> Released in 2020, GPT-3 is one of the largest language models to date, with 175 billion parameters, enabling it to perform a wide range of natural language processing tasks with remarkable fluency.<br></code>[x]
+   + <b>GPT-1:</b> Introduced in 2018, it was one of the pioneering large-scale language models.<br>
+   + <b>GPT-2:</b> Released in 2019, GPT-2 was a significant advancement, featuring 1.5 billion parameters.<br>
+   + <b>GPT-3:</b> Released in 2020, GPT-3 is one of the largest language models to date, with 175 billion parameters, enabling it to perform a wide range of natural language processing tasks with remarkable fluency.<br>
   <b>BERT (Bidirectional Encoder Representations from Transformers) by Google:</b>
         BERT was introduced in 2018 and is designed to understand the context of words in a sentence by considering both their left and right context. It has been influential in various NLP tasks, including question answering, sentiment analysis, and more.
 
