@@ -23,8 +23,8 @@ Large language models refer to advanced artificial intelligence models that are 
    <b>GPT-1:</b> Introduced in 2018, it was one of the pioneering large-scale language models.<br>
    <b>GPT-2:</b> Released in 2019, GPT-2 was a significant advancement, featuring 1.5 billion parameters.<br>
    <b>GPT-3:</b> Released in 2020, GPT-3 is one of the largest language models to date, with 175 billion parameters, enabling it to perform a wide range of natural language processing tasks with remarkable fluency.<br></li>
-<li><b>BERT (Bidirectional Encoder Representations from Transformers) by Google:</b>
-        BERT was introduced in 2018 and is designed to understand the context of words in a sentence by considering both their left and right context. It has been influential in various NLP tasks, including question answering, sentiment analysis, and more.</li>
+<b>BERT (Bidirectional Encoder Representations from Transformers) by Google:</b>
+        BERT was introduced in 2018 and is designed to understand the context of words in a sentence by considering both their left and right context. It has been influential in various NLP tasks, including question answering, sentiment analysis, and more.
 
 ## Images
 ## Audio
