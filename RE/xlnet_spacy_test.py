@@ -27,7 +27,7 @@ def get_response(user_input):
     logits = outputs.logits
     print('Logits : ', logits)
     predicted_class = torch.argmax(logits, dim=1).item()
-    print('Predicted Class :, predicted_class)
+    print('Predicted Class :', predicted_class)
     return predicted_class  # Replace this with an appropriate real estate response
 
 # Main loop for interacting with the chatbot
