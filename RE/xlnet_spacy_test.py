@@ -25,6 +25,7 @@ def get_response(user_input):
     inputs = tokenizer(user_input, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
+    print('Logits : ', logits)
     predicted_class = torch.argmax(logits, dim=1).item()
     return predicted_class  # Replace this with an appropriate real estate response
 
