@@ -13,7 +13,11 @@ nlp = spacy.load("en_core_web_sm")
 # Function to extract entities using SpaCy
 def extract_entities(text):
     doc = nlp(text)
+    
+    # Analyze topics based on spaCy's named entities
+    topics = set()
     entities = [ent.text for ent in doc.ents]
+    
     return entities
 
 # Function to get XLNet response
