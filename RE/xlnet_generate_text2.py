@@ -15,7 +15,7 @@ def generate_text(prompt, max_length=50, num_return_sequences=1, temperature=1.0
     output = model.generate(
         input_ids=input_ids,
         max_length=max_length,
-        num_return_sequences= 1, #num_return_sequences,
+        num_return_sequences= num_return_sequences,
         temperature=temperature,
         pad_token_id=tokenizer.eos_token_id,
         eos_token_id=tokenizer.eos_token_id
@@ -27,7 +27,7 @@ def generate_text(prompt, max_length=50, num_return_sequences=1, temperature=1.0
 prompt = "Once upon a time,"
 
 # Generate text
-generated_text = generate_text(prompt, max_length=100, num_return_sequences=5, temperature=0.8)
+generated_text = generate_text(prompt, max_length=100, num_return_sequences=1, temperature=0.8)
 
 # Print generated text
 for i, text in enumerate(generated_text, start=1):
