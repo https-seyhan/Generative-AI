@@ -8,6 +8,7 @@ def generate_text(model_name_or_path, prompt_text, num_sequences=1, max_length=5
 
     # Tokenize input text
     input_ids = tokenizer.encode(prompt_text, return_tensors="pt")
+    print('Input Ids :', input_ids)
 
     # Generate text
     output_sequences = model.generate(
