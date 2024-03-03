@@ -27,7 +27,8 @@ def generate_text(model_name_or_path, prompt_text, num_sequences=1, max_length=5
 
 # Example usage
 model_name_or_path = "xlnet-base-cased"
-prompt_text = "The cat"
+#prompt_text = "The cat"
+prompt_text = "The weather today is"
 num_sequences = 1 #3
 max_length = 50
 temperature = 0.7
