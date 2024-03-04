@@ -14,7 +14,7 @@ def find_similar_words(model, word, top_n=5):
         return f"'{word}' not found in the vocabulary."
 
 if __name__ == "__main__":
-	os.chdir('/home/saul/Desktop/generative-AI/document_analysis')
+	os.chdir('/home/saul/Desktop/generative-AI/RE')
     # Specify the path to the GloVe file (you can download pre-trained GloVe models from the official website)
     
     #glove_file_path = 'path/to/glove.6B.50d.txt'  # Adjust the path and dimensionality accordingly
