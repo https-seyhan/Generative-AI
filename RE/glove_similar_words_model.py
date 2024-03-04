@@ -23,7 +23,7 @@ if __name__ == "__main__":
     glove_model = load_glove_model(glove_file_path)
 
     # Specify the word for which you want to find similar words
-    target_word = 'example'
+    target_word = 'Real Estate'
 
     # Find and print similar words
     similar_words = find_similar_words(glove_model, target_word)
