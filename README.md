@@ -1,7 +1,6 @@
 # Generative-AI
-## Generative Adversarial Networks (GANs)
-#### <span style="color : blue">Generative AI, also known as Generative Adversarial Networks (GANs) or other generative models, is a subset of artificial intelligence that aims to generate new content that is similar to existing data. 
-#### It involves two main components: a generator and a discriminator. The generator creates synthetic data, while the discriminator tries to distinguish between real and generated data</span>.
+## Our Mission
+#### <span style="color : blue">Our mission is to Organise and Intelligently Direct our Specialised Knowledge in Generative-AI & Large Language Models(LLM) for Real Estate Business </span>.
 
 
 ## Generative AI & GitHub:
