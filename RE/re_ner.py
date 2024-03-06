@@ -3,6 +3,11 @@ import random
 from spacy.util import minibatch, compounding
 from pathlib import Path
 
+
+class NER_Analysis():
+	def __init__():
+		print('Init')
+
 def set_model():
 	print('Model Called!')
 
