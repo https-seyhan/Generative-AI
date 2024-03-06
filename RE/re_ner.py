@@ -12,6 +12,7 @@ class NER_Analysis():
 	def __init__(Self):
 		print('Init')
 		print("Loaded model '%s'" % Self.nlp)
+		ner = Self.nlp.create_pipe("ner")
 		
 	def get_ner(self):
 		print('get Ner')
