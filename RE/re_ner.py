@@ -1,11 +1,14 @@
 import spacy
 import random
 from spacy.util import minibatch, compounding
+from spacy.lang.en import English
+from spacy.pipeline import EntityRuler
+
 from pathlib import Path
 
 
 class NER_Analysis():
-	def __init__():
+	def __init__(Self):
 		print('Init')
 
 def set_model():
