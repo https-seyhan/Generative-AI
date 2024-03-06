@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 class NER_Analysis():
+	nlp = spacy.load('en_core_web_md')
 	def __init__(Self):
 		print('Init')
 
@@ -16,3 +17,4 @@ def set_model():
 
 if __name__ == '__main__':
 	set_model()
+	re_ner = NER_Analysis()
