@@ -17,6 +17,7 @@ class NER_Analysis():
 	def get_ner(self):
 		print('get Ner')
 		ner = self.nlp.create_pipe("ner")
+		print(ner)
 
 def set_model():
 	print('Model Called!')
