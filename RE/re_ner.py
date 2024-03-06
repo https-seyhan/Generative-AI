@@ -11,6 +11,7 @@ class NER_Analysis():
 	nlp = spacy.load('en_core_web_md')
 	def __init__(Self):
 		print('Init')
+		print("Loaded model '%s'" % Self.nlp)
 		
 	def get_ner(self):
 		print('get Ner')
