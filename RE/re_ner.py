@@ -18,6 +18,8 @@ class NER_Analysis():
 		print('get Ner')
 		ner = self.nlp.create_pipe("ner")
 		print(ner)
+		doc = nlp2(text)
+        print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
 
 def set_model():
 	print('Model Called!')
