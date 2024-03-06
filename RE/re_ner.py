@@ -24,7 +24,7 @@ class NER_Analysis():
 		print(ner)
 
 		doc = self.nlp(self.text)
-        print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
+		print("Entities", [(ent.text, ent.label_) for ent in doc.ents])
 
 def set_model():
 	print('Model Called!')
