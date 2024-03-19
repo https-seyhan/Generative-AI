@@ -40,3 +40,4 @@ Large language models refer to advanced artificial intelligence models that are 
 <p><b>RoBERTa (Robustly optimized BERT approach) by Facebook AI:</b>
         RoBERTa is an optimized version of BERT, introduced by Facebook AI in 2019. It uses larger mini-batches, dynamic masking, and longer training to improve performance on various NLP tasks.</p>
 
+<p><b>Retrieval-augmented generation (RAG)</b> is a technique for enhancing the accuracy and reliability of generative AI models with facts fetched from external sources
