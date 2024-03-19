@@ -9,10 +9,13 @@ tokenizer = T5Tokenizer.from_pretrained("t5-small")
 retriever_model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
 
 # Sample context for retrieval
-context = "Romeo and Juliet is a play written by William Shakespeare."
+#context = "Romeo and Juliet is a play written by William Shakespeare."
+
+context = "About 75 percent of the value that generative AI use cases could deliver falls across four areas: Customer operations, marketing and sales, software engineering, and R&D. Across 16 business functions, we examined 63 use cases in which the technology can address specific business challenges in ways that produce one or more measurable outcomes. Examples include generative AI’s ability to support interactions with customers, generate creative content for marketing and sales, and draft computer code based on natural-language prompts, among many other tasks."
 
 # Sample query for retrieval
-query = "What is the play Romeo and Juliet about?"
+#query = "What is the play Romeo and Juliet about?"
+query = "What are generative AI use cases?"
 
 # Encode the context and query
 context_embedding = retriever_model.encode(context, convert_to_tensor=True)
