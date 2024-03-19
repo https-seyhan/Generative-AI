@@ -1,0 +1,1 @@
+Retrieval-augmented generation is a technique that combines elements of retrieval-based models with generative models to improve the quality and relevance of generated text. One common approach is to use a retriever to find relevant context or information, which is then used to guide the generation process of a generative model.
