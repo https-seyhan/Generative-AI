@@ -1,3 +1,9 @@
+property_descriptions = [
+    "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen.",
+    "Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access.",
+    "Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
+]
+
 
 T5 --> Generated Response: townhouse in prime location with 4 bedrooms, 3 bathrooms and a private garage.
 
