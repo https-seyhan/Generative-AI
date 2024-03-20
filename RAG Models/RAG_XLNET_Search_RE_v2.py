@@ -1,4 +1,4 @@
-from transformers import XLNetTokenizer, XLNetModel #XLNetForConditionalGeneration
+from transformers import XLNetTokenizer, XLNetModel, XLNetLMHeadModel #XLNetForConditionalGeneration
 from sentence_transformers import SentenceTransformer, util
 
 # Load XLNet model and tokenizer for generation
