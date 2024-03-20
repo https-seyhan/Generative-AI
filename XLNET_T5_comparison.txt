@@ -1,0 +1,11 @@
+property_descriptions = [
+    "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen.",
+    "Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access.",
+    "Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
+]
+
+client_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
+
+T5 --> Generated Response: townhouse in prime location with 4 bedrooms, 3 bathrooms and a private garage.
+
+XLNET --> Generated Response: summarize: Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage. townhouse in a prime location, in a very location, with 3 bedrooms, 3 bathrooms, and a private garage. "Great townhouse in a prime location, in a very location, in a very location, in a very location, in a very location, in a very location, in a very location, in a very location, in a very
