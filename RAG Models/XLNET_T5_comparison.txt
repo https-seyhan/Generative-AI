@@ -1,0 +1,4 @@
+
+T5 --> Generated Response: townhouse in prime location with 4 bedrooms, 3 bathrooms and a private garage.
+
+XLNET --> Generated Response: summarize: Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage. townhouse in a prime location, in a very location, with 3 bedrooms, 3 bathrooms, and a private garage. "Great townhouse in a prime location, in a very location, in a very location, in a very location, in a very location, in a very location, in a very location, in a very location, in a very
