@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer, util
 # Load XLNet model and tokenizer for generation
 tokenizer = XLNetTokenizer.from_pretrained("xlnet-base-cased")
 #model = XLNetForConditionalGeneration.from_pretrained("xlnet-base-cased")
-model = XLNetModel.from_pretrained('xlnet-base-cased')
+#model = XLNetModel.from_pretrained('xlnet-base-cased')
 
 # Load sentence-transformers model for retrieval
 retriever_model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
