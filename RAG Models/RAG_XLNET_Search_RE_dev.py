@@ -45,3 +45,6 @@ generated_response = tokenizer.decode(output[0], skip_special_tokens=True)
 print(type(property_descriptions))
 print(type(generated_response))
 print("Generated Response:", generated_response)
+
+def compare_output_to_input(generated_response, property_descriptions):
+	print(generated_response, property_descriptions)
