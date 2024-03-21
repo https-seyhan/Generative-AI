@@ -46,5 +46,10 @@ print(type(property_descriptions))
 print(type(generated_response))
 print("Generated Response:", generated_response)
 
+
+compare_output_to_input(generated_response, property_descriptions)
+
+
+
 def compare_output_to_input(generated_response, property_descriptions):
 	print(generated_response, property_descriptions)
