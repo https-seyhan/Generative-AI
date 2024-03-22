@@ -47,9 +47,9 @@ print(type(generated_response))
 print("Generated Response:", generated_response)
 
 def compare_output_to_input(generated_response, property_descriptions):
-	#property_descriptions = property_descriptions.split(',')
-	#print('Generated Response: ', generated_response, end='\n')
-	print('Property Descriptions: ', property_descriptions)
+	generated_response = generated_response.split(',')
+	print('Generated Response: ', generated_response, end='\n')
+	#print('Property Descriptions: ', property_descriptions)
 
 
 
