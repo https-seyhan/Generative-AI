@@ -48,10 +48,15 @@ print(type(property_descriptions))
 print(type(generated_response))
 print("Generated Response:", generated_response)
 
+
+def save_to_csv(generated_response):
+	print(generated_response)
+	
 def compare_output_to_input(generated_response, property_descriptions):
 	generated_response = generated_response.split(',')
 	print('Generated Response: ', generated_response, end='\n')
 	#print('Property Descriptions: ', property_descriptions)
+	save_to_csv(generated_response)
 
 
 
