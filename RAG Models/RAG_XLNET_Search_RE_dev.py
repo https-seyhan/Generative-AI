@@ -1,5 +1,6 @@
 from transformers import XLNetTokenizer, XLNetModel, XLNetLMHeadModel #XLNetForConditionalGeneration
 from sentence_transformers import SentenceTransformer, util
+import pandas as pd
 
 # Load XLNet model and tokenizer for generation
 tokenizer = XLNetTokenizer.from_pretrained("xlnet-base-cased")
