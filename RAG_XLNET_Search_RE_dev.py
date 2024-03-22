@@ -1,5 +1,7 @@
 from transformers import XLNetTokenizer, XLNetModel, XLNetLMHeadModel #XLNetForConditionalGeneration
 from sentence_transformers import SentenceTransformer, util
+import pandas as pd
+import os
 
 # Load XLNet model and tokenizer for generation
 tokenizer = XLNetTokenizer.from_pretrained("xlnet-base-cased")
@@ -46,10 +48,16 @@ print(type(property_descriptions))
 print(type(generated_response))
 print("Generated Response:", generated_response)
 
+
+def save_to_csv(generated_response):
+	print(generated_response)
+	os.chdir('/home/saul/Desktop/generative-AI/RE/')
+	
 def compare_output_to_input(generated_response, property_descriptions):
-	property_descriptions = property_descriptions.split(',')
+	generated_response = generated_response.split(',')
 	print('Generated Response: ', generated_response, end='\n')
-	print('Property Descriptions: ', property_descriptions)
+	#print('Property Descriptions: ', property_descriptions)
+	save_to_csv(generated_response)
 
 
 
