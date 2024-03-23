@@ -56,8 +56,9 @@ def save_to_csv(generated_response):
 	df.to_csv('generated_text.csv')
 	
 def compare_output_to_input(generated_response, property_descriptions):
-	generated_response = generated_response.split(',')
 	print('Generated Response: ', generated_response, end='\n')
+	generated_response = generated_response.split(',')
+	#print('Generated Response: ', generated_response, end='\n')
 	#print('Property Descriptions: ', property_descriptions)
 	save_to_csv(generated_response)
 
