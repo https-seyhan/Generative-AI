@@ -52,6 +52,7 @@ print("Generated Response:", generated_response)
 def save_to_csv(generated_response):
 	print(generated_response)
 	os.chdir('/home/saul/Desktop/generative-AI/RE/')
+	df = pd.DataFrame(generated_response, columns=["generated_text"])
 	
 def compare_output_to_input(generated_response, property_descriptions):
 	generated_response = generated_response.split(',')
