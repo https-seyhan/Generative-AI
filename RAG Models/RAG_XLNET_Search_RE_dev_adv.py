@@ -1,0 +1,35 @@
+from transformers import XLNetTokenizer, XLNetLMHeadModel
+import torch
+
+def query_xlnet(query, property_descriptions, model, tokenizer):
+    # Combine conversation history with the current query
+    full_query = " <SEP> ".join(conversation_history + [query])
+    
+    # Tokenize and encode the sequence
+    inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
+
+    # Generate a sequence of tokens to predict
+    output_sequences = model.generate(input_ids=inputs['input_ids'], 
+                                      max_length=50, 
+                                      num_return_sequences=1)
+
+    # Decode the output sequence
+    rewritten_query = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
+    return rewritten_query
+
+# Load pre-trained model and tokenizer
+model_name = 'xlnet-base-cased'
+model = XLNetLMHeadModel.from_pretrained(model_name)
+tokenizer = XLNetTokenizer.from_pretrained(model_name)
+
+# Example conversation history and current query
+property_descriptions = [
+    "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen.",
+    "Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access.",
+    "Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
+]
+current_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
+
+# Use XLNet to rewrite the query with conversation history
+rewritten_query = query_xlnet(current_query, property_descriptions, model, tokenizer)
+print(f"Rewritten Query: {rewritten_query}")
