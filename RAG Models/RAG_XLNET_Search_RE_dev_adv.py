@@ -3,7 +3,7 @@ import torch
 
 def query_xlnet(query, property_descriptions, model, tokenizer):
     # Combine conversation history with the current query
-    full_query = " <SEP> ".join(property_descriptionsy + [query])
+    full_query = " <SEP> ".join(property_descriptions + [query])
     
     # Tokenize and encode the sequence
     inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
