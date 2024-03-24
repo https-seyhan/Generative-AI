@@ -43,3 +43,20 @@ print(f"Rewritten Query: {rewritten_query}")
 # Encode property descriptions and client query
 property_embeddings = retriever_model.encode(property_descriptions, convert_to_tensor=True)
 query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True)
+
+# Find similar property descriptions using cosine similarity
+similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
+
+# Find index of most similar property description
+most_similar_index = similarities.argmax().item()
+
+# Retrieve most relevant property description
+relevant_property_description = property_descriptions[most_similar_index]
+
+# Generate response based on the relevant property description
+input_text = "summarize: " + relevant_property_description.strip()
+input_ids = tokenizer.encode(input_text, return_tensors="pt", max_length=512, truncation=True)
+
+# Generate output response
+output = model.generate(input_ids=input_ids, max_length=100, num_return_sequences=1, early_stopping=True)
+
