@@ -1,5 +1,11 @@
 from transformers import XLNetTokenizer, XLNetLMHeadModel
 import torch
+from sentence_transformers import SentenceTransformer, util
+import pandas as pd
+import os
+
+# Load sentence-transformers model for retrieval
+retriever_model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
 
 def query_xlnet(query, property_descriptions, model, tokenizer):
     # Combine conversation history with the current query
