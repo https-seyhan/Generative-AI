@@ -33,3 +33,7 @@ current_query = "I'm looking for a family-friendly home with a backyard. Do you 
 # Use XLNet to rewrite the query with conversation history
 rewritten_query = query_xlnet(current_query, property_descriptions, model, tokenizer)
 print(f"Rewritten Query: {rewritten_query}")
+
+# Encode property descriptions and client query
+property_embeddings = retriever_model.encode(property_descriptions, convert_to_tensor=True)
+query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True)
