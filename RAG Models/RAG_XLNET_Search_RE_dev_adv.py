@@ -54,6 +54,7 @@ most_similar_index = similarities.argmax().item()
 # Retrieve most relevant property description
 relevant_property_description = property_descriptions[most_similar_index]
 
+# End RAG
 # Generate response based on the relevant property description
 input_text = "summarize: " + relevant_property_description.strip()
 input_ids = tokenizer.encode(input_text, return_tensors="pt", max_length=512, truncation=True)
