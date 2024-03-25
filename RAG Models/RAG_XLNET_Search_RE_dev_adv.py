@@ -3,6 +3,8 @@ import torch
 from sentence_transformers import SentenceTransformer, util
 import pandas as pd
 import os
+import warnings
+warnings.filterwarnings("ignore")
 
 # Load sentence-transformers model for retrieval
 retriever_model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
