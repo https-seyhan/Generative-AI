@@ -5,6 +5,7 @@ import pandas as pd
 import os
 import warnings
 warnings.filterwarnings("ignore")
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # Load sentence-transformers model for retrieval
 retriever_model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
