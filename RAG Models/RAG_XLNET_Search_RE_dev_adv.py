@@ -5,7 +5,7 @@ import pandas as pd
 import os
 import warnings
 warnings.filterwarnings("ignore")
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
 # Load sentence-transformers model for retrieval
 retriever_model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
@@ -50,6 +50,7 @@ query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True
 
 # Find similar property descriptions using cosine similarity
 similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
+print('Similarities: ', similarities)
 
 # Find index of most similar property description
 most_similar_index = similarities.argmax().item()
