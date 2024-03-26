@@ -7,7 +7,7 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # Load sentence-transformers model for retrieval
 retriever_model = SentenceTransformer('distilbert-base-nli-stsb-mean-tokens')
