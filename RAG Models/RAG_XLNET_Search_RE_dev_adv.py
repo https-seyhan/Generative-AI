@@ -5,6 +5,8 @@ import pandas as pd
 import os
 import warnings
 warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=DeprecationWarning) 
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
 # Load sentence-transformers model for retrieval
