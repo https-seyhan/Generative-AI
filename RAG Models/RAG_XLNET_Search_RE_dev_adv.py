@@ -79,3 +79,14 @@ def save_to_csv(generated_response):
 	os.chdir('/home/saul/Desktop/generative-AI/RE/')
 	df = pd.DataFrame(generated_response, columns=["generated_text"])
 	df.to_csv('generated_text_dev.csv')
+	
+def compare_output_to_input(generated_response, property_descriptions):
+	print('Generated Response: ', generated_response, end='\n')
+	generated_response = generated_response.split(',')
+	#print('Generated Response: ', generated_response, end='\n')
+	#print('Property Descriptions: ', property_descriptions)
+	save_to_csv(generated_response)
+
+
+
+compare_output_to_input(generated_response, property_descriptions)
