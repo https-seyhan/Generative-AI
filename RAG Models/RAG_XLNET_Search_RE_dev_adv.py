@@ -78,4 +78,4 @@ def save_to_csv(generated_response):
 	print(generated_response)
 	os.chdir('/home/saul/Desktop/generative-AI/RE/')
 	df = pd.DataFrame(generated_response, columns=["generated_text"])
-	df.to_csv('generated_text.csv')
+	df.to_csv('generated_text_dev.csv')
