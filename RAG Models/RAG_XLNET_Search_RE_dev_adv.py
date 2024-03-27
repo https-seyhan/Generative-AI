@@ -73,3 +73,9 @@ generated_response = tokenizer.decode(output[0], skip_special_tokens=True)
 #print(type(property_descriptions))
 #print(type(generated_response))
 print("Generated Response:", generated_response)
+
+def save_to_csv(generated_response):
+	print(generated_response)
+	os.chdir('/home/saul/Desktop/generative-AI/RE/')
+	df = pd.DataFrame(generated_response, columns=["generated_text"])
+	df.to_csv('generated_text.csv')
