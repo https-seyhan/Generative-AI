@@ -221,9 +221,6 @@ num_train_optimization_steps = int( math.ceil(len(tr_inputs) / batch_num) / 1) *
 
 
 #Manual optimizer
-
-
-
 val_segs = torch.tensor(val_segs)
 
 #Put data into data loader
