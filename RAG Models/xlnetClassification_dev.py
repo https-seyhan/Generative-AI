@@ -204,8 +204,6 @@ model = XLNetForSequenceClassification.from_pretrained(model_file_address,num_la
 
 model.to(device);
 
-
-
 # Set epoch and grad max num
 epochs = 5
 max_grad_norm = 1.0
