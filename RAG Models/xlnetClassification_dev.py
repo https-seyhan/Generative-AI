@@ -96,7 +96,6 @@ num_train_optimization_steps = int( math.ceil(len(tr_inputs) / batch_num) / 1) *
 
 #Set fine tuning method
 
-
 #Manual optimizer
 #    mask embedding
 #    segment embedding
@@ -127,12 +126,14 @@ for i,sentence in enumerate(sentences):
     # Trim the len of text
     if(len(tokens_a)>max_len-2):
         tokens_a = tokens_a[:max_len-2]
+    
     tokens = []
     segment_ids = []
 
     for token in tokens_a:
         tokens.append(token)
         segment_ids.append(SEG_ID_A)
+    
     # Add <sep> token 
     tokens.append(SEP_ID)
     segment_ids.append(SEG_ID_A)
@@ -196,7 +197,6 @@ tr_segs = torc188
 #Create XLNet model
 
 model = XLNetForSequenceClassification.from_pretrained(model_file_address,num_labels=len(tag2idx))
-
 
 # Set model to GPU,if you are using GPU machine
 
