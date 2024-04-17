@@ -85,8 +85,6 @@ model;
 
 model.to(device);
 
-
-
 # Set epoch and grad max num
 
 epochs = 5
