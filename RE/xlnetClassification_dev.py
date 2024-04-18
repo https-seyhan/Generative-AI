@@ -198,7 +198,6 @@ tr_segs = torc188
 
 model = XLNetForSequenceClassification.from_pretrained(model_file_address,num_labels=len(tag2idx))
 
-
 # Set model to GPU,if you are using GPU machine
 
 model.to(device);
@@ -354,7 +353,6 @@ if n_gpu >1:
     
 # Evalue loop
 model.eval();
-
 
 # Set acc funtion
 def accuracy(out, labels):
