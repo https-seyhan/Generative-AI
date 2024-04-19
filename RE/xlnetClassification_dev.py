@@ -191,7 +191,6 @@ tr_segs = torc188
 
 # Download model from "https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-pytorch_model.bin"
 
-
 # Download model from "https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json" 
 
 #Create XLNet model
@@ -395,7 +394,6 @@ for step, batch in enumerate(valid_dataloader):
    
     nb_eval_steps += 1
     
-    
 eval_loss = eval_loss / nb_eval_steps
 eval_accuracy = eval_accuracy / len(val_inputs)
 loss = tr_loss/nb_tr_steps 
@@ -411,7 +409,7 @@ with open(output_eval_file, "w") as writer:
     for key in sorted(result.keys()):
         print("  %s = %s"%(key, str(result[key])))
         writer.write("%s = %s\n" % (key, str(result[key])))
-        
+          
     print(report)
     writer.write("\n\n")  
     writer.write(report)
