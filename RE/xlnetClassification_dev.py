@@ -399,6 +399,7 @@ loss = tr_loss/nb_tr_steps
 result = {'eval_loss': eval_loss,
                   'eval_accuracy': eval_accuracy,
                   'loss': loss}
+                  
 report = classification_report(y_pred=np.array(y_predict),y_true=np.array(y_true))
 
 # Save the report into file
