@@ -15,7 +15,7 @@ from pytorch_transformers import (XLNetConfig, XLNetForSequenceClassification, X
 from sklearn.metrics import classification_report # to mesure the accuracy of the model
 #XLNet with Pytorch
 
-os.chdir('/home/saul/xlnet/')
+os.chdir('/home/saul/Desktop/generative-AI/RE/')
 data_file_address = "text_classification_dataset.csv"
 df_data = pd.read_csv(data_file_address,sep=",",encoding="utf-8",names=['labels','texts'])
 df_data.columns # get variables of the dataset of the modelling.
