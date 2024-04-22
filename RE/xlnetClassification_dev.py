@@ -193,7 +193,6 @@ tr_segs = torc188
 # Download model from "https://s3.amazonaws.com/models.huggingface.co/bert/xlnet-base-cased-config.json" 
 
 #Create XLNet model
-
 model = XLNetForSequenceClassification.from_pretrained(model_file_address,num_labels=len(tag2idx))
 
 # Set model to GPU,if you are using GPU machine
