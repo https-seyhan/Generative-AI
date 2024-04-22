@@ -58,7 +58,7 @@ property_descriptions = [
 current_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
 
 # Use XLNet to rewrite the query with conversation history
-rewritten_query = query_xlnet(current_query, property_descriptions, model, tokenizer)
+#rewritten_query = query_xlnet(current_query, property_descriptions, model, tokenizer)
 print(f"Rewritten Query: {rewritten_query}")
 
 # Start RAG
