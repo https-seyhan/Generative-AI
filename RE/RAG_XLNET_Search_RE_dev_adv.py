@@ -27,6 +27,22 @@ def query_xlnet(query, property_descriptions, model, tokenizer):
     # Decode the output sequence
     rewritten_query = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
     return rewritten_query
+    
+def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
+    # Combine conversation history with the current query
+    full_query = " <SEP> ".join(property_descriptions + [query])
+    
+    # Tokenize and encode the sequence
+    inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
+
+    # Generate a sequence of tokens to predict
+    output_sequences = model.generate(input_ids=inputs['input_ids'], 
+                                      max_length=50, 
+                                      num_return_sequences=1)
+
+    # Decode the output sequence
+    rewritten_query = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
+    return rewritten_query
 
 # Load pre-trained model and tokenizer
 model_name = 'xlnet-base-cased'
