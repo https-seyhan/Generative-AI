@@ -60,7 +60,7 @@ current_query = "I'm looking for a family-friendly home with a backyard. Do you 
 # Use XLNet to rewrite the query with conversation history
 #rewritten_query = query_xlnet(current_query, property_descriptions, model, tokenizer)
 rewritten_query = query_xlnet_advanced(current_query, property_descriptions, model, tokenizer)
-print(f"Rewritten Query: {rewritten_query}")
+#print(f"Rewritten Query: {rewritten_query}")
 
 # Start RAG
 # Encode property descriptions and client query
@@ -91,7 +91,7 @@ output = model.generate(input_ids=input_ids, max_length=100, num_return_sequence
 generated_response = tokenizer.decode(output[0], skip_special_tokens=True)
 #print(type(property_descriptions))
 #print(type(generated_response))
-print("Generated Response:", generated_response)
+#print("Generated Response:", generated_response)
 
 def save_to_csv(generated_response):
 	print(generated_response)
