@@ -9,7 +9,7 @@ import os
 import torch.nn.functional as F
 from tqdm import tqdm,trange
 from torch.optim import Adam
-from torch.utils.data import TeNo wrapnsorDataset, DataLoader, RandomSampler, SequentialSampler
+from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 from sklearn.model_selection import train_test_split
 from pytorch_transformers import (XLNetConfig, XLNetForSequenceClassification, XLNetTokenizer)
 from sklearn.metrics import classification_report # to mesure the accuracy of the model
