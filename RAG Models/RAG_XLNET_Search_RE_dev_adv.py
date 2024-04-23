@@ -46,8 +46,10 @@ def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
 
 # Load pre-trained model and tokenizer
 model_name = 'xlnet-base-cased'
+vocabulary = 'xlnet-base-cased-spiece.model'
 model = XLNetLMHeadModel.from_pretrained(model_name)
-tokenizer = XLNetTokenizer.from_pretrained(model_name)
+#tokenizer = XLNetTokenizer.from_pretrained(model_name)
+tokenizer = XLNetTokenizer(vocab_file=vocabulary,do_lower_case=False)
 
 # Example conversation history and current query
 property_descriptions = [
