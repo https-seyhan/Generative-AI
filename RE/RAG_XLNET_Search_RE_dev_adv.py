@@ -67,6 +67,8 @@ print(f"Rewritten Query: {rewritten_query}")
 property_embeddings = retriever_model.encode(property_descriptions, convert_to_tensor=True)
 query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True)
 
+print(query_embedding)
+
 # Find similar property descriptions using cosine similarity
 similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
 print('Similarities: ', similarities)
