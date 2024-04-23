@@ -1,4 +1,5 @@
-from transformers import XLNetTokenizer, XLNetLMHeadModel
+from transformers import XLNetLMHeadModel
+from transformers import (XLNetConfig, XLNetForSequenceClassification, XLNetTokenizer)
 import torch
 from sentence_transformers import SentenceTransformer, util
 import pandas as pd
