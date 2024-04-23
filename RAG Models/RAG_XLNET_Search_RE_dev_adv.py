@@ -71,7 +71,7 @@ query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True
 
 # Find similar property descriptions using cosine similarity
 similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
-print('Similarities: ', similarities)
+#print('Similarities: ', similarities)
 
 # Find index of most similar property description
 most_similar_index = similarities.argmax().item()
@@ -91,7 +91,7 @@ output = model.generate(input_ids=input_ids, max_length=100, num_return_sequence
 generated_response = tokenizer.decode(output[0], skip_special_tokens=True)
 #print(type(property_descriptions))
 #print(type(generated_response))
-print("Generated Response:", generated_response)
+#print("Generated Response:", generated_response)
 
 def save_to_csv(generated_response):
 	print(generated_response)
