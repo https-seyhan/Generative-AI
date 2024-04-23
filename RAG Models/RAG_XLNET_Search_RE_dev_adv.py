@@ -27,6 +27,22 @@ def query_xlnet(query, property_descriptions, model, tokenizer):
     # Decode the output sequence
     rewritten_query = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
     return rewritten_query
+    
+def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
+    # Combine conversation history with the current query
+    full_query = " <SEP> ".join(property_descriptions + [query])
+    
+    # Tokenize and encode the sequence
+    inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
+
+    # Generate a sequence of tokens to predict
+    output_sequences = model.generate(input_ids=inputs['input_ids'], 
+                                      max_length=50, 
+                                      num_return_sequences=1)
+
+    # Decode the output sequence
+    rewritten_query = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
+    return rewritten_query
 
 # Load pre-trained model and tokenizer
 model_name = 'xlnet-base-cased'
@@ -42,13 +58,16 @@ property_descriptions = [
 current_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
 
 # Use XLNet to rewrite the query with conversation history
-rewritten_query = query_xlnet(current_query, property_descriptions, model, tokenizer)
-print(f"Rewritten Query: {rewritten_query}")
+#rewritten_query = query_xlnet(current_query, property_descriptions, model, tokenizer)
+rewritten_query = query_xlnet_advanced(current_query, property_descriptions, model, tokenizer)
+#print(f"Rewritten Query: {rewritten_query}")
 
 # Start RAG
 # Encode property descriptions and client query
 property_embeddings = retriever_model.encode(property_descriptions, convert_to_tensor=True)
 query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True)
+
+#print(query_embedding)
 
 # Find similar property descriptions using cosine similarity
 similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
@@ -86,7 +105,5 @@ def compare_output_to_input(generated_response, property_descriptions):
 	#print('Generated Response: ', generated_response, end='\n')
 	#print('Property Descriptions: ', property_descriptions)
 	save_to_csv(generated_response)
-
-
 
 compare_output_to_input(generated_response, property_descriptions)
