@@ -35,8 +35,8 @@ def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
     full_query = " <SEP> ".join(property_descriptions + [query])
     
     # Tokenize and encode the sequence
-    #inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
-    inputs = tokenizer.encode_plus(query, add_special_tokens=True, return_tensors='pt')
+    inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
+    #inputs = tokenizer.encode_plus(query, add_special_tokens=True, return_tensors='pt')
 
     # Generate a sequence of tokens to predict
     output_sequences = model.generate(input_ids=inputs['input_ids'], 
@@ -106,7 +106,7 @@ def save_to_csv(generated_response):
 	#print(generated_response)
 	os.chdir('/home/saul/Desktop/generative-AI/RE/')
 	df = pd.DataFrame(generated_response, columns=["generated_text"])
-	df.to_csv('generated_text_dev.csv')
+	df.to_csv('generated_text_dev_SEP.csv')
 	
 def compare_output_to_input(generated_response, property_descriptions):
 	#print('Generated Response: ', generated_response, end='\n')
