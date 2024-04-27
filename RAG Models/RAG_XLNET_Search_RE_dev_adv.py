@@ -53,8 +53,8 @@ vocabulary = 'xlnet-base-cased-spiece.model'
 os.chdir('/home/saul/Desktop/generative-AI/RE/')
 # Create XLNET model
 model = XLNetLMHeadModel.from_pretrained(model_name)
-#tokenizer = XLNetTokenizer.from_pretrained(model_name)
-tokenizer = XLNetTokenizer(vocab_file=model_name,do_lower_case=False)
+tokenizer = XLNetTokenizer.from_pretrained(model_name)
+#tokenizer = XLNetTokenizer(vocab_file=model_name,do_lower_case=False)
 #tokenizer = XLNetTokenizer(vocab_file=vocabulary,do_lower_case=False)
 
 # Example conversation history and current query
