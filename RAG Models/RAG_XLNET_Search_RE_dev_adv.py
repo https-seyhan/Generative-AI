@@ -33,7 +33,8 @@ def query_xlnet(query, property_descriptions, model, tokenizer):
     
 def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
     # Combine conversation history with the current query
-    full_query = " <SEP> ".join(property_descriptions + [query])
+    #full_query = " <SEP> ".join(property_descriptions + [query])
+    full_query = " <EOD> ".join(property_descriptions + [query])
     
     # Tokenize and encode the sequence
     #inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
