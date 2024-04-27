@@ -19,6 +19,7 @@ def query_xlnet(query, property_descriptions, model, tokenizer):
     
     # Tokenize and encode the sequence
     inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
+    #inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
 
     # Generate a sequence of tokens to predict
     output_sequences = model.generate(input_ids=inputs['input_ids'], 
@@ -49,9 +50,11 @@ def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
 model_name = 'xlnet-base-cased'
 vocabulary = 'xlnet-base-cased-spiece.model'
 
+os.chdir('/home/saul/Desktop/generative-AI/RE/')
 # Create XLNET model
 model = XLNetLMHeadModel.from_pretrained(model_name)
-tokenizer = XLNetTokenizer.from_pretrained(model_name)
+#tokenizer = XLNetTokenizer.from_pretrained(model_name)
+tokenizer = XLNetTokenizer(vocab_file=model_name,do_lower_case=False)
 #tokenizer = XLNetTokenizer(vocab_file=vocabulary,do_lower_case=False)
 
 # Example conversation history and current query
