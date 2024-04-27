@@ -98,6 +98,8 @@ input_ids = tokenizer.encode(input_text, return_tensors="pt", max_length=512, tr
 # Generate output response
 output = model.generate(input_ids=input_ids, max_length=100, num_return_sequences=1, early_stopping=True)
 
+print('Output :', output)
+
 # Decode and print generated response
 generated_response = tokenizer.decode(output[0], skip_special_tokens=True)
 #print(type(property_descriptions))
