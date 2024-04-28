@@ -39,13 +39,17 @@ def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
     
     # Tokenize and encode the sequence
     #inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
-    #inputs = tokenizer.encode_plus(query, add_special_tokens=True, return_tensors='pt')
-    inputs = tokenizer.encode_plus(query, add_special_tokens=False, return_tensors='pt')
+    inputs = tokenizer.encode_plus(query, add_special_tokens=True, return_tensors='pt')
+    #inputs = tokenizer.encode_plus(query, add_special_tokens=False, return_tensors='pt')
 
     # Generate a sequence of tokens to predict
+    #output_sequences = model.generate(input_ids=inputs['input_ids'], 
+    #                                 max_length=50, 
+    #                                  num_return_sequences=1)
+                                      
     output_sequences = model.generate(input_ids=inputs['input_ids'], 
-                                      max_length=50, 
-                                      num_return_sequences=1)
+                                      max_length=50, num_beams=50,
+                                      num_return_sequences=2)
 
     # Decode the output sequence
     rewritten_query = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
@@ -84,6 +88,9 @@ query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True
 
 # Find similar property descriptions using cosine similarity
 similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
+
+## Use GloVE for similarities
+
 #print('Similarities: ', similarities)
 
 # Find index of most similar property description
