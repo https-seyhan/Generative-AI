@@ -33,13 +33,13 @@ def query_xlnet(query, property_descriptions, model, tokenizer):
     
 def query_xlnet_advanced(query, property_descriptions, model, tokenizer):
     # Combine conversation history with the current query
-    #full_query = " <SEP> ".join(property_descriptions + [query])
-    full_query = " <EOD> ".join(property_descriptions + [query])
+    full_query = " <SEP> ".join(property_descriptions + [query])
+    #full_query = " <EOD> ".join(property_descriptions + [query])
     #full_query = " <CLS> ".join(property_descriptions + [query])
     
     # Tokenize and encode the sequence
-    #inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
-    inputs = tokenizer.encode_plus(query, add_special_tokens=True, return_tensors='pt')
+    inputs = tokenizer.encode_plus(full_query, add_special_tokens=True, return_tensors='pt')
+    #inputs = tokenizer.encode_plus(query, add_special_tokens=True, return_tensors='pt')
 
     # Generate a sequence of tokens to predict
     output_sequences = model.generate(input_ids=inputs['input_ids'], 
