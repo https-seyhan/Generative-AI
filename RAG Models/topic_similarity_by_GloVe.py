@@ -18,6 +18,9 @@ query = nlp(current_query)
 
 print('Query ', query)
 
+for sent in query.sents:
+    print(sent)
+
 # Calculate similarity between pairs of words
 similar_word_pairs = []
 for word1 in word_list:
