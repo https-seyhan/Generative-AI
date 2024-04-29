@@ -12,6 +12,8 @@ property_descriptions = [
     "Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
 ]
 
+current_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
+
 # Calculate similarity between pairs of words
 similar_word_pairs = []
 for word1 in word_list:
