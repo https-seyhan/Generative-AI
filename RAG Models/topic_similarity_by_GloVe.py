@@ -14,6 +14,8 @@ property_descriptions = [
 
 current_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
 
+query = nlp(current_query)
+
 # Calculate similarity between pairs of words
 similar_word_pairs = []
 for word1 in word_list:
