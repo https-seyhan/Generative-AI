@@ -26,6 +26,7 @@ query_embedding = retriever_model.encode(client_query, convert_to_tensor=True)
 # Find similar property descriptions using cosine similarity
 similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
 
+print('Similarities ', similarities)
 # Find index of most similar property description
 most_similar_index = similarities.argmax().item()
 
