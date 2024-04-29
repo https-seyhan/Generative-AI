@@ -31,7 +31,7 @@ most_similar_index = similarities.argmax().item()
 
 # Retrieve most relevant property description
 relevant_property_description = property_descriptions[most_similar_index]
-print('Relevant Propery Description :', relevant_property_description\n)
+print('Relevant Propery Description :', relevant_property_description, '\n')
 # Generate response based on the relevant property description
 input_text = "summarize: " + relevant_property_description.strip()
 print('Input Text :', input_text)
