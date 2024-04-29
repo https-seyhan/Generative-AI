@@ -95,7 +95,7 @@ similarities = util.pytorch_cos_sim(query_embedding, property_embeddings)
 
 # Find index of most similar property description
 most_similar_index = similarities.argmax().item()
-
+print("Most Similar :", most_similar_index)
 # Retrieve most relevant property description
 relevant_property_description = property_descriptions[most_similar_index]
 
