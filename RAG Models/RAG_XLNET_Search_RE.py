@@ -34,6 +34,7 @@ relevant_property_description = property_descriptions[most_similar_index]
 
 # Generate response based on the relevant property description
 input_text = "summarize: " + relevant_property_description.strip()
+print('Input Text :', input_text)
 input_ids = tokenizer.encode(input_text, return_tensors="pt", max_length=512, truncation=True)
 
 # Generate output response
