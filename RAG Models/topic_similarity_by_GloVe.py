@@ -20,6 +20,9 @@ print('Query ', query)
 
 for sent in query.sents:
     print(sent)
+    
+query_description = [sent for sent in query.sents]
+query_description
 
 # Calculate similarity between pairs of words
 similar_word_pairs = []
