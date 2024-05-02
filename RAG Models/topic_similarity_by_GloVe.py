@@ -24,12 +24,12 @@ for sent in query.sents:
     print(sent)
     
 query_description = [sent for sent in query.sents]
-query_description
+print(query_description)
 
 # Calculate similarity between pairs of words
 similar_word_pairs = []
 for word1 in word_list:
-    for word2 in word_list:
+    for word2 in query_description:
         if word1 != word2:
             similarity = nlp(word1).similarity(nlp(word2))
             similar_word_pairs.append((word1, word2, similarity))
