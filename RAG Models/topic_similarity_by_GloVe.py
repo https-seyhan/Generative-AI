@@ -22,6 +22,9 @@ current_query = "This charming 3-bedroom, 2-bathroom home features hardwood floo
 query = nlp(current_query)
 
 print('Query ', query)
+#Tokenise text
+for token in query:
+    print(token.text)
 
 query_token = ''
 for i in current_query:
@@ -33,7 +36,7 @@ print('Query Token ', query_token)
 #    print(sent)
     
 query_description = [sent for sent in query.sents]
-print(query_description)
+#print(query_description)
 
 # Calculate similarity between pairs of words
 similar_word_pairs = []
