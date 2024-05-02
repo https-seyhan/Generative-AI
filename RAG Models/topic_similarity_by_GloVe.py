@@ -23,6 +23,7 @@ query = nlp(current_query)
 
 print('Query ', query)
 
+tokenizer = Tokenizer(query)
 #for sent in query.sents:
 #    print(sent)
     
