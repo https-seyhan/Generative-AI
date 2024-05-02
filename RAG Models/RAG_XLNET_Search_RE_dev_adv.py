@@ -82,7 +82,7 @@ print(f"Rewritten Query: {rewritten_query}\n")
 # Start RAG
 # Encode property descriptions and client query
 property_embeddings = retriever_model.encode(property_descriptions, convert_to_tensor=True)
-query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True)
+query_embedding = retriever_model.encode(rewritten_query, convert_to_tensor=True) # XLNET output
 
 #print(query_embedding)
 
