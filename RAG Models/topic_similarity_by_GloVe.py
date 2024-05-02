@@ -1,5 +1,5 @@
 import spacy
-
+from transformers import (XLNetConfig, XLNetForSequenceClassification, XLNetTokenizer)
 
 tokenizer = XLNetTokenizer.from_pretrained(model_name)
 # Load the GloVe model (e.g., 'en_core_web_md' includes GloVe vectors)
