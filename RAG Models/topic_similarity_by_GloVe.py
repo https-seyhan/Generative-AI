@@ -1,5 +1,7 @@
 import spacy
 
+
+tokenizer = XLNetTokenizer.from_pretrained(model_name)
 # Load the GloVe model (e.g., 'en_core_web_md' includes GloVe vectors)
 nlp = spacy.load('en_core_web_md')
 
