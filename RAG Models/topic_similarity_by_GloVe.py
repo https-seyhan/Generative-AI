@@ -39,7 +39,7 @@ print(query_description)
 similar_word_pairs = []
 for word1 in word_list:
     for word2 in query_description:
-        print('Word 2 ', word2)
+        #print('Word 2 ', word2)
         if word1 != word2:
             similarity = nlp(word1).similarity(nlp(word2))
             similar_word_pairs.append((word1, word2, similarity))
