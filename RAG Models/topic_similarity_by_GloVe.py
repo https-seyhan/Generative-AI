@@ -27,6 +27,7 @@ query_token = ''
 for i in current_query:
    query_token +=i
 
+print('Query Token ', query_token)
 #tokenizer = Tokenizer(query)
 #for sent in query.sents:
 #    print(sent)
