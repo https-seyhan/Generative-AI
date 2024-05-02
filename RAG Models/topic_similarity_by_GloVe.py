@@ -6,6 +6,15 @@ from spacy.tokenizer import Tokenizer
 # Load the GloVe model (e.g., 'en_core_web_md' includes GloVe vectors)
 nlp = spacy.load('en_core_web_md')
 
+customize_stop_words = [
+    'attach'
+]
+
+
+for w in customize_stop_words:
+    nlp.vocab[w].is_stop = True
+
+
 # List of words
 word_list = ['translation', 'values', 'transformer', 'recurrent', 'input', 'output', 'positions', 'sequence',  'self', 'decoder', 'encoder', 'training', 'neural', 'keys', 'bleu', 'product', 'dot', 'arxiv', 'layer', 'table']
 
