@@ -20,8 +20,8 @@ query = nlp(current_query)
 
 print('Query ', query)
 
-for sent in query.sents:
-    print(sent)
+#for sent in query.sents:
+#    print(sent)
     
 query_description = [sent for sent in query.sents]
 print(query_description)
