@@ -31,7 +31,8 @@ current_query = "This charming 3-bedroom, 2-bathroom home features hardwood floo
 
 query = nlp(current_query)
 
-filtered_tokens = [token.text for token in query if not token.is_stop]
+query_tokens = [token.text for token in query if not token.is_stop]
+
 
 tokenised_query = []
 #print('Query ', query)
