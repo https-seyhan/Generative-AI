@@ -6,14 +6,6 @@ from spacy.tokenizer import Tokenizer
 # Load the GloVe model (e.g., 'en_core_web_md' includes GloVe vectors)
 nlp = spacy.load('en_core_web_md')
 
-customize_stop_words = [
-    'a', ',', '.'
-]
-
-
-
-for w in customize_stop_words:
-    nlp.vocab[w].is_stop = True
 
 
 # List of words
@@ -28,6 +20,16 @@ property_descriptions = [
 current_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
 
 current_query = "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen., Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access., Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
+
+customize_stop_words = [
+    'a', ',', '.'
+]
+
+
+
+for w in customize_stop_words:
+    nlp.vocab[w].is_stop = True
+
 
 query = nlp(current_query)
 
