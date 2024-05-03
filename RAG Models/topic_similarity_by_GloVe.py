@@ -36,8 +36,8 @@ filtered_tokens = [token.text for token in query if not token.is_stop]
 tokenised_query = []
 print('Query ', query)
 #Tokenise text
-for token in query:
-    print(token.text)
+#for token in query:
+#    print(token.text)
     
 
 query_token = ''
