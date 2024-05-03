@@ -7,7 +7,7 @@ from spacy.tokenizer import Tokenizer
 nlp = spacy.load('en_core_web_md')
 
 customize_stop_words = [
-    'a', ','
+    'a', ',', '.'
 ]
 
 
