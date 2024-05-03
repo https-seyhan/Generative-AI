@@ -29,6 +29,7 @@ for w in customize_stop_words:
 
 
 query = nlp(current_query)
+query_tokens = [token.text for token in query if not token.is_stop]
 
 descriptions = nlp(property_descriptions)
 description_tokens = [token.text for token in descriptions if not token.is_stop]
