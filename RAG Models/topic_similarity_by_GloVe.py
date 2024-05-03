@@ -33,7 +33,7 @@ query = nlp(current_query)
 
 query_tokens = [token.text for token in query if not token.is_stop]
 
-
+print('Query Tokens ', query_tokens)
 tokenised_query = []
 #print('Query ', query)
 #Tokenise text
