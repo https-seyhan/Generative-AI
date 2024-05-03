@@ -42,7 +42,7 @@ query_description = [sent for sent in query.sents]
 # Calculate similarity between pairs of words
 similar_word_pairs = []
 for word1 in word_list:
-    for word2 in query_tokens:
+    for word2 in description_tokens:
         #print('Word 2 ', word2)
         if word1 != word2:
             similarity = nlp(word1).similarity(nlp(word2))
