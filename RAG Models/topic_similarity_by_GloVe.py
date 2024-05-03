@@ -34,21 +34,7 @@ query = nlp(current_query)
 query_tokens = [token.text for token in query if not token.is_stop]
 
 print('Query Tokens ', query_tokens)
-tokenised_query = []
-#print('Query ', query)
-#Tokenise text
-#for token in query:
-#    print(token.text)
-    
 
-query_token = ''
-for i in current_query:
-   query_token +=i
-
-#print('Query Token ', query_token)
-#tokenizer = Tokenizer(query)
-#for sent in query.sents:
-#    print(sent)
     
 query_description = [sent for sent in query.sents]
 #print(query_description)
