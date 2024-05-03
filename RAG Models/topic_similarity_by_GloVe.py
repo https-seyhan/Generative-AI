@@ -6,8 +6,6 @@ from spacy.tokenizer import Tokenizer
 # Load the GloVe model (e.g., 'en_core_web_md' includes GloVe vectors)
 nlp = spacy.load('en_core_web_md')
 
-
-
 # List of words
 word_list = ['translation', 'values', 'transformer', 'recurrent', 'input', 'output', 'positions', 'sequence',  'self', 'decoder', 'encoder', 'training', 'neural', 'keys', 'bleu', 'product', 'dot', 'arxiv', 'layer', 'table']
 
@@ -19,20 +17,20 @@ property_descriptions = [
 
 current_query = "I'm looking for a family-friendly home with a backyard. Do you have any properties like that?"
 
-current_query = "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen., Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access., Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
+property_descriptions = "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen., Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access., Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
 
 # Add customised stop words
 customize_stop_words = [
-    'a', ',', '.'
+    'a', 'the', ',', '.'
 ]
 
 for w in customize_stop_words:
     nlp.vocab[w].is_stop = True
 
 
-query = nlp(current_query)
+descriptions = nlp(property_descriptions)
 
-query_tokens = [token.text for token in query if not token.is_stop]
+description_tokens = [token.text for token in descriptions if not token.is_stop]
 
 print('Query Tokens ', query_tokens)
 
