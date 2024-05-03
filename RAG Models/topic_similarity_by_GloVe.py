@@ -21,11 +21,10 @@ current_query = "I'm looking for a family-friendly home with a backyard. Do you 
 
 current_query = "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen., Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access., Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
 
+# Add customised stop words
 customize_stop_words = [
     'a', ',', '.'
 ]
-
-
 
 for w in customize_stop_words:
     nlp.vocab[w].is_stop = True
@@ -44,7 +43,7 @@ query_description = [sent for sent in query.sents]
 # Calculate similarity between pairs of words
 similar_word_pairs = []
 for word1 in word_list:
-    for word2 in query_description:
+    for word2 in query_tokens:
         #print('Word 2 ', word2)
         if word1 != word2:
             similarity = nlp(word1).similarity(nlp(word2))
