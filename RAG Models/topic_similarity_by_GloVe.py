@@ -7,8 +7,9 @@ from spacy.tokenizer import Tokenizer
 nlp = spacy.load('en_core_web_md')
 
 customize_stop_words = [
-    'attach'
+    'a', ','
 ]
+
 
 
 for w in customize_stop_words:
@@ -29,6 +30,8 @@ current_query = "I'm looking for a family-friendly home with a backyard. Do you 
 current_query = "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen., Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access., Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
 
 query = nlp(current_query)
+
+filtered_tokens = [token.text for token in query if not token.is_stop]
 
 tokenised_query = []
 print('Query ', query)
