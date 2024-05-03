@@ -28,8 +28,9 @@ for w in customize_stop_words:
     nlp.vocab[w].is_stop = True
 
 
-descriptions = nlp(property_descriptions)
+query = nlp(current_query)
 
+descriptions = nlp(property_descriptions)
 description_tokens = [token.text for token in descriptions if not token.is_stop]
 
 print('QDescription Tokens ', description_tokens)
