@@ -64,7 +64,7 @@ class GenAI_LLM():
 	def __init__(self):
 		print('This is using LLM for GEN_AI purposes')
 
-	def get_similars(query_tokens, description_tokens):
+	def get_similars(self, query_tokens, description_tokens):
 		
 		# Calculate similarity between pairs of words
 		similar_word_pairs = []
