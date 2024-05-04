@@ -70,11 +70,11 @@ class GenAI_LLM():
 		# Calculate similarity between pairs of words
 		similar_word_pairs = []
 		for query_word in query_tokens:
-			for word2 in description_tokens:
+			for description_word in description_tokens:
 				#print('Word 2 ', word2)
-				if query_word != word2:
-					similarity = nlp(query_word).similarity(nlp(word2))
-					similar_word_pairs.append((query_word, word2, similarity)) # append words and similarity degrees to the list
+				if query_word != description_word:
+					similarity = nlp(query_word).similarity(nlp(description_word))
+					similar_word_pairs.append((query_word, description_word, similarity)) # append words and similarity degrees to the list
 
 		# Sort the pairs by similarity (highest first)
 		similar_word_pairs.sort(key=lambda x: x[2], reverse=True)
