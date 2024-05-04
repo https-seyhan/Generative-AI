@@ -85,6 +85,10 @@ class GenAI_LLM():
 		
 		#print(similar_word_pairs[:5][:5][0][0])
 		
+		for query_word in similar_word_pairs[:5]:
+			print(query_word)
+			
+		
 	def generate_summary(self):
 		print('Genetate Summary Called')	
 
