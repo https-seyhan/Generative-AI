@@ -62,7 +62,7 @@ def get_similars(query_tokens, description_tokens):
 
 class GenAI_LLM():
 	def __init__(self):
-		print('This is using LLM for GEN_AI purposes')
+		print('This is using LLM for GEN_AI purposes', '\n')
 		self.similar_word_pairs = []
 
 	def get_similars(self, query_tokens, description_tokens):
