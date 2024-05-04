@@ -68,7 +68,7 @@ class GenAI_LLM():
 		
 		# Calculate similarity between pairs of words
 		similar_word_pairs = []
-	for word1 in query_tokens:
+		for word1 in query_tokens:
 		for word2 in description_tokens:
 			#print('Word 2 ', word2)
 			if word1 != word2:
