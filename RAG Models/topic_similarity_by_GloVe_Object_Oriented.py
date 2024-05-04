@@ -80,9 +80,10 @@ class GenAI_LLM():
 		similar_word_pairs.sort(key=lambda x: x[2], reverse=True)
 
 		# Print the top similar word pairs
-		#for word1, word2, similarity in similar_word_pairs[:10]:
-		#	print(f"{word1} - {word2}: {similarity}")
-		print(similar_word_pairs[:5][:5][0][0])
+		for query_word, word2, similarity in similar_word_pairs[:10]:
+			print(f"{query_word} - {word2}: {similarity}")
+		
+		#print(similar_word_pairs[:5][:5][0][0])
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
