@@ -60,3 +60,6 @@ def get_similars(query_tokens, description_tokens):
 
 get_similars(query_tokens, description_tokens)
 
+class GenAI_LLM():
+	def __init(self):
+		print('This is using LLM for GEN_AI purposes')
