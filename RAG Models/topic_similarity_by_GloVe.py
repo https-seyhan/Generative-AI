@@ -40,18 +40,22 @@ print('escription Tokens ', description_tokens)
 query_description = [sent for sent in query.sents]
 #print(query_description)
 
-# Calculate similarity between pairs of words
-similar_word_pairs = []
-for word1 in query_tokens:
-    for word2 in description_tokens:
-        #print('Word 2 ', word2)
-        if word1 != word2:
-            similarity = nlp(word1).similarity(nlp(word2))
-            similar_word_pairs.append((word1, word2, similarity))
+def get_similars(query_tokens, description_tokens):
+	# Calculate similarity between pairs of words
+	similar_word_pairs = []
+	for word1 in query_tokens:
+		for word2 in description_tokens:
+			#print('Word 2 ', word2)
+			if word1 != word2:
+				similarity = nlp(word1).similarity(nlp(word2))
+				similar_word_pairs.append((word1, word2, similarity))
 
-# Sort the pairs by similarity (highest first)
-similar_word_pairs.sort(key=lambda x: x[2], reverse=True)
+	# Sort the pairs by similarity (highest first)
+	similar_word_pairs.sort(key=lambda x: x[2], reverse=True)
 
-# Print the top similar word pairs
-for word1, word2, similarity in similar_word_pairs[:10]:
-    print(f"{word1} - {word2}: {similarity}")
+	# Print the top similar word pairs
+	for word1, word2, similarity in similar_word_pairs[:10]:
+		print(f"{word1} - {word2}: {similarity}")
+	
+
+
