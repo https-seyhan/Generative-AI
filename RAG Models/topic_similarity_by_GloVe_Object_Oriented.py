@@ -34,7 +34,7 @@ query_tokens = [token.text for token in query if not token.is_stop]
 descriptions = nlp(property_descriptions)
 description_tokens = [token.text for token in descriptions if not token.is_stop]
 
-print('escription Tokens ', description_tokens)
+print('Description Tokens ', description_tokens)
 
     
 query_description = [sent for sent in query.sents]
