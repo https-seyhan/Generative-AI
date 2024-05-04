@@ -84,6 +84,9 @@ class GenAI_LLM():
 			print(f"{query_word} - {description_word}: {similarity}")
 		
 		#print(similar_word_pairs[:5][:5][0][0])
+		
+	def generate_summary(self):
+		print('Genetate Summary Called')	
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
