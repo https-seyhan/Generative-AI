@@ -63,3 +63,6 @@ get_similars(query_tokens, description_tokens)
 class GenAI_LLM():
 	def __init__(self)
 		print('This is using LLM for GEN_AI purposes')
+
+genAI = GENAI_LLM()
+
