@@ -58,7 +58,7 @@ def get_similars(query_tokens, description_tokens):
 		print(f"{word1} - {word2}: {similarity}")
 
 
-get_similars(query_tokens, description_tokens)
+#get_similars(query_tokens, description_tokens)
 
 class GenAI_LLM():
 	def __init__(self):
