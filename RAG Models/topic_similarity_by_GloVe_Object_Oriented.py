@@ -75,8 +75,8 @@ class GenAI_LLM():
 					similarity = nlp(word1).similarity(nlp(word2))
 					similar_word_pairs.append((word1, word2, similarity))
 
-	# Sort the pairs by similarity (highest first)
-	similar_word_pairs.sort(key=lambda x: x[2], reverse=True)
+		# Sort the pairs by similarity (highest first)
+		similar_word_pairs.sort(key=lambda x: x[2], reverse=True)
 
 	# Print the top similar word pairs
 	for word1, word2, similarity in similar_word_pairs[:10]:
