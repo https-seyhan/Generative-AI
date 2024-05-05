@@ -67,7 +67,7 @@ class GenAI_LLM():
 		print('This is using LLM for GEN_AI purposes', '\n')
 		self.similar_word_pairs = []
 		self.property_descriptions = "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen., Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access., Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
-
+		self.matcher = Matcher(nlp.vocab)
 
 	def get_similars(self, query_tokens, description_tokens):
 		
