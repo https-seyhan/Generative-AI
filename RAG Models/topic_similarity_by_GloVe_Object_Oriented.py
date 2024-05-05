@@ -90,8 +90,9 @@ class GenAI_LLM():
 			self.__generate_summary(query_word[0])
 			
 		
-	def __generate_summary(self, query):
-		print('Genetate Summary Called')	
+	def __generate_summary(self, description):
+		print('Genetate Summary Called')
+		
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
