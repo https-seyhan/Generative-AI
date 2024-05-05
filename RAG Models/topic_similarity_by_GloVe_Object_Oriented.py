@@ -87,7 +87,7 @@ class GenAI_LLM():
 		
 		for query_word in similar_word_pairs[:5]:
 			print(query_word[0]) # Get query words
-			generate_summary(query_word[0])
+			self.generate_summary(query_word[0])
 			
 		
 	def generate_summary(self, query):
