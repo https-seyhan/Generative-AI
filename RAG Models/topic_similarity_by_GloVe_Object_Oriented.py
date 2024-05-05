@@ -98,6 +98,7 @@ class GenAI_LLM():
 		print('Genetate Summary Called')
 		print(property_descriptions)
 		pattern = [{"LOWER": description}]
+		matcher.add("description", [pattern])
 		
 		
 		
