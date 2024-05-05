@@ -95,6 +95,7 @@ class GenAI_LLM():
 		
 	def __generate_summary(self, description):
 		print('Genetate Summary Called')
+		print(property_descriptions)
 		
 		
 		
