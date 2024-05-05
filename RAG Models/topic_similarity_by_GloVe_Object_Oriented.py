@@ -28,6 +28,7 @@ customize_stop_words = [
 for w in customize_stop_words:
     nlp.vocab[w].is_stop = True
 
+matcher = Matcher(nlp.vocab)
 
 query = nlp(current_query)
 query_tokens = [token.text for token in query if not token.is_stop]
