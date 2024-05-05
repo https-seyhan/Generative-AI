@@ -100,6 +100,7 @@ class GenAI_LLM():
 		pattern = [{"LOWER": description}]
 		matcher.add("description", [pattern])
 		descriptions = nlp(property_descriptions)
+		print('Description ', descriptions)
 		matches = matcher(descriptions)
 		
 		
