@@ -86,7 +86,7 @@ class GenAI_LLM():
 		#print(similar_word_pairs[:5][:5][0][0])
 		
 		for query_word in similar_word_pairs[:5]:
-			print(query_word[0]) # Get descriptions
+			print(query_word[1]) # Get descriptions
 			self.__generate_summary(query_word[1])
 			
 		
