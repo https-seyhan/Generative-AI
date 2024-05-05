@@ -90,7 +90,7 @@ class GenAI_LLM():
 			self.generate_summary(query_word[0])
 			
 		
-	def generate_summary(self, query):
+	def __generate_summary(self, query):
 		print('Genetate Summary Called')	
 
 genAI = GenAI_LLM()
