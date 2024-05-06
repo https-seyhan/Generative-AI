@@ -103,7 +103,10 @@ class GenAI_LLM():
 		print('Description ', descriptions)
 		matches = matcher(descriptions)
 		print('Matches ', matches)
-		
+		for match_id, start, end in matches:
+			string_id = nlp.vocab.strings[match_id]  # Get string representation
+			span = doc[start:end]  # The matched span
+			print(match_id, string_id, start, end, span.text)
 		
 
 genAI = GenAI_LLM()
