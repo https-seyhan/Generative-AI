@@ -102,7 +102,7 @@ class GenAI_LLM():
 		descriptions = nlp(property_descriptions)
 		print('Description ', descriptions)
 		matches = matcher(descriptions)
-		
+		print('Matches ', matches)
 		
 		
 
