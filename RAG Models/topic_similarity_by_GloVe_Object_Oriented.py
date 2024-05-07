@@ -108,7 +108,10 @@ class GenAI_LLM():
 			string_id = nlp.vocab.strings[match_id]  # Get string representation
 			span = doc[start:end]  # The matched span
 			print(match_id, string_id, start, end, span.text)
-		
+		self.__get_text(description)
+
+	def __get_text(self, word):
+		print("Word ", word)
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
