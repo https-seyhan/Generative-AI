@@ -66,7 +66,7 @@ def get_similars(query_tokens, description_tokens):
 class GenAI_LLM():
 	def __init__(self):
 		print('This is using LLM for GEN_AI purposes', '\n')
-		property_descriptions = [
+		property_descriptions_list = [
     "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen.",
     "Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access.",
     "Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
