@@ -108,7 +108,7 @@ class GenAI_LLM():
 		pattern = [{"LOWER": description}]
 		matcher.add("description", [pattern])
 		descriptions = nlp(property_descriptions)
-		print('Description ', descriptions)
+		#print('Description ', descriptions)
 		matches = matcher(descriptions)
 		#print('Matches ', matches)
 		for match_id, start, end in matches:
