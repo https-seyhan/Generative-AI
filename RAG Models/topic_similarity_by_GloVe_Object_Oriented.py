@@ -113,6 +113,7 @@ class GenAI_LLM():
 
 	def __get_text(self, word):
 		print("Word ", word)
+		re.findall(r"([^.]*?apple[^.]*\.)",txt)  
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
