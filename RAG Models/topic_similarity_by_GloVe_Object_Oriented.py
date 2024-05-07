@@ -96,6 +96,7 @@ class GenAI_LLM():
 		
 	def __generate_summary(self, description):
 		print('Genetate Summary Called')
+		doc = nlp(property_descriptions)
 		print(property_descriptions)
 		pattern = [{"LOWER": description}]
 		matcher.add("description", [pattern])
