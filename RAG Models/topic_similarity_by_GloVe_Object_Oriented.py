@@ -1,5 +1,6 @@
 import spacy
 from spacy.matcher import Matcher
+import re
 from transformers import (XLNetConfig, XLNetForSequenceClassification, XLNetTokenizer)
 from spacy.tokenizer import Tokenizer
 
