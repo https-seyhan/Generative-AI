@@ -114,7 +114,7 @@ class GenAI_LLM():
 		for match_id, start, end in matches:
 			string_id = nlp.vocab.strings[match_id]  # Get string representation
 			span = doc[start:end]  # The matched span
-			print(match_id, string_id, start, end, span.text)
+			#print(match_id, string_id, start, end, span.text)
 		self.__get_text(description)
 
 	def __get_text(self, word):
