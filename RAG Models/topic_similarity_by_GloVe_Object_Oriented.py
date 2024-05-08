@@ -119,8 +119,8 @@ class GenAI_LLM():
 
 	def __get_text(self, word):
 		print("Word ", word)
-		#re.findall(r"([^.]*? + str(word) + [^.]*\.)",self.property_descriptions_list) 
-		re.findall(r"([^.]*?[^.]*\.)",word, self.property_descriptions_list)  
+		re.findall(r"([^.]*? + str(word) + [^.]*\.)",self.property_descriptions_list) 
+		#re.findall(r"([^.]*?[^.]*\.)",word, self.property_descriptions_list)  
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
