@@ -98,10 +98,10 @@ class GenAI_LLM():
 		
 		for query_word in similar_word_pairs[:5]:
 			#print(query_word[1]) # Get descriptions
-			self.__generate_summary(query_word[1])
+			self.__generate_summary(query_word[1], property_descriptions_list)
 			
 		
-	def __generate_summary(self, description):
+	def __generate_summary(self, description, property_descriptions_list):
 		print('Genetate Summary Called')
 		doc = nlp(property_descriptions)
 		#print(property_descriptions)
