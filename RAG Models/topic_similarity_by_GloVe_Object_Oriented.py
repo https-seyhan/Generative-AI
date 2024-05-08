@@ -66,7 +66,7 @@ def get_similars(query_tokens, description_tokens):
 class GenAI_LLM():
 	def __init__(self):
 		print('This is using LLM for GEN_AI purposes', '\n')
-		property_descriptions_list = [
+		self.property_descriptions_list = [
     "This charming 3-bedroom, 2-bathroom home features hardwood floors, a spacious backyard, and a newly renovated kitchen.",
     "Stunning 2-bedroom apartment with panoramic city views, modern amenities, and rooftop access.",
     "Beautiful townhouse in a prime location, with 4 bedrooms, 3 bathrooms, and a private garage."
@@ -98,10 +98,10 @@ class GenAI_LLM():
 		
 		for query_word in similar_word_pairs[:5]:
 			#print(query_word[1]) # Get descriptions
-			self.__generate_summary(query_word[1], property_descriptions_list)
+			self.__generate_summary(query_word[1])
 			
 		
-	def __generate_summary(self, description, property_descriptions_list):
+	def __generate_summary(self, description):
 		print('Genetate Summary Called')
 		doc = nlp(property_descriptions)
 		#print(property_descriptions)
