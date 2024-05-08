@@ -120,6 +120,7 @@ class GenAI_LLM():
 	def __get_text(self, word):
 		print("Word ", word)
 		reg_exp = "[^.]*?" + str(word) + "[^.]*\."
+		print('Reg Exp ', reg_exp)
 		re.findall(r"([^.]*? + str(word) + [^.]*\.)",self.property_descriptions)
 		#re.findall(r"([^.]*? + str(word) + [^.]*\.)",self.property_descriptions) 
 		#re.findall(r"([^.]*?[^.]*\.)",word, self.property_descriptions_list)  
