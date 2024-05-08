@@ -122,7 +122,7 @@ class GenAI_LLM():
 		reg_exp = "[^.]*?" + str(word) + "[^.]*\."
 		print('Reg Exp ', reg_exp)
 		#re.findall(r"([^.]*? + str(word) + [^.]*\.)",self.property_descriptions)
-		expression = re.findall(r"(reg_exp)",self.property_descriptions)
+		expression = re.findall(reg_exp,self.property_descriptions)
 		print('RE ', expression)
 		#re.findall(r"([^.]*? + str(word) + [^.]*\.)",self.property_descriptions) 
 		#re.findall(r"([^.]*?[^.]*\.)",word, self.property_descriptions_list)  
