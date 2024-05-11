@@ -130,9 +130,9 @@ class GenAI_LLM():
 		#re.findall(r"([^.]*?apple[^.]*\.)",self.property_descriptions) 
 		#re.findall(r"([^.]*?apple[^.]*\.)",txt)  
 		
-	def __search_in_description(self):
+	def __search_in_description(self, search_item):
 		print('Search in Description ')
-		self.property_descriptions.index('2')
+		self.property_descriptions.index(search_item)
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
