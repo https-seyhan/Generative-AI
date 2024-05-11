@@ -132,7 +132,7 @@ class GenAI_LLM():
 		
 	def __search_in_description(self):
 		print('Search in Description ')
-		self.property_descriptions.index(2)
+		self.property_descriptions.index('2')
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
