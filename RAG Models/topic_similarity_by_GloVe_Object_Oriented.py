@@ -116,6 +116,7 @@ class GenAI_LLM():
 			span = doc[start:end]  # The matched span
 			#print(match_id, string_id, start, end, span.text)
 		self.__get_text(description)
+		self.__search_in_description()
 
 	def __get_text(self, word):
 		print("Word ", word)
