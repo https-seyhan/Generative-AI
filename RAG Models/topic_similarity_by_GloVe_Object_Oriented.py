@@ -116,7 +116,7 @@ class GenAI_LLM():
 			span = doc[start:end]  # The matched span
 			#print(match_id, string_id, start, end, span.text)
 		self.__get_text(description)
-		self.__search_in_description()
+		
 
 	def __get_text(self, word):
 		print("Word ", word)
@@ -128,7 +128,8 @@ class GenAI_LLM():
 		#re.findall(r"([^.]*? + str(word) + [^.]*\.)",self.property_descriptions) 
 		#re.findall(r"([^.]*?[^.]*\.)",word, self.property_descriptions_list)  
 		#re.findall(r"([^.]*?apple[^.]*\.)",self.property_descriptions) 
-		#re.findall(r"([^.]*?apple[^.]*\.)",txt)  
+		#re.findall(r"([^.]*?apple[^.]*\.)",txt) 
+		self.__search_in_description() 
 		
 	def __search_in_description(self, search_item):
 		print('Search in Description ')
