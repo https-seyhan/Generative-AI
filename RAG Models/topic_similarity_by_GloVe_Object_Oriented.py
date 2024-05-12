@@ -135,7 +135,7 @@ class GenAI_LLM():
 		print('Search in Description ')
 		print('location of the item ', search_item, self.property_descriptions.index(search_item))
 		
-	def __get_text(self):
+	def __get_element(self):
 		
 
 genAI = GenAI_LLM()
