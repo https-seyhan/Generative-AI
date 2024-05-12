@@ -131,14 +131,15 @@ class GenAI_LLM():
 		#re.findall(r"([^.]*?apple[^.]*\.)",self.property_descriptions) 
 		#re.findall(r"([^.]*?apple[^.]*\.)",txt) 
 		self.__search_in_description(str(word)) 
-		self.__get_element()
+		self.__get_element(str(word))
 		
 	def __search_in_description(self, search_item):
 		print('Search in Description ')
 		print('location of the item ', search_item, self.property_descriptions.index(search_item))
 		
-	def __get_element(self):
-		
+	def __get_element(self, search_word):
+		print(search_word)
+
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
