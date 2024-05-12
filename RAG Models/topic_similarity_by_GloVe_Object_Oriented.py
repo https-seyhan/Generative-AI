@@ -134,6 +134,9 @@ class GenAI_LLM():
 	def __search_in_description(self, search_item):
 		print('Search in Description ')
 		print('location of the item ', search_item, self.property_descriptions.index(search_item))
+		
+	def __get_text(self):
+		
 
 genAI = GenAI_LLM()
 genAI.get_similars(query_tokens, description_tokens)
