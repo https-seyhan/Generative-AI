@@ -100,6 +100,7 @@ class GenAI_LLM():
 			#print(query_word[1]) # Get descriptions
 			self.__generate_summary(query_word[1])
 			
+			
 		
 	def __generate_summary(self, description):
 		print('Genetate Summary Called')
@@ -130,6 +131,7 @@ class GenAI_LLM():
 		#re.findall(r"([^.]*?apple[^.]*\.)",self.property_descriptions) 
 		#re.findall(r"([^.]*?apple[^.]*\.)",txt) 
 		self.__search_in_description(str(word)) 
+		self.__get_element()
 		
 	def __search_in_description(self, search_item):
 		print('Search in Description ')
