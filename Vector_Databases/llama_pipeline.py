@@ -33,3 +33,8 @@ print('Tokeniser ', tokeniser)
 recogniser = pipeline("ner", model=model, tokenizer=tokeniser)
 
 print('Recogniser ', recogniser)
+
+dataset = datasets.load_dataset("imdb", name="plain_text", split="unsupervised")
+pipe = pipeline("text-classification", device=0)
+for out in pipe(KeyDataset(dataset, "text"), batch_size=8, truncation="only_first"):
+    print(out)
