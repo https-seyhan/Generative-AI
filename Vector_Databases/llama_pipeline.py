@@ -15,3 +15,5 @@ oracle = pipeline(
     "question-answering", model="distilbert/distilbert-base-cased-distilled-squad", tokenizer="google-bert/bert-base-cased"
 
 )
+
+print('Oracle ', oracle)
