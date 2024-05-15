@@ -23,3 +23,7 @@ print('Oracle ', oracle)
 model = AutoModelForTokenClassification.from_pretrained("dbmdz/bert-large-cased-finetuned-conll03-english")
 
 print('Model ', model)
+
+tokenizer = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
+
+recognizer = pipeline("ner", model=model, tokenizer=tokenizer)
