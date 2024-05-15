@@ -31,3 +31,5 @@ tokeniser = AutoTokenizer.from_pretrained("google-bert/bert-base-cased")
 print('Tokeniser ', tokeniser)
 
 recogniser = pipeline("ner", model=model, tokenizer=tokeniser)
+
+print('Recogniser ', recogniser)
