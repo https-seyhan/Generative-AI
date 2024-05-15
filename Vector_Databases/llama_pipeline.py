@@ -17,3 +17,7 @@ oracle = pipeline(
 )
 
 print('Oracle ', oracle)
+
+# Named entity recognition pipeline, passing in a specific model and tokenizer
+
+model = AutoModelForTokenClassification.from_pretrained("dbmdz/bert-large-cased-finetuned-conll03-english")
