@@ -1,4 +1,5 @@
 import boto3
+aws bedrock list-foundation-models
 
 # Initialize the Bedrock client
 bedrock = boto3.client('bedrock')
