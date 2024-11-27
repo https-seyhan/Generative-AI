@@ -11,8 +11,10 @@ def run(playwright):
     # navigate to the website
     page_addr = 'https://www.uts.edu.au/'
     page.goto(page_addr)
+    title = page.title()
+    print("Page Title:", title)
     # take a full-page screenshot
-    page.screenshot(path='/home/saul/Desktop/RE/screenshots/uts.png', full_page=True)
+    page.screenshot(path='/home/saul/Desktop/RE/screenshots/' + page_addr.sep['.'][0] +'.png', full_page=True)
     # always close the browser
     browser.close()
 
