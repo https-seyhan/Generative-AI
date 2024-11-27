@@ -9,9 +9,10 @@ def run(playwright):
     # opens a new browser page
     page = browser.new_page()
     # navigate to the website
-    page.goto('https://example.com')
+    page_addr = 'https://www.uts.edu.au/'
+    page.goto(page_addr)
     # take a full-page screenshot
-    page.screenshot(path='/home/saul/Desktop/RE/screenshots/example.png', full_page=True)
+    page.screenshot(path='/home/saul/Desktop/RE/screenshots/uts.png', full_page=True)
     # always close the browser
     browser.close()
 
