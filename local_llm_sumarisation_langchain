@@ -1,0 +1,67 @@
+To do text summarization with a locally-run open-source LLM, here’s a practical guide with:
+
+    ✅ Model recommendations
+
+    🔧 Tool setup (Ollama or llama.cpp)
+
+    🧪 Working Python code using LangChain
+
+✅ Best Open-Source Local Models for Summarization
+Model	Size	Notes	Tool Support
+Mistral 7B	7B	Strong general performance	Ollama, llama.cpp
+Dolphin 2.5	7B	Fine-tuned for summarization/chat	Ollama
+LLaMA 2 7B/13B	7B+	More verbose, good reasoning	llama.cpp, GPT4All
+Gemma 7B	7B	Lightweight, optimized for CPU	Ollama, llama.cpp
+Phi-2	2.7B	Very small, decent basic summarization	llama.cpp
+🔧 Quick Setup Using Ollama + LangChain
+Step 1: Install Ollama
+
+curl -fsSL https://ollama.com/install.sh | sh
+
+Step 2: Pull a Model
+
+ollama pull mistral  # Or: dolphin2.5, gemma
+
+🧪 Python Code: Summarize Text with LangChain + Ollama
+
+from langchain_community.llms import Ollama
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+
+# Load local model
+llm = Ollama(model="mistral")  # or "dolphin2.5", etc.
+
+# Prompt template for summarization
+prompt = PromptTemplate.from_template("""
+Summarize the following text in concise bullet points:
+
+{text}
+""")
+
+# Build the chain
+chain = LLMChain(llm=llm, prompt=prompt)
+
+# Sample long text
+input_text = """
+Climate change is accelerating, with rising global temperatures leading to more severe weather events, melting glaciers, and rising sea levels.
+Governments worldwide are being urged to adopt renewable energy, reduce emissions, and invest in sustainable practices.
+Meanwhile, individuals are encouraged to lower their carbon footprints through lifestyle changes such as reducing meat consumption, driving less, and conserving energy.
+"""
+
+# Run summarization
+summary = chain.run(input_text)
+print(summary)
+
+🧠 Sample Output
+
+- Global temperatures are rising, causing extreme weather and rising sea levels.
+- Governments are urged to use renewable energy and reduce emissions.
+- Individuals can help by changing habits like eating less meat and saving energy.
+
+🚀 Optional: Summarize PDFs or Documents
+
+Once you have this working, you can plug in a document loader and summarizer using:
+
+    langchain.document_loaders for PDFs/TXT
+
+    langchain.chains.summarize for map-reduce summarization
