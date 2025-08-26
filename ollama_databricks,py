@@ -1,0 +1,124 @@
+
+Got it ✅ — let’s make Ollama **completely offline** on Databricks.
+That means you won’t rely on `ollama pull` fetching weights from the internet. Instead, you’ll pre-download and stage the models yourself.
+
+---
+
+# 🔒 Full Offline Ollama on Databricks
+
+## 1. Prepare the Model Files Outside Databricks
+
+On a machine **with internet** (like your laptop or a secure staging server):
+
+1. Install Ollama normally:
+
+   ```bash
+   curl -fsSL https://ollama.com/install.sh | sh
+   ```
+
+2. Pull your desired model(s):
+
+   ```bash
+   ollama pull llama3.1:8b
+   ```
+
+   Ollama stores everything in `~/.ollama`:
+
+   * Model manifests: `~/.ollama/models/manifests/`
+   * Model blobs: `~/.ollama/models/blobs/`
+
+3. Package that `.ollama` folder, e.g.:
+
+   ```bash
+   tar -czf ollama-models.tar.gz ~/.ollama/models
+   ```
+
+---
+
+## 2. Upload Models to Databricks
+
+You have two options:
+
+* **DBFS (Databricks File System)**:
+
+  ```bash
+  databricks fs cp ollama-models.tar.gz dbfs:/ollama/ollama-models.tar.gz
+  ```
+* Or mount a **cloud storage bucket** (S3, ADLS, GCS) and place it there.
+
+---
+
+## 3. Init Script to Install Ollama + Load Local Models
+
+Now write an init script that:
+
+* Installs Ollama (no pulling from internet).
+* Unpacks your pre-staged models into the Ollama directory.
+
+```python
+script = """#!/bin/bash
+set -eux
+
+# Install Ollama binary only (no pulling models)
+if ! command -v ollama >/dev/null; then
+  curl -fsSL https://ollama.com/install.sh | sh
+fi
+
+# Create Ollama model dir
+mkdir -p /root/.ollama/models
+
+# Copy models from DBFS into driver node
+dbfs_path="/dbfs/ollama/ollama-models.tar.gz"
+if [ -f "$dbfs_path" ]; then
+  tar -xzf "$dbfs_path" -C /root/.ollama/
+fi
+
+# Start Ollama server
+if ! pgrep -f "ollama serve" >/dev/null; then
+  nohup ollama serve > /var/log/ollama.log 2>&1 &
+fi
+"""
+path = "dbfs:/databricks/init/ollama-offline/ollama.sh"
+dbutils.fs.mkdirs("dbfs:/databricks/init/ollama-offline")
+dbutils.fs.put(path, script, overwrite=True)
+print("Offline init script written to", path)
+```
+
+Then in your **Cluster UI → Advanced Options → Init Scripts** add:
+`dbfs:/databricks/init/ollama-offline/ollama.sh`
+
+---
+
+## 4. Verify in Notebook
+
+After cluster restart:
+
+```python
+import subprocess, json, urllib.request
+
+# Check version
+print(subprocess.check_output("ollama --version", shell=True).decode())
+
+# List available models (from your offline copy)
+print(subprocess.check_output("ollama list", shell=True).decode())
+```
+
+You should see `llama3.1:8b` (or whatever you staged).
+
+---
+
+## 5. Use Exactly as Before
+
+All the earlier Python examples (`ollama.chat`, `ollama.embeddings`, streaming, JSON output) work exactly the same, but now **no internet is needed**.
+
+---
+
+## 🔑 Key Points
+
+* The Ollama **binary** is small, so installing via `install.sh` is fine even offline if you pre-stage it. Otherwise, you can also copy a prebuilt `ollama` binary into DBFS and symlink it.
+* The heavy files are the model weights (`~/.ollama/models`), which you staged yourself.
+* No calls leave your Databricks cluster; inference is 100% local.
+
+---
+
+
