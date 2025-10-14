@@ -1,6 +1,4 @@
-Certainly! Here’s an in-depth explanation of **agentic AI**:
 
----
 
 ## What is Agentic AI?
 
