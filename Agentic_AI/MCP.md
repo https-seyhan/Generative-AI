@@ -1,7 +1,7 @@
 
 ## What is Model Context Protocol (MCP)?
 
-**Model Context Protocol** refers to a standardized way for defining, exchanging, and managing the *context* that an AI model uses to make decisions, generate responses, or perform actions. The context here can be anything that influences the model’s output, such as:
+**Model Context Protocol** refers to a standardised way for defining, exchanging, and managing the *context* that an AI model uses to make decisions, generate responses, or perform actions. The context here can be anything that influences the model’s output, such as:
 
 - User instructions or goals
 - Conversation history
