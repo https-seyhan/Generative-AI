@@ -69,5 +69,3 @@ With greater autonomy and goal pursuit come risks:
 ## In Summary
 
 **Agentic AI** is about creating artificial agents that *do* things, not just *answer* things. They pursue goals, adapt, interact, and make decisions—potentially transforming productivity, automation, and interaction. As their autonomy grows, so does the importance of careful design, oversight, and ethical alignment.
-
-If you want specifics (architecture, code, or applications), let me know!
