@@ -1,6 +1,3 @@
-Certainly! **Model Context Protocol (MCP)** is not a universal acronym, but in the context of AI and machine learning, it typically refers to a protocol or specification for managing the **context** in which a model operates, especially for large language models (LLMs) or agentic AI systems. Let me break down what this means:
-
----
 
 ## What is Model Context Protocol (MCP)?
 
