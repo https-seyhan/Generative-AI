@@ -26,7 +26,7 @@ def load_custom_construction_dataset(path):
 
 construction_dataset = load_custom_construction_dataset("construction_schedule_dataset.json")
 
-# Initialize RAG tokeniser and retriever
+# Initialise RAG tokeniser and retriever
 tokenizer = RagTokenizer.from_pretrained("facebook/rag-sequence-nq")
 retriever = RagRetriever.from_pretrained("facebook/rag-sequence-nq", index_name="exact")
 
@@ -66,4 +66,5 @@ for epoch in range(3):  # You can adjust the number of epochs
 
 # Save the fine-tuned model
 rag_model.save_pretrained("fine-tuned-rag-construction")
+
 
