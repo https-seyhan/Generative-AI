@@ -1,5 +1,6 @@
 from crewai import Agent, Task, Crew
 import litellm
+# ollama pull phi3:mini
 
 # --------------------------------------------
 # Lightweight LLM Wrapper (Single Shared Model)
