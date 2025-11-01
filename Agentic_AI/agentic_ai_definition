@@ -1,0 +1,34 @@
+Agentic AI refers to autonomous artificial intelligence systems designed to make decisions and take actions independently to achieve goals, without constant human intervention. 
+These systems use tools, data, and large language models (LLMs) for multi-step reasoning, planning, learning from outcomes, and adapting to new situations to achieve complex tasks. 
+Key characteristics include autonomy, proactivity, and the ability to learn, making them proactive "agents" rather than just reactive assistants. 
+
+# How Agentic AI Works
+
+    Goal Orientation:
+    Agentic AI systems are given a goal or objective. 
+
+Perception & Reasoning:
+They perceive their environment, process information, and use LLMs for multi-step reasoning and planning to decide on the best course of action. 
+Action & Tool Use:
+These AI agents can access and use various tools, data sources, and even other AI systems to execute tasks. 
+Adaptation & Learning:
+Agentic AI adapts to changes in the environment and learns from the outcomes of its actions to improve future performance. 
+Collaboration:
+They can work cooperatively with humans and other AI systems to achieve broader objectives. 
+
+Key Differences from Traditional AI
+
+    Autonomy:
+    Agentic AI acts proactively to pursue goals, whereas traditional AI is often reactive or requires detailed instructions. 
+
+Planning & Reasoning:
+Agentic AI performs multi-step reasoning and planning to achieve goals, going beyond simple function calls or content generation. 
+Learning & Adaptation:
+It learns from experience and adapts to dynamic environments, continuously improving its performance. 
+
+Applications
+
+    Customer Service: Handling inquiries and personalizing interactions, according to Salesforce. 
+
+Process Automation: Automating complex, multi-step processes in various industries. 
+Personalized Experiences: Creating customized content or recommendations for users, notes Salesforce. 
