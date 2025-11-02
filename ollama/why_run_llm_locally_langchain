@@ -33,7 +33,7 @@ Prompt Templates and Chains
 
     Chain multiple steps together easily.
 
-🤖 Agent Systems
+Agent Systems
 
     Use LangChain agents to dynamically decide which tools or APIs to call, based on LLM output.
 
