@@ -31,7 +31,7 @@ CMD if [ "$DB_IS_DRIVER" = "true" ]; then \
 
 ---
 
-# ⚙️ 2. Cluster Config in Databricks
+# Cluster Config in Databricks
 
 When creating cluster:
 
