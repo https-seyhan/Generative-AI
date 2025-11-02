@@ -43,7 +43,7 @@ Workers don’t run Ollama, so they just do Spark work.
 
 ---
 
-# 📓 3. Notebook Usage (driver-side only)
+#  Notebook Usage (driver-side only)
 
 Install the Python client in your notebook:
 
