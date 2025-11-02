@@ -41,7 +41,7 @@ Memory
 
     Add memory to your application (e.g., keep a running conversation history).
 
-📚 Knowledge Retrieval (RAG)
+Knowledge Retrieval (RAG)
 
     Combine local LLMs with vector databases (e.g., FAISS, Chroma) to build custom Q&A over your documents.
 
