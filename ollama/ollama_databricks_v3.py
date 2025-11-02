@@ -1,15 +1,5 @@
 
 
-* You keep one inference service bound to `127.0.0.1:11434` on the driver.
-* Workers don’t waste resources running extra Ollama servers.
-* Your notebooks and jobs call it locally (driver-side).
-
-Here’s how to structure it:
-
----
-
-# 🐳 1. Dockerfile (driver-only Ollama)
-
 Since Databricks doesn’t distinguish driver vs worker when pulling your custom Docker image, the trick is:
 
 * Ship Ollama + models in the image.
