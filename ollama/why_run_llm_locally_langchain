@@ -23,7 +23,7 @@ Offline Capability
 Why Combine It with LangChain?
 
 LangChain isn't a model—it's a framework that helps you build applications around LLMs. Here's what it gives you:
-🔗 Tool and API Integration
+Tool and API Integration
 
     LangChain makes it easy to connect your LLM to external tools, search APIs, SQL databases, etc.
 
