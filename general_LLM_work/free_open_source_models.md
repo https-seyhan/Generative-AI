@@ -1,4 +1,4 @@
-Yes — there are several excellent free and open-source alternatives to OpenAI models like GPT-4. These models vary in size, performance, and licensing, but many are surprisingly capable, especially when fine-tuned or quantized. Here’s a breakdown of top free/open-source LLMs you can use locally or via APIs:
+
 🧠 Top Free/Open-Source LLMs (2024–2025)
 Model Name	Size	Highlights	License
 Mistral 7B	7B	State-of-the-art small model, very fast, open-weight	Apache 2.0
