@@ -88,7 +88,7 @@ df["a"] = [ask(q) for q in df.q]
 df
 ```
 
-⚠️ Don’t call from Spark workers (`mapPartitions`) — they won’t see Ollama.
+Don’t call from Spark workers (`mapPartitions`) — they won’t see Ollama.
 If you need large-scale inference, coalesce to 1 partition and run on driver, or expose the driver port inside your VPC (less private, but possible).
 
 ---
