@@ -1,6 +1,6 @@
 # Generative-AI
 ## Mission
-#### <span style="color : blue">Our mission is to Organise and Intelligently Direct our Specialised Knowledge in Generative-AI & Large Language Models(LLM) through Practical Actions and Solutions for Real Estate Business </span>.
+#### <span style="color : blue">Our mission is to Organise and Intelligently Direct our Specialised Knowledge in Generative-AI & Large Language Models (LLM) through Practical Actions and Solutions for Real Estate Business </span>.
 
 
 ## Generative AI & GitHub:
