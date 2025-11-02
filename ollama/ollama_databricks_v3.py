@@ -1,6 +1,4 @@
-
-
-Since Databricks doesn’t distinguish driver vs worker when pulling your custom Docker image, the trick is:
+#Since Databricks doesn’t distinguish driver vs worker when pulling custom Docker image, the trick is:
 
 * Ship Ollama + models in the image.
 * Auto-start `ollama serve` only **if the node is the driver**.
