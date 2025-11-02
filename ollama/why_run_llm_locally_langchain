@@ -37,7 +37,7 @@ Agent Systems
 
     Use LangChain agents to dynamically decide which tools or APIs to call, based on LLM output.
 
-🗃️ Memory
+Memory
 
     Add memory to your application (e.g., keep a running conversation history).
 
