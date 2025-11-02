@@ -1,4 +1,4 @@
-Got it 👍 — running **Ollama only on the driver** is the safest + simplest design in Databricks:
+
 
 * You keep one inference service bound to `127.0.0.1:11434` on the driver.
 * Workers don’t waste resources running extra Ollama servers.
