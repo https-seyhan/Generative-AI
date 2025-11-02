@@ -22,13 +22,7 @@ Fine-tuning means continuing to train a pretrained model on task-specific or dom
     Frameworks: Hugging Face Transformers + PEFT, Axolotl, LLaMA Factory
 
 🧊 2. Quantization – Shrink and speed up the model
-🔍 What it is:
 
-Quantization reduces the precision of the model’s weights (e.g., from 16-bit to 4-bit or 8-bit), making it smaller and faster—with minimal accuracy loss.
-Precision	Size	Speed	Quality
-FP32	Large	Slow	Highest
-FP16	Smaller	Faster	Nearly as good
-INT8/4-bit (quantized)	Much smaller	Much faster	Good enough for most use cases
 ✅ Why you’d quantize:
 
     Run large models on consumer hardware (8–16GB RAM)
