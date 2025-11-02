@@ -93,7 +93,7 @@ If you need large-scale inference, coalesce to 1 partition and run on driver, or
 
 ---
 
-# ✅ Benefits of Driver-only Setup
+# Benefits of Driver-only Setup
 
 * Saves cluster resources (no wasted workers running Ollama).
 * Keeps LLM inference private and local.
