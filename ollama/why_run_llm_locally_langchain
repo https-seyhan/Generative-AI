@@ -27,7 +27,7 @@ Tool and API Integration
 
     LangChain makes it easy to connect your LLM to external tools, search APIs, SQL databases, etc.
 
-🧩 Prompt Templates and Chains
+Prompt Templates and Chains
 
     Define reusable prompts and workflows (e.g., question → summarization → decision).
 
