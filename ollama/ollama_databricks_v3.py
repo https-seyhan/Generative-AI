@@ -66,7 +66,7 @@ print(resp["message"]["content"])
 
 ---
 
-# 🗂 4. Batch Workflow Pattern
+# Batch Workflow Pattern
 
 Since only the **driver** can talk to Ollama, keep inference driver-side.
 That means:
