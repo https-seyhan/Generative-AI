@@ -1,4 +1,4 @@
-Here's a breakdown of the best open-source models for chat, coding, and document summarization as of 2025, based on performance and availability:
+
 💬 Best for Chat
 Model	Size	Strengths
 Mixtral 8x7B	12.9B (MoE)	Top-tier performance, great reasoning and chat alignment
