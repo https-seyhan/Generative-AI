@@ -1,4 +1,5 @@
-Running a local LLM with LangChain offers several advantages, especially if you're building applications that need LLM-powered logic (e.g., chatbots, agents, tools, workflows). Here's why you might want to combine a local LLM with LangChain:
+Running a local LLM with LangChain offers several advantages, especially if you're building applications that need LLM-powered logic (e.g., chatbots, agents, tools, workflows). 
+
 🔧 Why Use a Local LLM?
 ✅ Privacy and Control
 
