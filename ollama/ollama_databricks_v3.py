@@ -33,7 +33,7 @@ CMD if [ "$DB_IS_DRIVER" = "true" ]; then \
 
 # ⚙️ 2. Cluster Config in Databricks
 
-When creating your cluster:
+When creating cluster:
 
 * Runtime: **Databricks Container Services**.
 * Docker image: `<your-registry-url>/my-ollama:driver-only`.
