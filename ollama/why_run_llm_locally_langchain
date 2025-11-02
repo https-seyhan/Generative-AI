@@ -45,7 +45,7 @@ Knowledge Retrieval (RAG)
 
     Combine local LLMs with vector databases (e.g., FAISS, Chroma) to build custom Q&A over your documents.
 
-✅ Example Use Case
+Example Use Case
 
 Imagine building a private AI assistant that:
 
