@@ -1,7 +1,8 @@
 Running a local LLM with LangChain offers several advantages, especially if you're building applications that need LLM-powered logic (e.g., chatbots, agents, tools, workflows). 
 
-🔧 Why Use a Local LLM?
-✅ Privacy and Control
+Why Use a Local LLM?
+
+Privacy and Control
 
     Data stays on your machine—ideal for sensitive or proprietary information.
 
