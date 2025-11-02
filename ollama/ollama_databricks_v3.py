@@ -26,8 +26,6 @@ CMD if [ "$DB_IS_DRIVER" = "true" ]; then \
     fi
 ```
 
-This way:
-
 * **Driver node** runs Ollama automatically.
 * **Worker nodes** do nothing (just idle container).
 
