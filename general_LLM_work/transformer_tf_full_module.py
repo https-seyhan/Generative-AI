@@ -18,6 +18,16 @@ from tensorflow.keras import layers
 import numpy as np
 from einops import rearrange
 
+# Placeholder imports (for environments without TensorFlow)
+try:
+    import tensorflow as tf
+    from tensorflow import keras
+    from tensorflow.keras import layers
+except ModuleNotFoundError:
+    print("Warning: TensorFlow is not installed. Using placeholders for classes and functions.")
+    tf = type('tf', (), {})()
+    keras = type('keras', (), {})()
+    layers = type('layers', (), {})()
 
 # -------------------------------------------------------
 # Positional Encoding
