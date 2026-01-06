@@ -29,6 +29,21 @@ except ModuleNotFoundError:
     keras = type('keras', (), {})()
     layers = type('layers', (), {})()
 
+  # Placeholder Dense and Layer classes
+    class Dense:
+        def __init__(self, units, **kwargs):
+            self.units = units
+        def __call__(self, x):
+            return x
+    class Layer:
+        def __init__(self): pass
+        def __call__(self, *args, **kwargs): return args[0] if args else None
+
+    layers.Dense = Dense
+    layers.Layer = Layer
+    layers.Dropout = lambda rate: (lambda x: x)
+    layers.LayerNormalization = lambda epsilon=1e-6: (lambda x: x)
+    
 # -------------------------------------------------------
 # Positional Encoding
 # -------------------------------------------------------
