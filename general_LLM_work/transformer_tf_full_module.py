@@ -202,7 +202,7 @@ class Transformer(keras.Model):
 
 
 # -------------------------------------------------------
-# Tokenizer + Data Pipeline
+# Tokeniser + Data Pipeline
 # -------------------------------------------------------
 class SimpleTokenizer:
     def __init__(self, vocab_size=20000, seq_len=128):
