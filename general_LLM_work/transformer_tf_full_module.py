@@ -2,7 +2,7 @@
 """
 Complete Transformer (Encoder + Decoder) implementation in TensorFlow/Keras.
 Includes:
-- Tokenizer (Keras TextVectorization)
+- Tokeniser (Keras TextVectorization)
 - Positional Encoding
 - Multi-Head Attention (custom and FlashAttention variant)
 - Encoder Layer
