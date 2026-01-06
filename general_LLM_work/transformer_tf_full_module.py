@@ -253,10 +253,10 @@ def build_transformer(vocab_size=20000, max_len=128, d_model=256, num_heads=8, d
 # -------------------------------------------------------
 """
 text_data = tf.data.Dataset.from_tensor_slices([
-    "hello world", "transformers are powerful", "attention is all you need"
+    "Planet Mars", "transformers are powerful", "attention is all you need"
 ])
 
-# Tokenizer
+# Tokeniser
  tok = SimpleTokenizer()
  tok.adapt(text_data)
 
