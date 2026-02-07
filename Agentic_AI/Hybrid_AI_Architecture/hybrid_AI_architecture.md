@@ -15,7 +15,7 @@
 
 ### Classical Machine Learning (e.g., Logistic Regression, RandomForest, XGBoost, SVM)
 
-Strengths
+<b>Strengths</b>
 
     Stable decision boundary
 
