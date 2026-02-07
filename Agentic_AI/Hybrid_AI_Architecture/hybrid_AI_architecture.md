@@ -13,7 +13,7 @@
     Works well with small labeled datasets
 
 
-### Classical Machine Learning (e.g., Logistic Regression, XGBoost, SVM)
+### Classical Machine Learning (e.g., Logistic Regression, RandomForest, XGBoost, SVM)
 
 Strengths
 
