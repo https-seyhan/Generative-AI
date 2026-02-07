@@ -51,7 +51,7 @@ LLM-assisted tabular classification
 
 You do NOT ask the LLM:
 
-❌ “Which class is this?”
+ “Which class is this?”
 
 Instead you ask:
 
