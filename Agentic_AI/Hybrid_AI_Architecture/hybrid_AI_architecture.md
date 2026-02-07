@@ -26,7 +26,7 @@
     Explainable (SHAP, feature importance)
 
 
-<b>The core insight:</b>
+<b>The core insight</b>
 
     <strong>LLM = feature generator</strong>
     ML model = decision maker
