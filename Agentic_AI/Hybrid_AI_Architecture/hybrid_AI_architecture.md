@@ -1,6 +1,6 @@
 
 ## What each component (LLM + Machine Learning) is good at
-LLM (e.g., GPT, Llama, Mistral)
+### LLM (e.g., GPT, Llama, Mistral)
 
 Strengths
 
