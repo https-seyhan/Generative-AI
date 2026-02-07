@@ -28,8 +28,9 @@
 
 <b>The core insight</b>
 
-    <strong>LLM = feature generator</strong>
-    <b>ML model = decision maker</b>
+<strong>LLM = feature generator</strong>
+
+<b>ML model = decision maker</b>
 
 
 ### The Hybrid Pipeline (Correct Architecture)
