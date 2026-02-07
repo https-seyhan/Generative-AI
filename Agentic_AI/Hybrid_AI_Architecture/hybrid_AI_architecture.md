@@ -55,7 +55,7 @@ You do NOT ask the LLM:
 
 Instead you ask:
 
-✔ “Describe this in structured measurable form.”
+ “Describe this in structured measurable form.”
 
 Example problem:
 You classify businesses into:
