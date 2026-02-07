@@ -2,7 +2,7 @@
 ## What each component (LLM + Machine Learning) is good at
 ### LLM (e.g., GPT, Llama, Mistral)
 
-Strengths
+<b>Strengths</b>
 
     Understands language context
 
