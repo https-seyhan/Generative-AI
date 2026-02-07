@@ -32,7 +32,7 @@ The core insight:
     ML model = decision maker
 
 
-###The Hybrid Pipeline (Correct Architecture)
+### The Hybrid Pipeline (Correct Architecture)
 
 Raw Text
    ↓
