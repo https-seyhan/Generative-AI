@@ -28,7 +28,7 @@
 
 The core insight:
 
-    <b>LLM = feature generator</b>
+    __LLM = feature generator__
     ML model = decision maker
 
 
