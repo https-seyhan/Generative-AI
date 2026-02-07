@@ -28,7 +28,7 @@ Strengths
 
 The core insight:
 
-    LLM = feature generator
+    <b>LLM = feature generator</b>
     ML model = decision maker
 
 
