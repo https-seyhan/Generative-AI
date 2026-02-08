@@ -25,7 +25,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ML model = decision maker</b>
 
 
-### The Hybrid Pipeline (Correct Architecture)
+### The Hybrid Pipeline (Architecture)
 
 Raw Text
    ↓
