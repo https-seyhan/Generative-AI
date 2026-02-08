@@ -145,13 +145,14 @@ Your training set:
 
 X = [embedding + LLM features + numeric business data  ]
 &nbsp; 
-- [ ] y = class (0,1,2)
+-  y = class (0,1,2)
 
-This works extremely well because:
+**This works extremely well because:**
 
-The LLM converts meaning → signals
-The ML model converts signals → decisions
-6) Why this outperforms pure LLM classification
+- The LLM converts meaning → signals
+- The ML model converts signals → decisions
+
+## Why this outperforms pure LLM classification
 
 Direct prompting classification:
 
@@ -240,7 +241,7 @@ clf.fit(X_train, y_train)
 
 proba = clf.predict_proba(X_test)
 prediction = clf.predict(X_test)
-```          ← ← ← this line (three backticks alone) CLOSES the block
+```
 9) Important (Most People Miss This)
 
 You should not retrain embeddings frequently.
@@ -269,8 +270,8 @@ Final Concept
 
 Think of the system like this:
 
-    The LLM understands the case.
-    The ML model makes the judgement.
+    - The LLM understands the case.
+    - The ML model makes the judgement.
 
 The LLM acts as an investigator.
 The classifier acts as a court decision.
