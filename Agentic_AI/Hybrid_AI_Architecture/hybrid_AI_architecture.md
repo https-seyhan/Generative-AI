@@ -63,7 +63,7 @@ You classify businesses into:
 1 = Suspicious
 2 = High Risk
 
-Input text:
+**Input text:**
 
     "Company changed directors twice in 8 months, same registered address as a deregistered entity."
 
@@ -73,7 +73,7 @@ But an LLM can extract latent variables.
 
 You prompt the LLM to output structured signals:
 
-Example prompt:
+**Example prompt:**
 
 “Extract risk indicators from the text. Return JSON with fields:
 
