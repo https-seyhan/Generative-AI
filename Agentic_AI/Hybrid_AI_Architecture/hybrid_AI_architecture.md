@@ -143,7 +143,8 @@ Handles:
 
 Your training set:
 
-X = "[embedding + LLM features + numeric business data]"
+X = [embedding + LLM features + numeric business data]
+&nbsp; 
 y = class (0,1,2)
 
 This works extremely well because:
