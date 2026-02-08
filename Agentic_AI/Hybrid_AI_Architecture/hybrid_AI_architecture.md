@@ -41,7 +41,7 @@
 &nbsp;  
 ↓  
 &nbsp;  
-**3-Class Prediction**
+## Class Prediction
 
 **This architecture is now called:**
 - LLM-assisted tabular classification
