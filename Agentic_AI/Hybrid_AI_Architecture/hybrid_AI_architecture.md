@@ -97,10 +97,10 @@ LLM Output:
   "legal_red_flags": 3
 }
 
-**Now converted unstructured text → tabular data.**
+**Now converted <b>unstructured text → tabular data</b>.**
 
 This is the magic step.
-#### Also use embeddings
+## Also use embeddings
 
 You should ALSO generate embeddings:
 
