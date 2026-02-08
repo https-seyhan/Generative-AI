@@ -20,7 +20,7 @@
 
 ### The core insight
 
-- **$${\color{blue} LLM = feature  generator}    $$**
+- **$${\color{blue} LLM = feature \ generator}    $$**
 
 - <b><span class="text-blue">ML model = decision maker</span></b>
 
