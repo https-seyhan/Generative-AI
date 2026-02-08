@@ -4,11 +4,8 @@
 
 **Strengths**  
     - Understands language context
-
     - Extracts meaning from messy text
-
     - Handles synonyms, paraphrases, sarcasm, implicit signals
-
     - Works well with small labeled datasets
 
 
