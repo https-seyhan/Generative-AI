@@ -30,7 +30,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>LLM = feature generator</b>
 
-<b>ML model = decision maker</b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ML model = decision maker</b>
 
 
 ### The Hybrid Pipeline (Correct Architecture)
