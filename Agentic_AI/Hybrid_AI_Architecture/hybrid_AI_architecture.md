@@ -48,7 +48,7 @@ Machine Learning Classifier
 This architecture is now called:
 
 ### LLM-assisted tabular classification
-#### Step 1 — Use the LLM to create features
+#### Use the LLM to create features
 
 You do NOT ask the LLM:
 
