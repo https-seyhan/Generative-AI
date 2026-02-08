@@ -26,16 +26,22 @@
 
 
 ### The Hybrid Pipeline (Architecture)
-
-Raw Text
-   ↓
-LLM Feature Extraction
-   ↓
-Structured Features (embeddings + attributes)
-   ↓
-Machine Learning Classifier
-   ↓
-3-Class Prediction
+**Raw Data**  
+&nbsp;  
+↓  
+**LLM Feature Extraction**  
+&nbsp;  
+↓  
+&nbsp;  
+**Structured Features** (embeddings + attributes)  
+&nbsp;  
+↓  
+&nbsp;  
+**Machine Learning Classifier**  
+&nbsp;  
+↓  
+&nbsp;  
+**3-Class Prediction**
 
 This architecture is now called:
 
