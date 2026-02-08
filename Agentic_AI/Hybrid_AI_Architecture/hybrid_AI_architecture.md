@@ -17,13 +17,13 @@
 
 <b>Strengths</b>
 
-    Stable decision boundary
+    - Stable decision boundary
 
-    Calibrated probabilities
+    - Calibrated probabilities
 
-    Cheap inference
+    - Cheap inference
 
-    Explainable (SHAP, feature importance)
+    - Explainable (SHAP, feature importance)
 
 
 ### The core insight
