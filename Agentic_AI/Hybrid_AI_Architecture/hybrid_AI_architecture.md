@@ -4,9 +4,9 @@
 
 **Strengths**  
 - Understands language context
-    - Extracts meaning from messy text
-    - Handles synonyms, paraphrases, sarcasm, implicit signals
-    - Works well with small labeled datasets
+- Extracts meaning from messy text
+- Handles synonyms, paraphrases, sarcasm, implicit signals
+- Works well with small labeled datasets
 
 
 ### Classical Machine Learning (e.g., Logistic Regression, RandomForest, XGBoost, SVM)
