@@ -561,6 +561,6 @@ Use hybrid LLM+ML when:
 It is especially powerful for:
 fraud, compliance, support tickets, legal risk, business behavior detection.
 
-If you want, I can also outline how to store the generated LLM features so you don’t repeatedly pay for LLM calls during training (this is a very important production optimization).
+
 
 
