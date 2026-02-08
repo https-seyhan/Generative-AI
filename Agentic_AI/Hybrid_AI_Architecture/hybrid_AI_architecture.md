@@ -124,11 +124,11 @@ LLM structured features	director_changes
 Embeddings	1024 vector
 Metadata	revenue, employees, location
 
-**Step 3 — Train a Multiclass ML Classifier**
+## Train a Multiclass ML Classifier
 
-Now use a traditional classifier:
+### Now use a traditional classifier:
 
-Best choices:
+**Best choices:**
 1) XGBoost (best in practice)
 
 Handles:
