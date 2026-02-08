@@ -3,7 +3,7 @@
 ### LLM (e.g., GPT, Llama, Mistral)
 
 **Strengths**  
-    - Understands language context
+- Understands language context
     - Extracts meaning from messy text
     - Handles synonyms, paraphrases, sarcasm, implicit signals
     - Works well with small labeled datasets
