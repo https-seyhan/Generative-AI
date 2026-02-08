@@ -102,7 +102,7 @@ LLM Output:
 This is the magic step.
 ## Also use embeddings
 
-You should ALSO generate embeddings:
+**ALSO generate embeddings:**
 
 text → embedding vector (768–4096 numbers)
 
@@ -244,8 +244,8 @@ prediction = clf.predict(X_test)
 ```
 9) Important (Most People Miss This)
 
-You should not retrain embeddings frequently.
-Instead you retrain only the classifier.
+Should not retrain embeddings frequently.
+Instead  retrain only the classifier.
 
 The LLM layer is a semantic encoder, not the learner.
 10) When to Use This
@@ -264,7 +264,7 @@ This hybrid approach is ideal when:
 
     risk scoring
 
-    phoenix company detection (your project fits perfectly)
+    phoenix company detection (project fits perfectly)
 
 Final Concept
 
@@ -275,12 +275,6 @@ Think of the system like this:
 
 The LLM acts as an investigator.
 The classifier acts as a court decision.
-
-If you want, I can design a concrete schema for your ASIC/ABN phoenixing detection pipeline — that is almost a textbook application of this architecture.
-
-You said:
-combining llm and machine learning for three class classification
-
 
 y∈{C0,C1,C2}(three mutually exclusive classes)
 y∈{C0​,C1​,C2​}(three mutually exclusive classes)
