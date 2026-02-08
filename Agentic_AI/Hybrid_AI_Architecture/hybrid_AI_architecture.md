@@ -26,7 +26,7 @@
     Explainable (SHAP, feature importance)
 
 
-<b>The core insight</b>
+### The core insight
 
 <b>LLM = feature generator</b>
 
