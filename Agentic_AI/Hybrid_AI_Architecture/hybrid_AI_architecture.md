@@ -23,6 +23,7 @@
 - <b><span class="text-blue">LLM = feature generator</span></b>
 
 - <b><span class="text-blue">ML model = decision maker</span></b>
+- **$$    {\color{blue} LLM = feature generator}    $$**
 
 
 ### The Hybrid Pipeline (Architecture)
