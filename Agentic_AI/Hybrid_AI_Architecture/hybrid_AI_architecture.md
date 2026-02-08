@@ -210,9 +210,9 @@ For a new record:
 
     ML model predicts class
 
-8) Python Skeleton
+Python Skeleton
 Feature generation
-
+```python
 from sentence_transformers import SentenceTransformer
 model = SentenceTransformer('BAAI/bge-large-en')
 
