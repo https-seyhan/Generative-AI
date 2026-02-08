@@ -15,15 +15,11 @@
 
 ### Classical Machine Learning (e.g., Logistic Regression, RandomForest, XGBoost, SVM)
 
-<b>Strengths</b>
-
-    - Stable decision boundary
-
-    - Calibrated probabilities
-
-    - Cheap inference
-
-    - Explainable (SHAP, feature importance)
+**Strengths**  
+- Stable decision boundary  
+- Calibrated probabilities  
+- Cheap inference  
+- Explainable (SHAP, feature importance)
 
 
 ### The core insight
