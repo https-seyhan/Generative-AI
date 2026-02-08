@@ -279,21 +279,13 @@ If you want, I can design a concrete schema for your ASIC/ABN phoenixing detecti
 You said:
 combining llm and machine learning for three class classification
 
-ChatGPT said:
 
-Below is a precise implementation pattern for a 3-class classifier that uses both an LLM and classical ML. I’ll keep it concrete so you could build it without guessing architecture decisions.
-
-We assume:
 y∈{C0,C1,C2}(three mutually exclusive classes)
 y∈{C0​,C1​,C2​}(three mutually exclusive classes)
 
 Example domains:
 
     normal / suspicious / fraud
-
-    positive / neutral / negative
-
-    low / medium / high risk
 
 1. Why you should combine them (the actual technical reason)
 
