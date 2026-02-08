@@ -239,7 +239,7 @@ clf.fit(X_train, y_train)
 
 proba = clf.predict_proba(X_test)
 prediction = clf.predict(X_test)
-
+```          ← ← ← this line (three backticks alone) CLOSES the block
 9) Important (Most People Miss This)
 
 You should not retrain embeddings frequently.
