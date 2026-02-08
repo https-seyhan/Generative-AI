@@ -141,9 +141,9 @@ Handles:
 3) LightGBM
 4) Random Forest
 
-Your training set:
+**Your training set:**
 
-X = [embedding + LLM features + numeric business data  ]
+- X = [embedding + LLM features + numeric business data  ]
 &nbsp; 
 -  y = class (0,1,2)
 
