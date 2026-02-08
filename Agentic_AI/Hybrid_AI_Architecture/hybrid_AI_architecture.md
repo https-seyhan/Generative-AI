@@ -2,15 +2,15 @@
 ## What each component (LLM + Machine Learning) is good at
 ### LLM (e.g., GPT, Llama, Mistral)
 
-<b>Strengths</b>
+**Strengths**  
 
-    Understands language context
+    - Understands language context
 
-    Extracts meaning from messy text
+    - Extracts meaning from messy text
 
-    Handles synonyms, paraphrases, sarcasm, implicit signals
+    - Handles synonyms, paraphrases, sarcasm, implicit signals
 
-    Works well with small labeled datasets
+    - Works well with small labeled datasets
 
 
 ### Classical Machine Learning (e.g., Logistic Regression, RandomForest, XGBoost, SVM)
