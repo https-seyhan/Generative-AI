@@ -46,7 +46,6 @@
 **This architecture is now called:**
 - LLM-assisted tabular classification
 
-### LLM-assisted tabular classification
 #### Use the LLM to create features
 
 You do NOT ask the LLM:
