@@ -97,7 +97,7 @@ LLM Output:
   "legal_red_flags": 3
 }
 
-Now you converted unstructured text → tabular data.
+**Now converted unstructured text → tabular data.**
 
 This is the magic step.
 #### Also use embeddings
