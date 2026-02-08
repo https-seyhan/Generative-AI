@@ -273,11 +273,10 @@ Think of the system like this:
     - The LLM understands the case.
     - The ML model makes the judgement.
 
-The LLM acts as an investigator.
-The classifier acts as a court decision.
+- **The LLM acts as an investigator.**
+- **The classifier acts as a court decision.**
 
 y∈{C0,C1,C2}(three mutually exclusive classes)
-y∈{C0​,C1​,C2​}(three mutually exclusive classes)
 
 Example domains:
 
