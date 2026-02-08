@@ -123,7 +123,8 @@ Feature Type	Example
 LLM structured features	director_changes
 Embeddings	1024 vector
 Metadata	revenue, employees, location
-5) Step 3 — Train a Multiclass ML Classifier
+
+**Step 3 — Train a Multiclass ML Classifier**
 
 Now use a traditional classifier:
 
@@ -131,8 +132,6 @@ Best choices:
 1) XGBoost (best in practice)
 
 Handles:
-
-    tabular
 
     mixed features
 
@@ -185,7 +184,7 @@ Now:
     explainable with SHAP
 
 This is how banks and fraud detection teams are starting to deploy GenAI.
-7) Training Workflow
+**Training Workflow**
 Training Phase
 
     Collect labeled examples
@@ -236,7 +235,7 @@ clf = XGBClassifier(
 
 clf.fit(X_train, y_train)
 
-Prediction
+**Prediction**
 
 proba = clf.predict_proba(X_test)
 prediction = clf.predict(X_test)
