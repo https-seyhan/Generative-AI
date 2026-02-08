@@ -187,21 +187,21 @@ Now:
 
 This is how banks and fraud detection teams are starting to deploy GenAI.
 **Training Workflow**
-Training Phase
+### Training Phase
 
-    Collect labeled examples
+**Collect labeled examples**
 
-    For each text:
+   **For each text:** 
 
-        call LLM → structured features
+        - call LLM → structured features
 
-        create embedding
+        - create embedding
 
-    Combine with numeric variables
+   **Combine with numeric variables**
 
-    Train XGBoost multiclass
+   **Train XGBoost multiclass**
 
-Inference Phase
+## Inference Phase
 
 For a new record:
 
