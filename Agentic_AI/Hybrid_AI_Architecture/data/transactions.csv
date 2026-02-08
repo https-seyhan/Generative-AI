@@ -1,0 +1,7 @@
+id,narrative,amount,customer_age,label
+1,regular salary payment from employer,4200,34,0
+2,multiple transfers just below reporting threshold,9800,52,1
+3,funds received from overseas unrelated parties and withdrawn immediately,9900,21,2
+4,monthly rent payment,1800,40,0
+5,new account receiving rapid deposits from several people,9500,23,2
+6,unusual late night transfers between linked accounts,8700,48,1
