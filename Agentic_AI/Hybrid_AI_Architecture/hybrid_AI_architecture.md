@@ -102,7 +102,7 @@ LLM Output:
 This is the magic step.
 ## Also use embeddings
 
-**ALSO generate embeddings:**
+**generate embeddings:**
 
 text → embedding vector (768–4096 numbers)
 
@@ -152,7 +152,7 @@ Handles:
 - The LLM converts meaning → signals
 - The ML model converts signals → decisions
 
-## Why this outperforms pure LLM classification
+### Why this outperforms pure LLM classification
 
 Direct prompting classification:
 
@@ -201,7 +201,7 @@ This is how banks and fraud detection teams are starting to deploy GenAI.
 
    **Train XGBoost multiclass**
 
-## Inference Phase
+## Inference Phase / Classification
 
 For a new record:
 
