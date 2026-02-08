@@ -21,7 +21,7 @@
 ### The core insight
 
 - **$${\color{blue} LLM = feature \ generator}    $$**
-- **$${\color{blue} LLM = ML\ model = decision \ maker\ Classification}    $$**
+- **$${\color{blue} LLM = ML\ model = decision \ maker\ '\'Classification}    $$**
 
 
 
