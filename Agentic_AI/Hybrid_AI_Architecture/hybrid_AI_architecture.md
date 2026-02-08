@@ -102,7 +102,7 @@ LLM Output:
 Now you converted unstructured text → tabular data.
 
 This is the magic step.
-#### Step 2 — Also use embeddings
+#### Also use embeddings
 
 You should ALSO generate embeddings:
 
