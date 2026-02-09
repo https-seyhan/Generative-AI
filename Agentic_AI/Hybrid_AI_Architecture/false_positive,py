@@ -1,0 +1,277 @@
+In practice, most AML systems fail not because models are weak, but because the decision policy wrapped around the model is wrong.
+
+You are not really building a classifier.
+
+You are building a risk-routing system.
+
+In a 3-class setup:
+
+Class	Operational Meaning
+0	Normal — no analyst
+1	Review — analyst queue
+2	Escalate — SAR/STR candidate
+
+False positives are NOT “model mistakes”.
+They are misrouted cases — low-risk behaviour being sent to the analyst queue or SAR queue.
+
+Below is the practical playbook banks use.
+
+1) Stop Using Argmax (the #1 cause of alert explosions)
+
+Most people classify like this:
+
+prediction = model.predict(X)  # argmax
+
+
+This is wrong for AML.
+
+Why?
+
+Because the model is forced to pick a class even when uncertainty is high.
+Financial crime data is extremely noisy and imbalanced → uncertainty is normal.
+
+Instead use probabilities.
+
+probs = model.predict_proba(X)
+p_normal, p_review, p_escalate = probs
+
+
+We route, not classify.
+
+2) Dual-Threshold Routing (The Most Important Fix)
+
+Instead of one decision boundary, use two risk cutoffs.
+
+Escalate if:  P(escalate) ≥ 0.70
+Review   if:  0.30 ≤ P(escalate) < 0.70
+Normal   if:  P(escalate) < 0.30
+
+
+Why it reduces false positives:
+
+A binary model forces uncertain behaviour into “suspicious”.
+The middle band absorbs ambiguity → analyst sees fewer junk alerts.
+
+In real deployments this single change cuts alerts 40–60%.
+
+3) Probability Calibration (Almost Nobody Does This — Critical)
+
+Raw ML probabilities are not probabilities.
+
+Gradient boosting, RF, XGBoost all produce scores, not calibrated risk.
+
+Without calibration:
+
+model says 0.92 → real chance = maybe 0.18
+
+
+That is exactly why AML teams drown in alerts.
+
+Fix
+
+Use isotonic regression or Platt scaling.
+
+from sklearn.calibration import CalibratedClassifierCV
+
+calibrated_model = CalibratedClassifierCV(model, method="isotonic", cv=5)
+calibrated_model.fit(X_train, y_train)
+
+
+Now:
+
+P(escalate)=0.70 ≈ 70% real-world likelihood
+
+
+This is the single biggest false-positive reducer after thresholds.
+
+4) Cost-Sensitive Training (You trained the wrong objective)
+
+Typical ML optimizes:
+
+accuracy
+
+AML needs:
+
+analyst workload minimization subject to catching true crime
+
+Define a cost matrix:
+
+True / Pred	Normal	Review	Escalate
+Normal	0	2	12
+Review	4	0	6
+Crime	25	6	0
+
+Then train with class weights:
+
+class_weights = {0:1, 1:4, 2:12}
+
+model = LGBMClassifier(
+    class_weight=class_weights,
+    n_estimators=400,
+    num_leaves=64
+)
+
+
+You are teaching the model:
+
+A false SAR is expensive.
+
+5) Behaviour Aggregation (Transaction-level models create false positives)
+
+Most AML systems score transactions.
+
+Criminals operate on behaviour patterns.
+
+False positive example:
+
+one $9,800 cash deposit → flagged
+
+but customer makes this quarterly (tax payment)
+
+The fix:
+
+Score customers over a time window
+
+Create features:
+
+7_day_cash_velocity
+30_day_counterparty_entropy
+structuring_index
+round_amount_ratio
+night_activity_ratio
+geo_dispersion
+
+
+Now the model sees behaviour, not events.
+
+False positives drop dramatically.
+
+6) Use LLM as a Behaviour Extractor (Not as a Decision Maker)
+
+This is where LLM + ML works.
+
+Do NOT ask:
+
+“Is this suspicious?”
+
+Instead ask the LLM to produce structured signals:
+
+Example output:
+
+structuring_score: 0.82
+mule_account_probability: 0.71
+circular_transactions: 0.65
+velocity_anomaly: 0.44
+narrative: "Multiple small deposits across different ATMs followed by rapid outgoing transfers to a new beneficiary."
+
+
+Convert to features:
+
+X = [
+ structuring_score,
+ mule_probability,
+ circularity,
+ velocity,
+ network_degree,
+ transaction_stats
+]
+
+
+Then ML decides.
+
+LLM provides context → ML provides calibration.
+
+This alone removes many rule-based alerts.
+
+7) Introduce a “No-Alert Zone” (Highly Effective)
+
+Add a hard suppression rule:
+
+IF
+  P(escalate) < 0.20
+  AND customer_age > 2 years
+  AND KYC risk = low
+  AND no sanctions hit
+THEN suppress alert
+
+
+Banks call this policy overlay or risk overlay.
+
+This removes legacy customer noise — a massive source of false positives.
+
+8) Threshold Optimisation Using Analyst Capacity
+
+You should NOT choose thresholds manually.
+
+Choose them using operations:
+
+Let:
+
+Analysts can review 120 cases/day
+
+You receive 25,000 customers/day
+
+Select threshold so:
+
+# of Review alerts ≈ analyst capacity
+
+
+Procedure:
+
+Sort by P(escalate)
+
+Simulate different thresholds
+
+Choose threshold where queue size = capacity
+
+This converts ML into a controlled workflow system.
+
+9) Feedback Learning (Most Important Long-Term)
+
+Use analyst decisions as labels:
+
+Analyst decision	Label
+cleared	Normal
+suspicious	Review
+SAR filed	Escalate
+
+Retrain monthly.
+
+False positives drop every cycle because the model learns investigator judgement — not just historical SARs.
+
+What Actually Causes False Positives in AML
+
+Almost always:
+
+• uncalibrated probabilities
+• binary thinking
+• transaction-level scoring
+• missing behavioural context
+• wrong thresholds
+• rule engines mixed with ML
+
+Not the algorithm.
+
+The Correct Architecture
+Transactions
+   ↓
+Feature Engineering
+   ↓
+LLM Behaviour Extraction
+   ↓
+Customer Behaviour Profile
+   ↓
+Calibrated ML Model
+   ↓
+Risk Routing (3-class thresholds)
+   ↓
+Analyst Queue Control
+
+
+When implemented properly, institutions typically see:
+
+50–80% alert reduction
+
+improved SAR quality
+
+regulators happier (because decisions become explainable)
