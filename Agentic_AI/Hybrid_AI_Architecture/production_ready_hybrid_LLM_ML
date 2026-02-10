@@ -1,0 +1,290 @@
+Below is a production-style bridge module that sits between your LLM and your ML classifier.
+
+Its job:
+
+LLM narrative  →  validated signals  →  feature vector  →  calibrated classifier  →  3-class decision
+
+
+Classes you requested:
+
+Class	Meaning
+decline	normal activity (no action)
+unclear	send to analyst
+escalate	potential SAR/STR
+
+We will not trust the LLM decision.
+We only trust signals extracted from the explanation.
+
+1) What the LLM must output (contract)
+
+Your LLM should produce structured text like:
+
+structuring_score: 0.82
+mule_account_probability: 0.71
+circular_transactions: 0.65
+velocity_anomaly: 0.44
+narrative: "Multiple small deposits across different ATMs followed by rapid outgoing transfers to a new beneficiary."
+
+
+Important:
+This is NOT classification.
+This is a behavioural description layer.
+
+The model you train later will decide the class.
+
+2) Project structure
+fincrime_monitoring/
+│
+├── parser/
+│   └── llm_signal_parser.py
+│
+├── features/
+│   └── feature_builder.py
+│
+├── model/
+│   ├── train_classifier.py
+│   └── predict_case.py
+│
+└── data/
+    └── training_cases.csv
+
+3) LLM Signal Parser (regex + schema validation)
+
+Create:
+
+parser/llm_signal_parser.py
+
+import re
+from dataclasses import dataclass
+
+# ---------- Schema ----------
+@dataclass
+class BehavioralSignals:
+    structuring_score: float
+    mule_account_probability: float
+    circular_transactions: float
+    velocity_anomaly: float
+    narrative: str
+
+# ---------- Validation ----------
+def validate_range(value, name):
+    if not 0 <= value <= 1:
+        raise ValueError(f"{name} must be between 0 and 1")
+    return value
+
+# ---------- Regex Extraction ----------
+def parse_llm_output(text: str) -> BehavioralSignals:
+    def extract_float(label):
+        match = re.search(rf"{label}\s*:\s*([0-9]*\.?[0-9]+)", text, re.IGNORECASE)
+        if not match:
+            raise ValueError(f"Missing field: {label}")
+        return float(match.group(1))
+
+    structuring = validate_range(extract_float("structuring_score"), "structuring_score")
+    mule = validate_range(extract_float("mule_account_probability"), "mule_account_probability")
+    circular = validate_range(extract_float("circular_transactions"), "circular_transactions")
+    velocity = validate_range(extract_float("velocity_anomaly"), "velocity_anomaly")
+
+    narrative_match = re.search(r'narrative\s*:\s*"(.*?)"', text, re.IGNORECASE | re.DOTALL)
+    if not narrative_match:
+        raise ValueError("Narrative not found")
+
+    narrative = narrative_match.group(1)
+
+    return BehavioralSignals(structuring, mule, circular, velocity, narrative)
+
+
+What this does:
+
+Rejects malformed LLM responses
+
+Enforces 0–1 scale
+
+Prevents prompt-hallucination from entering your model
+
+This is model governance (very important for audit).
+
+4) Feature Builder
+
+Create:
+
+features/feature_builder.py
+
+import numpy as np
+from parser.llm_signal_parser import BehavioralSignals
+
+def build_feature_vector(signals: BehavioralSignals, financial_features: dict):
+    """
+    Combine LLM behavioural signals with banking statistics
+    """
+
+    behavioral = np.array([
+        signals.structuring_score,
+        signals.mule_account_probability,
+        signals.circular_transactions,
+        signals.velocity_anomaly
+    ])
+
+    numeric = np.array([
+        financial_features["txn_count_7d"],
+        financial_features["avg_amount"],
+        financial_features["cash_ratio"],
+        financial_features["unique_counterparties"],
+        financial_features["account_age_days"],
+        financial_features["kyc_risk_score"],
+        financial_features["night_txn_ratio"]
+    ])
+
+    return np.concatenate([behavioral, numeric]).reshape(1, -1)
+
+
+This is the fusion layer (LLM + classical AML features).
+
+5) Train the 3-Class Classifier
+
+Create:
+
+model/train_classifier.py
+
+import pandas as pd
+from lightgbm import LGBMClassifier
+from sklearn.calibration import CalibratedClassifierCV
+import joblib
+
+# load training data
+df = pd.read_csv("../data/training_cases.csv")
+
+X = df.drop(columns=["label"])
+y = df["label"]   # 0 decline, 1 unclear, 2 escalate
+
+# cost sensitive learning (reduces false positives)
+class_weights = {0:1, 1:4, 2:10}
+
+base_model = LGBMClassifier(
+    n_estimators=400,
+    num_leaves=64,
+    class_weight=class_weights
+)
+
+# probability calibration (critical)
+model = CalibratedClassifierCV(base_model, method="isotonic", cv=5)
+model.fit(X, y)
+
+joblib.dump(model, "aml_classifier.pkl")
+print("Model trained and saved.")
+
+
+Why calibration matters:
+Without it → probabilities are wrong → thresholds meaningless → false positives explode.
+
+6) Prediction + Decision Routing
+
+Create:
+
+model/predict_case.py
+
+import joblib
+from parser.llm_signal_parser import parse_llm_output
+from features.feature_builder import build_feature_vector
+
+# load model
+model = joblib.load("aml_classifier.pkl")
+
+# ---- Example LLM output ----
+llm_text = """
+structuring_score: 0.82
+mule_account_probability: 0.71
+circular_transactions: 0.65
+velocity_anomaly: 0.44
+narrative: "Multiple small deposits across different ATMs followed by rapid outgoing transfers to a new beneficiary."
+"""
+
+signals = parse_llm_output(llm_text)
+
+# example banking stats
+financial_features = {
+    "txn_count_7d": 42,
+    "avg_amount": 1850,
+    "cash_ratio": 0.63,
+    "unique_counterparties": 12,
+    "account_age_days": 95,
+    "kyc_risk_score": 0.55,
+    "night_txn_ratio": 0.28
+}
+
+X = build_feature_vector(signals, financial_features)
+
+probs = model.predict_proba(X)[0]
+p_decline, p_unclear, p_escalate = probs
+
+# routing thresholds
+if p_escalate >= 0.70:
+    decision = "ESCALATE"
+elif p_escalate >= 0.30:
+    decision = "UNCLEAR (Human Review)"
+else:
+    decision = "DECLINE"
+
+print("Decision:", decision)
+print("Probabilities:", probs)
+
+7) How the “signal” is created (conceptually)
+
+The LLM is performing semantic typology detection.
+
+It reads transactions and internally recognizes patterns such as:
+
+Behaviour	Criminal Stage
+small repeated deposits	placement / structuring
+new beneficiary transfer	mule transfer
+looping transfers	layering
+rapid movement	velocity laundering
+
+The model converts language → quantitative indicators.
+
+So instead of the classifier learning from raw transactions:
+
+old AML:
+transactions → ML → alert (no context)
+
+new AML:
+transactions → LLM behaviour → ML probability → routed case
+
+
+You are giving the model intent awareness.
+
+Why this dramatically reduces false positives
+
+Rules trigger on events
+ML alone triggers on statistics
+LLM + ML triggers on behavioural evidence
+
+An innocent customer:
+
+may have a large transaction
+
+may have many transfers
+
+But they rarely have a coherent laundering narrative.
+
+The LLM encodes that narrative into features.
+The calibrated classifier then makes a controlled decision.
+
+What regulators like about this design
+
+Because you can show:
+
+• numeric risk score
+• behavioural explanation
+• consistent thresholds
+• audit trail
+
+You are no longer saying:
+
+“the model thinks it’s suspicious”
+
+You are saying:
+
+“The system observed structuring and layering indicators, producing a calibrated 0.78 laundering probability under policy threshold 0.70.”
+
+That is defensible.
