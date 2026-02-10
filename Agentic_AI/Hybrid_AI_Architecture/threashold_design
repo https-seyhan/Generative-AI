@@ -1,0 +1,328 @@
+Now we get to the part that actually makes or breaks an AML system.
+
+You do not “pick” thresholds.
+You derive them from expected loss + analyst capacity + regulatory tolerance.
+
+The thresholds are the control mechanism that converts a probability model into an operational surveillance program.
+
+We will do this properly (the way large banks and model-risk committees approve).
+
+Step 0 — What you already have
+
+Your classifier outputs a calibrated probability:
+
+p=P(financial crime)
+p=P(financial crime)
+
+For every customer or case you now have:
+
+0.01
+0.07
+0.18
+0.34
+0.52
+0.81
+
+
+Your job is to convert p → action
+
+Action	Class
+decline	ignore
+unclear	analyst review
+escalate	SAR/STR candidate
+
+You need two thresholds:
+
+Treview,  Tescalate
+T
+review
+	​
+
+,T
+escalate
+	​
+
+Step 1 — Define the real costs (this is the missing piece in most projects)
+
+AML is not a prediction problem.
+It is a risk economics problem.
+
+You must assign operational costs.
+
+Example realistic cost model:
+
+Event	Meaning	Approx cost
+Analyst review	manual investigation	$40–$120
+False escalation	unnecessary SAR	$300–$1500
+Missed laundering	regulatory + reputational	$50,000–$5M
+
+(Exact values don’t matter — ratios matter.)
+
+We define:
+
+C_review
+C_false_escalate
+C_missed_crime
+
+Step 2 — Expected loss for each decision
+
+For a case with probability p:
+
+If you DECLINE
+
+You risk missing crime.
+
+Lossdecline=p×Cmissed_crime
+Loss
+decline
+	​
+
+=p×C
+missed_crime
+	​
+
+If you REVIEW
+
+You always pay analyst cost.
+
+Lossreview=Creview
+Loss
+review
+	​
+
+=C
+review
+	​
+
+If you ESCALATE
+
+If innocent → wasted SAR.
+
+Lossescalate=(1−p)×Cfalse_escalate
+Loss
+escalate
+	​
+
+=(1−p)×C
+false_escalate
+	​
+
+Step 3 — Derive the thresholds mathematically
+
+You choose the action with lowest expected loss.
+
+Review threshold 
+Treview
+T
+review
+	​
+
+
+Review becomes better than Decline when:
+
+Creview<p⋅Cmissed_crime
+C
+review
+	​
+
+<p⋅C
+missed_crime
+	​
+
+p>CreviewCmissed_crime
+p>
+C
+missed_crime
+	​
+
+C
+review
+	​
+
+	​
+
+
+So:
+
+Treview=CreviewCmissed_crime
+T
+review
+	​
+
+=
+C
+missed_crime
+	​
+
+C
+review
+	​
+
+	​
+
+Escalation threshold 
+Tescalate
+T
+escalate
+	​
+
+
+Escalate becomes better than Review when:
+
+(1−p)⋅Cfalse_escalate<Creview
+(1−p)⋅C
+false_escalate
+	​
+
+<C
+review
+	​
+
+p>1−CreviewCfalse_escalate
+p>1−
+C
+false_escalate
+	​
+
+C
+review
+	​
+
+	​
+
+
+So:
+
+Tescalate=1−CreviewCfalse_escalate
+T
+escalate
+	​
+
+=1−
+C
+false_escalate
+	​
+
+C
+review
+	​
+
+	​
+
+Step 4 — Example numbers
+
+Assume:
+
+C_review = 80
+C_false_escalate = 800
+C_missed_crime = 80,000
+
+Review threshold
+Treview=80/80,000=0.001
+T
+review
+	​
+
+=80/80,000=0.001
+
+(very low — meaning even tiny risk deserves a look in theory)
+
+But operational capacity will override this (next step).
+
+Escalate threshold
+Tescalate=1−80/800=0.90
+T
+escalate
+	​
+
+=1−80/800=0.90
+
+Meaning:
+Only very strong evidence justifies SAR filing.
+
+This is why escalation thresholds are always high.
+
+Step 5 — Capacity constraint (the real-world adjustment)
+
+Mathematics alone floods analysts.
+
+So we apply queue control.
+
+Procedure:
+
+Score 6–12 months historical customers
+
+Sort by probability (highest → lowest)
+
+Simulate thresholds
+
+Find probability where:
+
+review alerts per day ≈ analyst team capacity
+
+
+Example:
+
+Threshold	Alerts/day
+0.20	3200
+0.30	1100
+0.40	620
+0.45	480
+
+If analysts can handle 500/day:
+
+Treview≈0.45
+T
+review
+	​
+
+≈0.45
+
+Now you have an operationally feasible system.
+
+Step 6 — Validate with PR curve (critical)
+
+You now verify:
+
+At chosen thresholds measure:
+
+Metric	Why
+Precision	SAR quality
+Recall	crimes detected
+False positive rate	workload
+
+If precision collapses → escalation threshold too low
+If recall collapses → escalation threshold too high
+
+Step 7 — Final policy
+
+You will end with something like:
+
+p < 0.45          → Decline
+0.45 ≤ p < 0.82   → Human review
+p ≥ 0.82          → Escalate
+
+
+These numbers are derived, not guessed.
+
+Why regulators like this
+
+Because you can defend:
+
+thresholds based on economic reasoning
+
+aligned with investigative capacity
+
+consistent treatment of customers
+
+documented model governance
+
+You are no longer saying:
+
+“We chose 0.5 because that’s standard.”
+
+You are saying:
+
+“We selected thresholds via expected-loss minimisation and operational capacity simulation.”
+
+That is exactly the language model risk and compliance committees expect.
