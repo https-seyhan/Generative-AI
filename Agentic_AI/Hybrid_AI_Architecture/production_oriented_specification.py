@@ -1,4 +1,4 @@
-Below is a **production-oriented specification** you can implement immediately.
+**production-oriented specification** you can implement immediately.
 The goal is: the LLM never makes the decision — it produces *auditable behavioural evidence* that becomes ML features.
 
 We will define three artifacts:
