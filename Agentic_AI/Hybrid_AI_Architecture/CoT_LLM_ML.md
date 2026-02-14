@@ -6,7 +6,7 @@ Instead of:
 
 “Is this transaction suspicious?”
 
-you ask:
+Instead ask:
 
 “Analyze the evidence step-by-step, evaluate indicators, then conclude.”
 
