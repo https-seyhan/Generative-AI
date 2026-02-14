@@ -22,7 +22,7 @@ CoT forces:
 
 token-level decomposition → intermediate representations → higher accuracy classification
 
-2) Why CoT works (mechanism)
+## 2) Why CoT works (mechanism)
 
 Important point:
 
