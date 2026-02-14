@@ -24,7 +24,7 @@ token-level decomposition → intermediate representations → higher accuracy c
 
 ## 2) Why CoT works (mechanism)
 
-Important point:
+#### Important point:
 
 LLMs do not “think”.
 
