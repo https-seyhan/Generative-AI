@@ -1,4 +1,4 @@
-1) What Chain-of-Thought Prompting is
+## 1) What Chain-of-Thought Prompting is
 
 Chain-of-Thought prompting is a reasoning scaffolding technique where the model is instructed to explicitly generate intermediate reasoning steps before giving a final answer.
 
