@@ -99,9 +99,8 @@ from openai import OpenAI
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# -------------------------
 # Prompt Template
-# -------------------------
+
 
 SYSTEM_PROMPT = """
 You are a financial investigations analyst.
@@ -120,9 +119,8 @@ Return ONLY JSON:
 }
 """
 
-# -------------------------
+
 # Investigator Function
-# -------------------------
 
 def investigate_case(case_text):
 
