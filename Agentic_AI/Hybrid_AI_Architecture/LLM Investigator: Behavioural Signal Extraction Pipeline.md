@@ -91,7 +91,7 @@ This instruction (CoT) is extremely important because:
 - Forcing reasoning → evidence → structured output.
 
 ## 4. Python Implementation
-
+```python
 
 import json
 import os
@@ -144,5 +144,5 @@ def investigate_case(case_text):
         raise ValueError("LLM returned non-JSON output")
 
     return signals
-
+```
 
