@@ -187,3 +187,19 @@ Average minutes between transfers: {row['avg_interval']}
 Repeated identical amounts: {row['repeated_amounts']}
 """
 ```
+**Then:**
+```python
+signals = investigate_case(build_case_text(row))
+```
+
+**The Output of above code:**
+```python
+{
+ "structuring_score": 0.82,
+ "mule_account_probability": 0.71,
+ "velocity_anomaly": 0.44,
+ "circular_transactions": 0.65
+}
+```
+
+This is exactly what your LightGBM model needs.
