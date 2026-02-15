@@ -85,7 +85,7 @@ Extract risk indicators from the text. Return JSON with fields:
 
     abnormal_activity_score (0–1)
 
-    legal_red_flags (count)”
+    legal_red_flags (count)
 
 LLM Output:
 
