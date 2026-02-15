@@ -1,4 +1,6 @@
 
+
+## how to code  Investigator → structured risk signals
 This is the core engineering problem of the whole architecture.
 
 How does the “LLM investigator” turn messy case information into numeric behavioural signals that an ML model can consume?
