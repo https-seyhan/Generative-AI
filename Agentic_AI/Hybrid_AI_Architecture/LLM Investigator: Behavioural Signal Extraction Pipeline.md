@@ -35,7 +35,7 @@ Define a strict schema.
 
         This is your feature contract with ML.
 
-Example:
+**Example:**
 ```python
         {
           "structuring_score": 0.0-1.0,
