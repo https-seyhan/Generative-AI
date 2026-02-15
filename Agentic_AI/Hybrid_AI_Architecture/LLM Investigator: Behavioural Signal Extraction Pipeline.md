@@ -29,10 +29,10 @@ It is a **cognitive feature extractor**:
 
 Define a strict schema.
 
-2. The Risk Signal Schema (Contract)
+### 2. The Risk Signal Schema (Contract)
 
-The LLM must always return the same structure.
+        The LLM must always return the same structure.
 
-This is your feature contract with ML.
+        This is your feature contract with ML.
 
-Example:
+        Example:
