@@ -90,7 +90,7 @@ This instruction (CoT) is extremely important because:
 
 - Forcing reasoning → evidence → structured output.
 
-## 4. Python Implementation
+## 4. Python Implementation (investigator_llm.py)
 ```python
 
 import json
