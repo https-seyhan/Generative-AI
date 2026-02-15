@@ -7,7 +7,7 @@ How does the “LLM investigator” turn messy case information into numeric beh
 
 It is a **cognitive feature extractor**:
 
-        **unstructured narrative + events**
+**unstructured narrative + events**
 
         behavioural analysis
         
