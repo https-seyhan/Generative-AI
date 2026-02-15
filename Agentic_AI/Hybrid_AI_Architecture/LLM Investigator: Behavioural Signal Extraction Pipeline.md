@@ -228,19 +228,19 @@ X = [0.82, 0.71, 0.44, 0.65]
 
 You have separated cognition from statistics.
 
-LLM:
-
+**LLM:**
+```python
 pattern recognition + behavioural understanding
+```
 
-
-ML:
-
+**ML:**
+```python
 probability estimation
-
+```
 
 The LLM does something classical feature engineering cannot do:
 
-It interprets intent-like behaviour from messy evidence.
+It **interprets intent-like behaviour** from messy evidence.
 
 The ML model then learns how much each behavioural pattern actually matters in real outcomes.
 
