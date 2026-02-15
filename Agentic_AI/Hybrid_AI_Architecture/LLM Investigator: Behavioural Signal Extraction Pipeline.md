@@ -248,13 +248,13 @@ The ML model then learns how much each behavioural pattern actually matters in r
 
 **This investigator is equivalent to a junior analyst writing case notes, except:**
 
-consistent
+- consistent
 
-fast
+- fast
 
-structured
+- structured
 
-measurable
+- measurable
 
 You did not automate decisions.
 
