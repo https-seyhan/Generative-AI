@@ -52,7 +52,7 @@ The LLM does NOT judge.
 it's role: <b>financial investigator.</b>
 
 Investigator prompt you should be:
-
+```writing
 You are a financial investigations analyst.
 
 Your task is NOT to decide if the case should be escalated.
@@ -83,3 +83,4 @@ Return ONLY valid JSON using this schema:
 "justification": "max 80 words"
 }
 
+```
