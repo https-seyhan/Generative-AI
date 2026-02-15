@@ -88,7 +88,27 @@ Return ONLY valid JSON using this schema:
 
 This instruction (CoT) is extremely important because:
 
-- It prevents the LLM from making the operational decision.
+- It prevents the LLM from making the operational decision.5. Feeding Real Case Data
+
+You convert transactions into a narrative summary.
+
+Example:
+
+def build_case_text(row):
+    return f"""
+Customer executed {row['tx_count']} transactions.
+
+Average amount: ${row['avg_amount']}
+
+Largest transaction: ${row['max_amount']}
+
+Unique counterparties: {row['counterparties']}
+
+Average minutes between transfers: {row['avg_interval']}
+
+Repeated identical amounts: {row['repeated_amounts']}
+"""
+
 
 - Forcing reasoning → evidence → structured output.
 
@@ -145,4 +165,25 @@ def investigate_case(case_text):
 
     return signals
 ```
+### 5. Feeding Real Case Data
 
+<b>Convert transactions into a narrative summary.</b>
+
+Example:
+
+```python
+def build_case_text(row):
+    return f"""
+Customer executed {row['tx_count']} transactions.
+
+Average amount: ${row['avg_amount']}
+
+Largest transaction: ${row['max_amount']}
+
+Unique counterparties: {row['counterparties']}
+
+Average minutes between transfers: {row['avg_interval']}
+
+Repeated identical amounts: {row['repeated_amounts']}
+"""
+```
