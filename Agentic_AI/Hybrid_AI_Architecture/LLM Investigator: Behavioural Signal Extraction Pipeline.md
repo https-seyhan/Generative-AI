@@ -38,10 +38,10 @@ Define a strict schema.
         Example:
         ```python
         {
-  "structuring_score": 0.0-1.0,
-  "mule_account_probability": 0.0-1.0,
-  "velocity_anomaly": 0.0-1.0,
-  "circular_transactions": 0.0-1.0,
-  "justification": "short explanation"
+          "structuring_score": 0.0-1.0,
+          "mule_account_probability": 0.0-1.0,
+          "velocity_anomaly": 0.0-1.0,
+          "circular_transactions": 0.0-1.0,
+          "justification": "short explanation"
 }
 
