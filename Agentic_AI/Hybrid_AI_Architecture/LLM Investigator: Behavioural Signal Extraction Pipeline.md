@@ -112,7 +112,7 @@ Repeated identical amounts: {row['repeated_amounts']}
 
 - Forcing reasoning → evidence → structured output.
 
-## 4. Python Implementation (investigator_llm.py)
+### 4. Python Implementation (investigator_llm.py)
 ```python
 
 import json
