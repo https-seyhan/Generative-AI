@@ -7,6 +7,9 @@ This step is not classification and not prompting for a label.
 
 It is a controlled conversion:
 **unstructured narrative + events**
+
         behavioural analysis
+        
         structured schema
+        
         numeric features
