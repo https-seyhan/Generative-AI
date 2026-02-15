@@ -38,7 +38,7 @@ token-level decomposition → intermediate representations → higher accuracy c
 Input → embedding → nearest statistical pattern → answer
 
 
-With CoT:
+<b>With CoT:</b>
 
 Input → feature extraction → hypothesis formation → evidence evaluation → conclusion
 
@@ -55,8 +55,8 @@ This is exactly why it dramatically improves:
 
 (Your phoenixing detection pipeline is a textbook CoT use-case.)
 
-3) The four main CoT prompt styles
-1. Zero-shot CoT
+## 3) The four main CoT prompt styles
+#### 1. Zero-shot CoT
 
 You simply add:
 
@@ -70,7 +70,7 @@ Example:
 Determine whether the director activity indicates phoenixing behaviour.
 Think step by step before concluding.
 
-2. Structured CoT ← what you actually want
+#### 2. Structured CoT ← what you actually want
 
 You define the reasoning framework the model must follow.
 
