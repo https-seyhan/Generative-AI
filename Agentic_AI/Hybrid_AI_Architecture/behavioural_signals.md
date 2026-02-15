@@ -6,7 +6,7 @@
 **So the origin chain is:**
 
 	Global crime patterns
-&nbsp; 
+	&nbsp; 
     ↓
 	&nbsp; 
 	Regulators & FIUs publish typologies
