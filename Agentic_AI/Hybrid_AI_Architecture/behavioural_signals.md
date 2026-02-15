@@ -1,4 +1,4 @@
-<b>Those behavioural signals are not invented by the LLM and not decided by a data scientist alone.</b>
+<b> Behavioural signals are not invented by the LLM and not decided by a data scientist alone.</b>
 
 In a real financial-crime system they come from regulatory typologies → investigator expertise → data engineering → model features.
 
