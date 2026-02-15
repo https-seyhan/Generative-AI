@@ -82,7 +82,6 @@ Return ONLY valid JSON using this schema:
 "circular_transactions": float(0-1),
 "justification": "max 80 words"
 }
-
 ```
 
 This instruction (CoT) is extremely important because:
