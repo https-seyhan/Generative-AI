@@ -45,3 +45,10 @@ Define a strict schema.
           "justification": "short explanation"
         }
 ```
+### 3. Prompt Engineering (This Is the Critical Part)
+
+The LLM soes not judge.
+
+it's role: financial investigator.
+
+Here is the actual investigator prompt you should code.
