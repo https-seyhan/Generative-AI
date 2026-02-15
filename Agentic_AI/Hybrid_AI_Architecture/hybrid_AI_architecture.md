@@ -75,7 +75,7 @@ You prompt the LLM to output structured signals:
 
 **Example prompt:**
 
-“Extract risk indicators from the text. Return JSON with fields:
+Extract risk indicators from the text. Return JSON with fields:
 
     director_changes
 
