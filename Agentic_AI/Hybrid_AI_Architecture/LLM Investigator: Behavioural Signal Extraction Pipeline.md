@@ -92,8 +92,8 @@ This instruction (CoT) is extremely important because:
 
 You convert transactions into a narrative summary.
 
-Example:
-
+**Example:**
+```python
 def build_case_text(row):
     return f"""
 Customer executed {row['tx_count']} transactions.
@@ -108,7 +108,7 @@ Average minutes between transfers: {row['avg_interval']}
 
 Repeated identical amounts: {row['repeated_amounts']}
 """
-
+```
 
 - Forcing reasoning → evidence → structured output.
 
