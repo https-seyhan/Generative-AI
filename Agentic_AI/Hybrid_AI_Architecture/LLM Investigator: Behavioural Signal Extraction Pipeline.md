@@ -169,7 +169,7 @@ def investigate_case(case_text):
 
 <b>Convert transactions into a narrative summary.</b>
 
-Example:
+**Example:**
 
 ```python
 def build_case_text(row):
