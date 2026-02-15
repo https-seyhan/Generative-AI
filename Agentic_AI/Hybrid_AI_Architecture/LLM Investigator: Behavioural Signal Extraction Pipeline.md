@@ -201,5 +201,5 @@ signals = investigate_case(build_case_text(row))
  "circular_transactions": 0.65
 }
 ```
-- **$${\color{blue} This is exactly what your LightGBM model needs.}    $$**
+- **$${\color{blue} This \ is \ exactly \ what \ is \ LightGBM \ model \ needs.}    $$**
 
