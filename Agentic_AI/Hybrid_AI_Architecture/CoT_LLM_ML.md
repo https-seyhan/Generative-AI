@@ -26,12 +26,12 @@ token-level decomposition → intermediate representations → higher accuracy c
 
 #### Important point:
 
-LLMs do not “think”.
+- LLMs do not “think”.
 
-They perform probabilistic next-token selection conditioned on context.
+- They perform probabilistic next-token selection conditioned on context.
 
-However, reasoning tasks require stateful inference.
-CoT creates artificial state.
+- However, reasoning tasks require stateful inference.
+- CoT creates artificial state.
 
 Without CoT:
 
