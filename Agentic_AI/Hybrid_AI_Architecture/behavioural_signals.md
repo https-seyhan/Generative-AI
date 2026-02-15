@@ -8,7 +8,7 @@
 	Global crime patterns
 &nbsp; 
     ↓
-&nbsp; 
+	&nbsp; 
 Regulators & FIUs publish typologies
     ↓
 AML investigators interpret them
