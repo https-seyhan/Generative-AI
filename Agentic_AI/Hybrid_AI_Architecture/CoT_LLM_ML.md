@@ -33,7 +33,7 @@ token-level decomposition → intermediate representations → higher accuracy c
 - Reasoning tasks require stateful inference.
 - CoT creates artificial state.
 
-Without CoT:
+<b>Without CoT:</b>
 
 Input → embedding → nearest statistical pattern → answer
 
