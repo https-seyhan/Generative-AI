@@ -6,9 +6,7 @@
 **So the origin chain is:**
 
 	Global crime patterns
- 
     ↓
-
 	Regulators & FIUs publish typologies
     ↓
 	AML investigators interpret them
