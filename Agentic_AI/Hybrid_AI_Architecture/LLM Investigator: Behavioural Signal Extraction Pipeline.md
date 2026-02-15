@@ -244,9 +244,9 @@ It **interprets intent-like behaviour** from messy evidence.
 
 The ML model then learns how much each behavioural pattern actually matters in real outcomes.
 
-What You Just Implemented
+## What You Just Implemented
 
-This investigator is equivalent to a junior analyst writing case notes, except:
+**This investigator is equivalent to a junior analyst writing case notes, except:**
 
 consistent
 
