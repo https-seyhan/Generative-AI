@@ -47,8 +47,8 @@ Define a strict schema.
 ```
 ### 3. Prompt Engineering (This Is the Critical Part)
 
-The LLM soes not judge.
+The LLM does NOT judge.
 
-it's role: financial investigator.
+it's role: <b>financial investigator.</b>
 
-Here is the actual investigator prompt you should code.
+Investigator prompt you should code.
