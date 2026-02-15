@@ -14,3 +14,25 @@ It is a **cognitive feature extractor**:
         -         structured schema
         
         -         numeric features
+
+### 1. First Principle (Important)
+
+        Do NOT prompt the LLM like this:
+
+                “Is this suspicious? yes/no”
+
+        That destroys calibration and creates false positives.
+
+Instead you force the LLM to behave like an analyst writing investigation notes.
+
+The LLM must output signals, not a decision.
+
+So we define a strict schema.
+
+2. The Risk Signal Schema (Contract)
+
+The LLM must always return the same structure.
+
+This is your feature contract with ML.
+
+Example:
