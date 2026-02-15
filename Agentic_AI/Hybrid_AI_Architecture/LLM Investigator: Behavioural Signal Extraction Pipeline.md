@@ -23,7 +23,7 @@ It is a **cognitive feature extractor**:
 
         That destroys calibration and creates false positives.
 
-Instead you force the LLM to behave like an analyst writing investigation notes.
+        Instead you force the LLM to behave like an analyst writing investigation notes.
 
 The LLM must output signals, not a decision.
 
