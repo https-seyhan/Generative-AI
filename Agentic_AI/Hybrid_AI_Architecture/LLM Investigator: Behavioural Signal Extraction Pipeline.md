@@ -25,9 +25,9 @@ It is a **cognitive feature extractor**:
 
         Instead you force the LLM to behave like an analyst writing investigation notes.
 
-The LLM must output signals, not a decision.
+**The LLM must output signals, not a decision.**
 
-So we define a strict schema.
+Define a strict schema.
 
 2. The Risk Signal Schema (Contract)
 
