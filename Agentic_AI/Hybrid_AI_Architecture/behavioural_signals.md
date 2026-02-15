@@ -3,7 +3,7 @@
 <b>In a real financial-crime system they come from regulatory typologies.</b>
 
 
-So the origin chain is:
+**So the origin chain is:**
 
 Global crime patterns
     ↓
