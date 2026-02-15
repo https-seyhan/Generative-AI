@@ -9,17 +9,17 @@
 &nbsp; 
     ↓
 	&nbsp; 
-Regulators & FIUs publish typologies
+	Regulators & FIUs publish typologies
     ↓
-AML investigators interpret them
+	AML investigators interpret them
     ↓
-Bank risk team formalises indicators
+	Bank risk team formalises indicators
     ↓
-Engineers convert to measurable signals
+	Engineers convert to measurable signals
     ↓
-LLM helps recognise them in narratives
+	LLM helps recognise them in narratives
     ↓
-ML model uses them for probability estimation
+	ML model uses them for probability estimation
 
 
 Let’s go layer by layer.
