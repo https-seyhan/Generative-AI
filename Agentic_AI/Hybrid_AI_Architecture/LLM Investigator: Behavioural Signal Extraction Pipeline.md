@@ -43,5 +43,5 @@ Define a strict schema.
           "velocity_anomaly": 0.0-1.0,
           "circular_transactions": 0.0-1.0,
           "justification": "short explanation"
-}
-
+        }
+        ```
