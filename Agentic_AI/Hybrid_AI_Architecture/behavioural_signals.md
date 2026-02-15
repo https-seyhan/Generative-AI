@@ -1,6 +1,8 @@
 <b> Behavioural signals are not invented by the LLM and not decided by a data scientist alone.</b>
 
-In a real financial-crime system they come from regulatory typologies → investigator expertise → data engineering → model features.
+In a real financial-crime system they come from regulatory typologies 
+
+investigator expertise → data engineering → model features.
 
 So the origin chain is:
 
