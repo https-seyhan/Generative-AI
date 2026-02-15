@@ -5,7 +5,7 @@ How does the “LLM investigator” turn messy case information into numeric beh
 
 This step is not classification and not prompting for a label.
 
-It is a controlled conversion:
+It is a **cognitive feature extractor**:
 
 **unstructured narrative + events**
 
