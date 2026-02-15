@@ -92,7 +92,7 @@ It is executing an investigative protocol.
 
 This dramatically reduces hallucinations.
 
-3. Few-shot CoT
+#### 3. Few-shot CoT
 
 You provide worked examples.
 
