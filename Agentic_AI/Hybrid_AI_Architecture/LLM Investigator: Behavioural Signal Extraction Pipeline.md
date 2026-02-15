@@ -84,7 +84,7 @@ Return ONLY valid JSON using this schema:
 }
 ```
 ```
-This instruction *CoT) is extremely important because:
+        **This instruction (CoT) is extremely important because:**
 
 - It prevents the LLM from making the operational decision.
 
