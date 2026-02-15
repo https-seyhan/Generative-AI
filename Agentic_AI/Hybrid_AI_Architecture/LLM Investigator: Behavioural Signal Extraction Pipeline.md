@@ -244,7 +244,7 @@ It **interprets intent-like behaviour** from messy evidence.
 
 The ML model then learns how much each behavioural pattern actually matters in real outcomes.
 
-## What You Just Implemented
+## What is Just Implemented:
 
 **This investigator is equivalent to a junior analyst writing case notes, except:**
 
@@ -256,9 +256,9 @@ The ML model then learns how much each behavioural pattern actually matters in r
 
 - measurable
 
-You did not automate decisions.
+Did not automate decisions.
 
-You automated evidence generation.
+Automated evidence generation.
 
 And that is precisely why the hybrid LLM-ML architecture becomes reliable
 
