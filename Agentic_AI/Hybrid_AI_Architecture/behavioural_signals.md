@@ -20,7 +20,7 @@
 	ML model uses them for probability estimation
 
 
-Let’s go layer by layer.
+#### Layer by Layer Explanation:
 
 1) Who defines the behaviours (outside the bank)
 
