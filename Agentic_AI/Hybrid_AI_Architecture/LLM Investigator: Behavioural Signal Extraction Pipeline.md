@@ -82,7 +82,7 @@ Return ONLY valid JSON using this schema:
 "circular_transactions": float(0-1),
 "justification": "max 80 words"
 }
-```
+
 ```
 
 This instruction (CoT) is extremely important because:
@@ -90,3 +90,60 @@ This instruction (CoT) is extremely important because:
 - It prevents the LLM from making the operational decision.
 
 - Forcing reasoning → evidence → structured output.
+
+## 4. Python Implementation
+
+
+import json
+import os
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+# -------------------------
+# Prompt Template
+# -------------------------
+
+SYSTEM_PROMPT = """
+You are a financial investigations analyst.
+
+Your task is NOT to decide escalation.
+
+Analyze behaviour and output structured risk signals.
+
+Return ONLY JSON:
+{
+ "structuring_score": float(0-1),
+ "mule_account_probability": float(0-1),
+ "velocity_anomaly": float(0-1),
+ "circular_transactions": float(0-1),
+ "justification": "short explanation"
+}
+"""
+
+# -------------------------
+# Investigator Function
+# -------------------------
+
+def investigate_case(case_text):
+
+    response = client.chat.completions.create(
+        model="gpt-5.2",
+        temperature=0.1,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": case_text}
+        ]
+    )
+
+    content = response.choices[0].message.content
+
+    # Parse JSON safely
+    try:
+        signals = json.loads(content)
+    except:
+        raise ValueError("LLM returned non-JSON output")
+
+    return signals
+
+
