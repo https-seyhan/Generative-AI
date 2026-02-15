@@ -256,9 +256,9 @@ The ML model then learns how much each behavioural pattern actually matters in r
 
 - measurable
 
-Did not automate decisions.
+**Did not automate decisions.**
 
-Automated evidence generation.
+**Automated evidence generation.**
 
 And that is precisely why the hybrid LLM-ML architecture becomes reliable
 
