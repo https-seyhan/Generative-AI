@@ -9,8 +9,8 @@ It is a **cognitive feature extractor**:
 
         <b>unstructured narrative + events</b>
 
-        behavioural analysis
+        - behavioural analysis
         
-        structured schema
+        - structured schema
         
-        numeric features
+        - numeric features
