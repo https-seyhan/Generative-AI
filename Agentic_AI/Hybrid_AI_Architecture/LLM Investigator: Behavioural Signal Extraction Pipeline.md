@@ -36,7 +36,7 @@ Define a strict schema.
         This is your feature contract with ML.
 
 **Example:**
-```python
+```json
         {
           "structuring_score": 0.0-1.0,
           "mule_account_probability": 0.0-1.0,
