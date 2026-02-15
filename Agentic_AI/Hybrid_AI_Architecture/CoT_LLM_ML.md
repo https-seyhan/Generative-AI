@@ -30,7 +30,7 @@ token-level decomposition → intermediate representations → higher accuracy c
 
 - They perform probabilistic next-token selection conditioned on context.
 
-- However, reasoning tasks require stateful inference.
+- Reasoning tasks require stateful inference.
 - CoT creates artificial state.
 
 Without CoT:
