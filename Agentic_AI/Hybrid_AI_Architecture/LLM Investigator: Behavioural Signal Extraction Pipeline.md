@@ -74,7 +74,7 @@ Evaluate the case using behavioural typologies:
    Funds returning to originator or moving through chains.
 
 Return ONLY valid JSON using this schema:
-
+```json
 {
 "structuring_score": float(0-1),
 "mule_account_probability": float(0-1),
@@ -82,5 +82,5 @@ Return ONLY valid JSON using this schema:
 "circular_transactions": float(0-1),
 "justification": "max 80 words"
 }
-
+```
 ```
