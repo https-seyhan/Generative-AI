@@ -201,5 +201,64 @@ signals = investigate_case(build_case_text(row))
  "circular_transactions": 0.65
 }
 ```
-- **$${\color{blue} This \ is \ exactly \ what \ is \ LightGBM \ model \ needs.}    $$**
+- **$${\color{blue} This \ is \ exactly \ what \ LightGBM \ model \ needs}    $$**
+
+### 6. Converting to ML Features
+
+```python
+def to_feature_vector(signals):
+
+    return [
+        signals["structuring_score"],
+        signals["mule_account_probability"],
+        signals["velocity_anomaly"],
+        signals["circular_transactions"]
+    ]
+```
+
+**That vector becomes:**
+
+```python
+X = [0.82, 0.71, 0.44, 0.65]
+```
+
+**Now ML can calibrate risk.**
+
+### Why This Works
+
+You have separated cognition from statistics.
+
+LLM:
+
+pattern recognition + behavioural understanding
+
+
+ML:
+
+probability estimation
+
+
+The LLM does something classical feature engineering cannot do:
+
+It interprets intent-like behaviour from messy evidence.
+
+The ML model then learns how much each behavioural pattern actually matters in real outcomes.
+
+What You Just Implemented
+
+This investigator is equivalent to a junior analyst writing case notes, except:
+
+consistent
+
+fast
+
+structured
+
+measurable
+
+You did not automate decisions.
+
+You automated evidence generation.
+
+And that is precisely why the hybrid LLM-ML architecture becomes reliable
 
