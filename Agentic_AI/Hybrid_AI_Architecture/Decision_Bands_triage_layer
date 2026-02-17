@@ -1,0 +1,20 @@
+Decision Bands (the triage layer)
+
+The calibrator outputs a risk number, not a class.
+
+0.00 ──────────────────────────────── 1.00
+
+
+Then policy converts it to action.
+
+0.00 – 0.35  → Decline
+0.35 – 0.72  → Unclear (human review)
+0.72 – 1.00  → Escalate (with corroboration)
+
+
+Visual:
+
+LOW RISK        REVIEW ZONE        HIGH RISK
+|------------|----------------|----------------|
+0          0.35             0.72               1
+ Decline        Human Analyst         Escalate
