@@ -35,4 +35,10 @@ LOW RISK        REVIEW ZONE        HIGH RISK
                        Operational Risk Score
                                 ▼
                      Decline / Unclear / Escalate
+Behaviour risk: 0.78
+Network risk: 0.73
+LLM intent: 0.69
+Final risk: 0.74
+Corroboration: satisfied
+Decision: ESCALATE
 
