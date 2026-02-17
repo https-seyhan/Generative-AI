@@ -18,3 +18,21 @@ LOW RISK        REVIEW ZONE        HIGH RISK
 |------------|----------------|----------------|
 0          0.35             0.72               1
  Decline        Human Analyst         Escalate
+
+                THREE OPINIONS ABOUT THE SAME CASE
+
+     Behaviour Model        Network Model          LLM Analyst
+        "activity"          "relationships"        "intent"
+           │                     │                     │
+           ▼                     ▼                     ▼
+        0.81                  0.67                  0.74
+           └────────────┬───────┴────────────┬───────┘
+                        ▼                    ▼
+                 ┌──────────────────────────────┐
+                 │      Decision Calibrator      │
+                 └──────────────┬───────────────┘
+                                ▼
+                       Operational Risk Score
+                                ▼
+                     Decline / Unclear / Escalate
+
