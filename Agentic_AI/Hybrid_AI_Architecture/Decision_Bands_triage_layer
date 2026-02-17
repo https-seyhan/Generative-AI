@@ -42,3 +42,241 @@ Final risk: 0.74
 Corroboration: satisfied
 Decision: ESCALATE
 
+When we say LightGBM is a risk-ranking engine, we mean:
+
+The model is not deciding “fraud or not fraud”.
+It is ordering cases from most fraud-like → least fraud-like based on similarity to historical confirmed fraud.
+
+That sounds subtle, but it changes how you train, evaluate, and use the model.
+
+We’ll go step-by-step and you’ll see it in code.
+
+1) Start with a concrete intuition
+
+Imagine you give the model past cases:
+
+Case	new_payees_7d	night_tx_ratio	network_risk	confirmed_fraud
+A	0	0.05	0.02	0
+B	2	0.10	0.03	0
+C	8	0.55	0.62	1
+D	9	0.61	0.70	1
+E	6	0.40	0.58	1
+
+The model learns:
+
+Fraud cases look like C, D, E.
+
+It does NOT learn:
+“if score > 0.5 → fraud”.
+
+Instead it learns a similarity surface.
+
+So for a new case:
+
+Case	new_payees_7d	night_tx_ratio	network_risk
+F	7	0.52	0.60
+
+The model says:
+
+This case behaves like C/D/E.
+
+So it assigns a high score.
+
+That score is similarity to fraud behaviour.
+
+2) Preparing the data (Python)
+
+We create a simple training dataset.
+
+import pandas as pd
+
+data = pd.DataFrame({
+    "new_payees_7d": [0,2,8,9,6],
+    "night_tx_ratio": [0.05,0.10,0.55,0.61,0.40],
+    "network_risk": [0.02,0.03,0.62,0.70,0.58],
+    "confirmed_fraud": [0,0,1,1,1]
+})
+
+X = data.drop(columns=["confirmed_fraud"])
+y = data["confirmed_fraud"]
+
+
+Here:
+
+y=1 → confirmed fraud
+y=0 → confirmed clean
+
+
+This is critical:
+We are not using escalate labels.
+
+3) Train the LightGBM model
+import lightgbm as lgb
+from sklearn.model_selection import train_test_split
+
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2)
+
+train_data = lgb.Dataset(X_train, label=y_train)
+val_data = lgb.Dataset(X_val, label=y_val)
+
+params = {
+    "objective": "binary",
+    "metric": "auc",
+    "learning_rate": 0.1,
+    "num_leaves": 15
+}
+
+model = lgb.train(
+    params,
+    train_data,
+    valid_sets=[val_data],
+    num_boost_round=200,
+    verbose_eval=False
+)
+
+
+Important detail:
+
+We are using objective="binary".
+
+That does not mean classification.
+
+It means the model learns a scoring function:
+
+score(x)=P(x is fraud-like)
+score(x)=P(x is fraud-like)
+4) Now test a new case
+
+Create a new incoming case:
+
+new_case = pd.DataFrame({
+    "new_payees_7d":[7],
+    "night_tx_ratio":[0.52],
+    "network_risk":[0.60]
+})
+
+risk_score = model.predict(new_case)[0]
+print(risk_score)
+
+
+Output (example):
+
+0.83
+
+
+The model is saying:
+
+This case looks 83% similar to historical fraud patterns.
+
+Not “83% fraud”.
+
+This distinction matters.
+
+5) Why this is ranking (visual)
+
+Suppose you score 10,000 accounts:
+
+Account A → 0.02
+Account B → 0.05
+Account C → 0.11
+Account D → 0.37
+Account E → 0.52
+Account F → 0.77
+Account G → 0.81
+Account H → 0.89
+
+
+The model’s real output is:
+
+H > G > F > E > D > C > B > A
+
+
+It created a risk ordering.
+
+That’s ranking.
+
+The exact numbers are less important than the order.
+
+6) Evaluating the model properly
+
+You should NOT evaluate using accuracy.
+
+Why?
+
+Fraud rate is usually ~1%.
+
+Accuracy would be 99% if the model predicts “no fraud” for everyone.
+
+Instead we use AUC:
+
+from sklearn.metrics import roc_auc_score
+
+preds = model.predict(X_val)
+print(roc_auc_score(y_val, preds))
+
+
+AUC measures:
+
+Does the model place fraud cases above non-fraud cases?
+
+Which is ranking quality.
+
+7) Using the ranking operationally
+
+Now the Decision Calibrator uses the ranking score.
+
+Example:
+
+Risk Score	Meaning	Action
+0.10	looks nothing like fraud	decline
+0.45	somewhat suspicious	unclear
+0.82	very similar to fraud	candidate for escalation
+
+Notice:
+
+The model did not decide escalation.
+
+It only answered:
+
+“How close is this behaviour to known fraud?”
+
+Policy decides the rest.
+
+8) Why this reduces false positives
+
+False escalations happen when a classifier is forced to decide:
+
+fraud OR not fraud
+
+
+But many real cases are ambiguous.
+
+Ranking avoids this.
+
+Instead:
+
+very similar → high priority
+somewhat similar → analyst
+not similar → clear
+
+
+This matches how human investigators actually work.
+
+9) Key mental model
+
+LightGBM is doing this:
+
+Historical fraud behaviour
+          ↓
+Build a behavioural fingerprint
+          ↓
+Compare new case to fingerprint
+          ↓
+Return similarity score
+
+
+So the model is not a judge.
+
+It is a similarity detector to known criminal behaviour patterns.
+
+The Decision Calibrator is the judge.
