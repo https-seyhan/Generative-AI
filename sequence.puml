@@ -1,0 +1,32 @@
+
+@startuml
+title Hybrid LLM + ML Fraud Triage — Sequence
+
+actor Client
+participant "Case Intake API" as Intake
+participant "Document Store" as Store
+participant "LLM Investigator" as LLM
+participant "Feature Assembler" as Feats
+participant "LightGBM (Calibrated)" as ML
+participant "Decision Policy" as Policy
+participant "Case Queue" as Queue
+participant "Human Investigator" as Human
+participant "Auto Actions" as Actions
+
+Client -> Intake: Submit case
+Intake -> Store: Save evidence
+Store -> LLM: Fetch documents
+LLM -> Feats: Emit structured signals (JSON)
+Feats -> ML: Build feature vector
+ML -> Policy: p = P(fraud)
+alt p <= TL
+    Policy -> Actions: Auto-Decline
+else TL < p < TH
+    Policy -> Queue: Route to review
+    Human -> Queue: Investigate & attest
+    Queue -> Actions: Final decision
+else p >= TH
+    Policy -> Actions: Auto-Escalate
+end
+
+@enduml
