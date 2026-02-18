@@ -1,0 +1,308 @@
+correct architecture:
+
+LLM = semantic investigator (signal generator)
+ML (LightGBM) = calibrated decision engine (risk ranking)
+
+Now the operational problem you’re solving is decision theory, not modeling.
+
+You are not asking:
+
+“Is this fraud?”
+
+You are asking:
+
+“When should I trust the model enough to act automatically, and when should a human intervene?”
+
+That is a selective classification problem (also called classification with rejection).
+The solution is a dual-threshold policy.
+
+1) What Dual Thresholds Actually Mean
+
+Your LightGBM does not output a class.
+
+It outputs a probability:
+
+p=P(fraud∣features)
+p=P(fraud∣features)
+
+(Features = structured signals extracted by the LLM + behavioural ML features)
+
+So every case receives a risk score between 0 and 1.
+
+Example:
+
+Case	Risk Score
+A	0.04
+B	0.22
+C	0.48
+D	0.71
+E	0.93
+
+If you force a single threshold (ex: 0.5):
+
+• >0.5 → escalate
+• <0.5 → decline
+
+This is exactly what produces False Positives.
+
+Because fraud detection datasets have a property:
+
+The model is very certain at the extremes
+
+and very unreliable in the middle.
+
+This is called probability uncertainty concentration.
+
+The middle zone is where most FPs live.
+
+2) The Three-Zone Risk Policy (The Real System)
+
+Instead of 1 threshold → use 2 thresholds
+
+TL<TH
+T
+L
+	​
+
+<T
+H
+	​
+
+
+You divide the probability line into 3 decision regions:
+
+0 ------------------ TL ----------- TH ------------------ 1
+
+Decline             Human Review       Escalate
+(auto safe)         (uncertain)        (auto block)
+
+
+So:
+
+Score	Action
+p ≤ TL	Decline (auto clear)
+TL < p < TH	Unclear → Human review
+p ≥ TH	Escalate (auto intervene)
+
+This is the only known practical way to significantly reduce FP without increasing FN catastrophically.
+
+3) Why This Reduces False Positives
+
+False positives occur when:
+
+a normal case gets a moderately high risk score
+
+Those almost never occur at 0.95.
+
+They occur around:
+
+0.35 – 0.70
+
+
+This region is called:
+
+The ambiguity band
+
+The model sees some suspicious signals, but not enough.
+
+Typical example in your hybrid system:
+
+LLM detects:
+
+related directors
+
+rapid transactions
+
+similar addresses
+
+But ML behavioural features weak:
+
+long operating history
+
+stable payments
+
+tax compliance
+
+Model becomes confused → produces ~0.55
+
+If you had a single threshold = 0.5 → False Positive
+
+With dual threshold → human review instead
+
+You just removed a large portion of FP automatically.
+
+4) How To Find the Thresholds (This is the key part)
+
+You DO NOT pick thresholds arbitrarily.
+
+You derive them from calibrated probabilities + cost analysis.
+
+You need a validation dataset with known labels.
+
+For each possible threshold, compute:
+
+TPR (recall)
+
+FPR (false positive rate)
+
+Precision
+
+Step 1 — Calibrate the model first (VERY important)
+
+LightGBM probabilities are not true probabilities.
+
+You must calibrate:
+
+Use:
+
+Isotonic Regression (best)
+or
+
+Platt Scaling
+
+Python:
+
+from sklearn.calibration import CalibratedClassifierCV
+
+calibrated_model = CalibratedClassifierCV(lgbm, method='isotonic', cv=5)
+calibrated_model.fit(X_train, y_train)
+
+probs = calibrated_model.predict_proba(X_valid)[:,1]
+
+
+Without this step → dual thresholds will fail.
+
+Because 0.8 may actually mean 0.3.
+
+Step 2 — Plot Risk vs Error
+
+You compute FPR at every threshold.
+
+import numpy as np
+
+thresholds = np.linspace(0,1,200)
+
+for t in thresholds:
+    pred = probs >= t
+    fp = ((pred==1) & (y_valid==0)).sum()
+    tn = ((pred==0) & (y_valid==0)).sum()
+    fpr = fp/(fp+tn)
+    print(t, fpr)
+
+
+You will see:
+
+FPR collapses sharply after a certain point.
+
+Typically:
+
+Threshold	FPR
+0.50	18%
+0.65	9%
+0.75	3%
+0.85	0.7%
+0.90	0.2%
+
+This is the mathematical place to put TH.
+
+Step 3 — Choose TH (Escalation threshold)
+
+Define a business tolerance:
+
+Example:
+
+“We accept only 1% false accusations.”
+
+Then choose:
+
+TH = \text{lowest threshold where FPR ≤ 1%}
+
+That becomes your auto-escalate boundary.
+
+Step 4 — Choose TL (Auto-decline threshold)
+
+Now look at the other side.
+
+We want:
+
+very low probability of fraud among cleared cases.
+
+Compute:
+
+P(fraud∣p≤t)
+P(fraud∣p≤t)
+
+Pick the highest t where this risk is tiny (e.g. 0.2%).
+
+That becomes TL.
+
+Typically you’ll see:
+
+Threshold	Fraud Rate Below Threshold
+0.10	0.02%
+0.15	0.05%
+0.20	0.12%
+0.25	0.40%
+
+So TL ≈ 0.18
+
+5) What the System Now Does
+
+Example final policy:
+
+TL = 0.18
+TH = 0.82
+
+Risk Score	Decision
+0.04	Decline
+0.22	Human
+0.48	Human
+0.71	Human
+0.88	Escalate
+0.97	Escalate
+
+Now:
+
+• FPs drop dramatically
+• Humans only review ambiguous cases
+• Automation still high
+
+This is exactly how banking AML transaction monitoring systems work.
+
+6) The Hidden Insight (Most Important)
+
+Your hybrid LLM + ML system does not classify fraud.
+
+It does:
+
+risk triage
+
+The LLM creates semantic suspicion signals
+The ML model ranks them by similarity to known fraud patterns
+The thresholds determine operational trust
+
+The human reviewer is not a fallback.
+
+They are part of the classifier.
+
+Mathematically:
+
+System Accuracy=Auto Decisions+Human Decisions in Uncertainty Region
+System Accuracy=Auto Decisions+Human Decisions in Uncertainty Region
+
+The unclear band is not a weakness.
+
+It is what allows you to reduce false positives without killing recall.
+
+7) Production Decision Policy (pseudocode)
+p = calibrated_model.predict_proba(case)[1]
+
+if p >= TH:
+    decision = "ESCALATE"
+elif p <= TL:
+    decision = "DECLINE"
+else:
+    decision = "UNCLEAR → HUMAN REVIEW"
+
+
+That’s the complete deployment logic.
