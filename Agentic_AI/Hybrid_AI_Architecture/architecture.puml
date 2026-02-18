@@ -1,0 +1,40 @@
+
+@startuml
+title Hybrid LLM + ML Fraud Triage — Architecture
+
+skinparam componentStyle rectangle
+
+actor "Upstream Systems" as upstream
+actor "Human Investigator" as human
+
+component "Case Intake API" as intake
+component "Document Store / Evidence" as store
+component "LLM Investigator
+(Semantic Signal Extraction)" as llm
+component "Feature Assembler" as feats
+component "LightGBM Risk Engine
+(Calibrated)" as ml
+component "Decision Policy
+(Dual Thresholds TL/TH)" as policy
+component "Case Management Queue" as queue
+component "Auto Actions
+(Decline/Escalate)" as actions
+component "Monitoring & Threshold Recalibration
+(Weekly)" as monitor
+
+upstream --> intake : create case
+intake --> store : persist evidence
+store --> llm : retrieve context
+llm --> feats : structured signals (JSON)
+feats --> ml : feature vector
+ml --> policy : probability p
+policy --> actions : p ≤ TL or p ≥ TH
+policy --> queue : TL < p < TH
+human --> queue : review/attest
+queue --> actions : final decision
+
+ml --> monitor : score distribution
+queue --> monitor : workload metrics
+monitor --> policy : update TL, TH
+
+@enduml
