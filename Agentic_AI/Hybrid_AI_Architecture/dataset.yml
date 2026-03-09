@@ -1,0 +1,48 @@
+dataset:
+  name: transactions_dataset
+  description: Customer transaction records used for fraud detection
+  owner: data_engineering_team
+  version: 1.0
+
+source:
+  system: data_lake
+  format: parquet
+  location: s3://data-lake/raw/transactions/
+
+schema:
+  primary_key: transaction_id
+
+  columns:
+    - name: transaction_id
+      type: string
+      description: Unique identifier
+
+    - name: customer_id
+      type: string
+      description: Customer identifier
+
+    - name: transaction_amount
+      type: double
+      description: Transaction value
+
+    - name: transaction_timestamp
+      type: timestamp
+      description: Transaction time
+
+quality_rules:
+  - rule: not_null
+    column: transaction_id
+
+  - rule: positive_value
+    column: transaction_amount
+
+storage:
+  format: delta
+  partition_by: transaction_date
+  location: s3://data-lake/processed/transactions/
+
+usage:
+  downstream_systems:
+    - fraud_detection_model
+    - aml_monitoring
+    - analytics_dashboard
