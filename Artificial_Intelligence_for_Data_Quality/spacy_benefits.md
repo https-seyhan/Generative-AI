@@ -1,6 +1,6 @@
 Why Use spaCy Instead of Regex
 
-Regular expressions often struggle with:
+### Regular expressions often struggle with:
 
 Multiline SQL blocks
 
@@ -10,7 +10,7 @@ Comments
 
 SAS macro expansions
 
-spaCy enables:
+### spaCy enables:
 
 Token-level parsing
 
