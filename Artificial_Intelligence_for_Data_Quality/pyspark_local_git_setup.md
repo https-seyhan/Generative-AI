@@ -93,7 +93,7 @@ pyspark
 ```
 python jobs/main.py
 ```
-spark-submit --master local[*] jobs/job_customers.py $ Local run
+spark-submit --master local[*] jobs/job_customers.py # Local run
 ### Option B (Recommended)
 ```
 spark-submit jobs/main.py
