@@ -1,0 +1,15 @@
+columns:
+  - source: id
+    target: customer_id
+  - source: income
+    target: annual_income
+    type: float
+
+transformations:
+  - column: annual_income
+    operation: multiply
+    value: 1.1
+
+filters:
+  - column: annual_income
+    condition: "> 30000"
