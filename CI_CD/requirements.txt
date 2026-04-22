@@ -1,0 +1,9 @@
+openai
+pandas
+numpy
+scikit-learn
+pyyaml
+tqdm
+streamlit
+pytest
+pyspark
