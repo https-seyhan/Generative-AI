@@ -1,0 +1,6 @@
+
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: .
+command: python jobs/run_regression.py
+environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu:1
+compute: azureml:cpu-cluster
