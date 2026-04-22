@@ -1,0 +1,5 @@
+semantic_threshold: 0.85
+llm_judge_weight: 0.5
+semantic_weight: 0.4
+rule_weight: 0.1
+fail_fast: true
