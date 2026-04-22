@@ -1,0 +1,12 @@
+
+inputs:
+  prompt: string
+
+outputs:
+  response: string
+
+nodes:
+  - name: llm_call
+    type: llm
+    inputs:
+      prompt: ${inputs.prompt}
