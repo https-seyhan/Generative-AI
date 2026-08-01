@@ -16,19 +16,25 @@
 
 ---
 
-## Relationship
+## 🏗 Relationship
 
-``` text
+```text
 Artificial Intelligence
+│
 └── Machine Learning
+    │
     └── Deep Learning
+        │
         └── Generative AI
-            ├── Large Language Models
-            ├── Image Generation Models
-            ├── Video Generation Models
-            ├── Audio Generation Models
-            └── Multimodal Models
+            │
+            ├── 🤖 Large Language Models (LLMs)
+            ├── 🖼 Image Generation
+            ├── 🎬 Video Generation
+            ├── 🎵 Audio Generation
+            └── 🌐 Multimodal Models
 ```
+
+---
 
 ## Examples of LLMs
 
