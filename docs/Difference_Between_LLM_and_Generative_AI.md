@@ -53,18 +53,6 @@ Artificial Intelligence
 -   3D model generation
 -   Synthetic data generation
 
-## Enterprise Perspective
-
-  Business Need             LLM   GenAI
-  ------------------------ ----- -------
-  Chatbots                  ✅     ✅
-  Document summarisation    ✅     ✅
-  Contract analysis         ✅     ✅
-  Code generation           ✅     ✅
-  Image creation            ❌     ✅
-  Video generation          ❌     ✅
-  Voice cloning             ❌     ✅
-  Product design            ❌     ✅
 
 ## Modern AI Systems
 
