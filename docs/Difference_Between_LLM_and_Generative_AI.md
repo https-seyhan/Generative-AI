@@ -2,7 +2,7 @@
 # 🤖 LLM vs 🎨 Generative AI
 
 > **Key takeaway:** Every **Large Language Model (LLM)** is a type of **Generative AI**, but not every Generative AI model is an LLM.
-.
+
 
 ## 📊 Comparison
 
