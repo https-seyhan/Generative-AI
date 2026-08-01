@@ -527,6 +527,6 @@ A[Language Models]
 >
 > The next generation of AI systems will reason, use tools, remember context, collaborate with other agents, and execute business workflows autonomously.
 
-**The future of scaling AI is not only bigger models — it is smarter systems.**
+**The future of scaling of Transformers is not only bigger models — it is smarter systems.**
 
 ---
