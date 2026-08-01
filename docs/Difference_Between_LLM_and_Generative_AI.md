@@ -66,6 +66,4 @@ transcription and synthesis. - Agent frameworks for orchestration.
 
 -   **Generative AI** = Vehicles
 -   **LLMs** = Cars
-
-Every LLM is a Generative AI model, but not every Generative AI model is
-an LLM.
+> **Remember:** 🚗 **Generative AI** is like **vehicles**, while **LLMs** are like **cars**. Every car is a vehicle, but not every vehicle is a car.
