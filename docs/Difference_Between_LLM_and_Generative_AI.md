@@ -1,8 +1,8 @@
 
-# Difference Between LLM and Generative AI (GenAI)
+# 🤖 LLM vs 🎨 Generative AI
 
-A **Large Language Model (LLM)** and **Generative AI (GenAI)** are
-related but not the same. An LLM is one type of Generative AI.
+> **Key takeaway:** Every **Large Language Model (LLM)** is a type of **Generative AI**, but not every Generative AI model is an LLM.
+.
 
 ## 📊 Comparison
 
