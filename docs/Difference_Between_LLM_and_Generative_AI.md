@@ -4,21 +4,17 @@
 A **Large Language Model (LLM)** and **Generative AI (GenAI)** are
 related but not the same. An LLM is one type of Generative AI.
 
-  -----------------------------------------------------------------------
-  Aspect                  LLM                     Generative AI
-  ----------------------- ----------------------- -----------------------
-  Definition              Model trained primarily Broad category of AI
-                          on text to understand   systems that generate
-                          and generate language.  text, images, audio,
-                                                  video, code and more.
+## 📊 Comparison
 
-  Scope                   Narrower;               Broader; includes many
-                          language-focused.       generative model types.
+| Feature | 🤖 Large Language Model (LLM) | 🎨 Generative AI |
+|:--------|:------------------------------|:-----------------|
+| **📖 Definition** | A model trained primarily on **text** to understand, reason, and generate human language. | A broad category of AI that generates **text, images, audio, video, code, music, and more**. |
+| **🌍 Scope** | Focused mainly on **language understanding and generation**. | Covers **multiple content modalities**, including language, vision, audio, and video. |
+| **📤 Output** | Text, code, summaries, translations, question answering, reasoning. | Text, images, audio, video, code, 3D models, music, synthetic data, and more. |
+| **🧠 Primary Technology** | Transformer-based language models. | LLMs, Diffusion Models, GANs, VAEs, Multimodal Models, and others. |
+| **💼 Typical Use Cases** | Chatbots, document analysis, coding assistants, translation, summarisation. | AI art, video creation, music generation, speech synthesis, content creation, code generation. |
 
-  Output                  Text, code, summaries,  Text, images, audio,
-                          translation, Q&A.       video, code, 3D,
-                                                  synthetic data.
-  -----------------------------------------------------------------------
+---
 
 ## Relationship
 
