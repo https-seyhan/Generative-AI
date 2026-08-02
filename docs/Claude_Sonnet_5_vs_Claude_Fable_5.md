@@ -31,7 +31,7 @@ Fable runs roughly **3.3×** Sonnet's standard cost (or **5×** the
 introductory rate).
 
 ### Capability
-*_Fable targets the hardest reasoning and long-running agentic tasks. Sonnet delivers excellent performance for everyday coding, reasoning, and agentic workloads._*
+_Fable targets the hardest reasoning and long-running agentic tasks. Sonnet delivers excellent performance for everyday coding, reasoning, and agentic workloads._
 
 ### Safety
 
