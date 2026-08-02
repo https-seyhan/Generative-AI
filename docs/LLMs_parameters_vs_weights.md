@@ -178,7 +178,7 @@ The total number of trainable parameters in a neural network layer is:
 \text{Number of values in } b
 }
 \]
-
+```
 Where:
 
 - **W** = Weight matrix containing learnable connection values
