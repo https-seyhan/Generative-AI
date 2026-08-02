@@ -214,10 +214,10 @@ Therefore:
 
 Total Trainable Parameters = 8
 
-
+---
 > 💡 Every number stored in the weight matrix and bias vector represents a trainable parameter that the model learns during training.
 
----
+
 
 ## Example Neural Network Layer
 
