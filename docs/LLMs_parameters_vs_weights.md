@@ -49,20 +49,54 @@ The weights are the **learned values inside those containers**.
 During training:
 
 ```
-Before Training
+## Parameter Learning During Training
 
-Parameter #1 = 0.215
+A neural network learns by updating parameter values through the training process.
 
+### Before Training
 
-        Training Process
-              │
-              ▼
-
-
-After Training
-
-Parameter #1 = 0.823
 ```
+┌─────────────────────────┐
+│ Parameter #1            │
+│                         │
+│ Initial Value = 0.215   │
+└─────────────────────────┘
+```
+
+⬇️
+
+```
+          Training Process
+
+    ┌───────────────────┐
+    │ Forward Pass      │
+    │ Loss Calculation  │
+    │ Backpropagation   │
+    │ Gradient Update   │
+    └───────────────────┘
+```
+
+⬇️
+
+### After Training
+
+```
+┌─────────────────────────┐
+│ Parameter #1            │
+│                         │
+│ Learned Value = 0.823   │
+└─────────────────────────┘
+```
+
+### What Changed?
+
+| Stage | Parameter Value | Meaning |
+|---|---:|---|
+| Before Training | `0.215` | Initial random or pre-trained value |
+| Training Process | Updated using gradients | Model learns from data |
+| After Training | `0.823` | Learned weight used for predictions |
+
+> The parameter itself does not change identity — only the numerical value stored inside it changes during training.
 
 The parameter location remains the same, but the stored value changes.
 
