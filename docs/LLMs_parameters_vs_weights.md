@@ -1,578 +1,215 @@
+# LLM Parameters, Weights & Architecture — A Technical Guide
 
-# Parameters vs Weights in Neural Networks
+> Understanding what "parameters" means, why weight counts vary, and how model architectures differ across the frontier.
 
-## Overview
+## Definition: Parameters vs. Weights
 
-In deep learning, the terms **parameters** and **weights** are often used interchangeably, but they represent slightly different concepts.
+**Parameter** = a trainable variable — a storage location in the model where a numerical value lives during and after training.
 
-- **Parameter** = a trainable variable that the model learns during training.
-- **Weight** = the numerical value stored inside a parameter after training.
+**Weight** = the numerical value stored in that parameter after training has completed.
 
-**In practice, when people discuss **model size** (for example, a 70B parameter model), they are referring to the total number of trainable parameters.**
+In practice, engineers and researchers often say "parameter count" and "weight count" interchangeably, because nearly every parameter in a modern neural network stores a learned weight. They're describing the same thing from slightly different angles.
 
----
+### In code
 
-# Parameter vs Weight
+```python
+# PyTorch example
+layer = nn.Linear(in_features=10, out_features=5)
+# This creates 10×5=50 weight parameters + 5 bias parameters = 55 parameters
+# After training, each parameter holds a numerical weight
 
-| Concept | Definition |
-|---|---|
-| Parameter | A location in the model that can be adjusted during training |
-| Weight | The actual numerical value stored in that parameter |
-| Training | Updates parameter values using optimisation algorithms |
-| Model Size | Usually measured by total parameter count |
-
-Example:
-
-```
-Parameter #1  → stores →  Weight = 0.823
-
-Parameter #2  → stores →  Weight = -1.204
-
-Parameter #3  → stores →  Weight = 0.011
+print(f"Total parameters: {sum(p.numel() for p in layer.parameters())}")
+# Output: Total parameters: 55
 ```
 
-The parameters are the **containers**.  
-The weights are the **learned values inside those containers**.
-
----
-
-# Neural Network Analogy
+## Intuitive analogy: The neural network as a machine
 
 ```
-┌──────────────────────────────┐
-│ Parameter #1 = Weight  0.823 │
-│ Parameter #2 = Weight -1.204 │
-│ Parameter #3 = Weight  0.011 │
-└──────────────────────────────┘
+┌────────────────────────────────────────┐
+│         Neural Network                 │
+├────────────────────────────────────────┤
+│ Parameter #1 → Weight = 0.823          │
+│ Parameter #2 → Weight = -1.204         │
+│ Parameter #3 → Weight = 0.011          │
+│ Parameter #4 → Weight = 2.567          │
+│        ...                             │
+│ Parameter #N → Weight = 0.342          │
+└────────────────────────────────────────┘
 ```
 
-During training:
+Each parameter is like a dial or lever. Before training, it holds a random or zeroed value. During training, it gets adjusted (via backpropagation) until the model learns something useful. After training, that final adjusted number is the "weight."
+
+## Mathematical view
+
+The core equation of a neural network layer:
 
 ```
-## Parameter Learning During Training
-
-A neural network learns by updating parameter values through the training process.
-
-### Before Training
-
-┌─────────────────────────┐
-│ Parameter #1            │
-│                         │
-│ Initial Value = 0.215   │
-└─────────────────────────┘
-
-
-          ⬇️
-
-
-       Training Process
-
-    ┌───────────────────┐
-    │ Forward Pass      │
-    │ Loss Calculation  │
-    │ Backpropagation   │
-    │ Gradient Update   │
-    └───────────────────┘
-
-
-
-          ⬇️
-
-
-      After Training
-┌────────────────────────────┐
-│ Parameter #1               │
-├────────────────────────────┤
-│                            │
-│ Weight Value: 0.823        │
-│                            │
-└────────────────────────────┘
-```
-
-
-## 🔄 What Changes During Training?
-
-During neural network training, the **parameter itself does not move or change identity**.  
-The model updates only the **numerical value stored inside that parameter**.
-
-Think of a parameter as a **memory location that stores a learned value**.
-
-### Parameter Update Example
-```
-
-              Training Process
-        (Forward Pass → Loss → Backpropagation)
-                         │
-                         ▼
-
-┌──────────────────┐              ┌──────────────────┐
-│  Parameter #1    │              │  Parameter #1    │
-│                  │              │                  │
-│  Weight = 0.215  │ ───────────▶ │  Weight = 0.823  │
-│                  │              │                  │
-└──────────────────┘              └──────────────────┘
-
-   Initial Value                    Learned Value
-```
-The **parameter location remains unchanged**:
-```
-
-Parameter #1
-     │
-     ├── Before Training → 0.215
-     │
-     └── After Training  → 0.823
-```
-
-**Only the stored numerical value is updated.**
-
----
-
-# 📈 Parameter Learning Lifecycle
-
-| Stage | Parameter State | What Happens |
-|:---:|---|---|
-| 🟦 **Initialisation** | `Parameter #1 = 0.215` | Model starts with random values or pre-trained weights |
-| 🟨 **Training** | `0.215 → 0.823` | Optimisation algorithms update values using gradients |
-| 🟩 **Inference** | `Parameter #1 = 0.823` | Learned value is used to generate predictions |
-
----
-
-> 💡 **Core Concept**
->
-> **Parameter = Storage location**  
-> **Weight = Numerical value stored in that location**
->
-> Training changes the weight value, not the parameter itself.
-
----
-
-# 🧮 Mathematical View
-
-A neural network layer performs a weighted transformation:
-
-\[
 y = Wx + b
-\]
+```
 
 Where:
+- **x** = input vector
+- **W** = weight matrix (each element is a parameter)
+- **b** = bias vector (each element is also a parameter)
+- **y** = output vector
 
-| Symbol | Name | Role |
-|:---:|---|---|
-| **W** | Weight Matrix | Contains the trainable connection weights between neurons |
-| **b** | Bias Vector | Contains additional trainable adjustment values |
-| **x** | Input Vector | Data entering the neural network layer |
-| **y** | Output Vector | Computed result after applying weights and bias |
+**Total parameter count** = number of elements in W + number of elements in b.
+
+### Example calculation
+
+```
+Input dimension:   10
+Output dimension:   5
+
+Weight matrix W:   10 × 5 = 50 parameters
+Bias vector b:            =  5 parameters
+─────────────────────────────────────────
+Total layer:              = 55 parameters
+```
+
+Multiply this by the number of layers, and you get the full model size.
+
+## Model size comparisons: Frontier LLMs
+
+| Model family | Disclosed parameter sizes | Transparency & Notes |
+|:---|:---|:---|
+| **GPT (OpenAI)** | Not disclosed | Exact counts are proprietary. GPT-4 is known to be in the hundreds of billions; exact figure withheld. |
+| **Claude (Anthropic)** | Not disclosed | Anthropic does not publish parameter counts for any Claude model. |
+| **DeepSeek** | 7B, 67B, 671B (V3) | Open-weight models with published sizes. V3 uses sparse Mixture-of-Experts. |
+| **Meta Llama** | 1B, 3B, 8B, 70B, 405B | Dense models. Llama 3.1 405B (Aug 2024) is the largest dense open-weight model. |
+| **Grok (xAI)** | Not disclosed | xAI has not published parameter counts. |
+| **Perplexity** | N/A | Routing layer over multiple foundation models, not a single proprietary base model. |
+
+### Note on billions (B)
+
+- **1B** = 1 billion parameters (1,000,000,000)
+- **7B** = 7 billion parameters
+- **70B** = 70 billion parameters
+- **405B** = 405 billion parameters
+
+A 70B model typically requires ~140 GB of memory to load in float32 format (2 bytes per parameter × 70 billion). This is why large models are usually deployed in lower-precision formats (float16, int8, int4) to reduce memory footprint.
+
+## Architecture: Dense vs. Mixture-of-Experts (MoE)
+
+### Dense model
+
+In a **dense** model, every parameter participates in every forward pass (every token prediction).
+
+```
+┌───────────┐
+│   Input   │
+└─────┬─────┘
+      │
+      ▼
+  ┌───────────┐
+  │ Layer 1   │  ← all 128M parameters active
+  └─────┬─────┘
+      │
+      ▼
+  ┌───────────┐
+  │ Layer 2   │  ← all 128M parameters active
+  └─────┬─────┘
+      │
+      ▼
+┌──────────┐
+│  Output  │
+└──────────┘
+
+Total compute cost per token ∝ total parameter count
+```
+
+**Examples:** Llama 3.1 70B, Claude Sonnet 5, GPT-4.
 
 ---
 
-# Parameter Count Calculation
+### Mixture-of-Experts (MoE) model
 
-The total number of trainable parameters in a neural network layer is:
-
-\[
-\boxed{
-\mathrm{Total\ Parameters} =
-\mathrm{Number\ of\ values\ in}\ W
-+
-\mathrm{Number\ of\ values\ in}\ b
-}
-\]
-
-Where:
-
-- **W** = Weight matrix containing learnable connection values
-- **b** = Bias vector containing learnable offset values
-
-### Example
-
-For a layer with:
+In an **MoE** model, the input is routed to only a subset of "expert" modules. Most parameters remain inactive for any given token.
 
 ```
-Weight Matrix (W)
-
-2 neurons × 3 inputs
-
-W = 6 parameters
-
-
-Bias Vector (b)
-
-2 neurons
-
-b = 2 parameters
-
-
-The total trainable parameters are:
-
-\[
-\text{Total Parameters} = 6 + 2 = 8
-\]
-
-Therefore:
-
-Total Trainable Parameters = 8
-
-Every number stored in the weight matrix and bias vector represents a trainable parameter that the model learns during training.
-
-
-
-## Example Neural Network Layer
-
-```
-Input Layer                    Output Layer
-
-x₁ ─────┐
-        │
-x₂ ─────┼──────► Neuron 1
-        │
-x₃ ─────┘
-
-
-Weight Matrix (W)
-
-              x₁      x₂      x₃
-
-Neuron 1    0.12   -0.45    0.77
-Neuron 2    0.91    0.33   -0.21
-
-
-Bias Vector (b)
-
-Neuron 1 → 0.05
-Neuron 2 → 0.12
-```
-
-
-
----
-
-# 🧠 Scaling to Large Language Models
-
-Large Language Models (LLMs) are built from billions of these learned parameters.
-
-```
-                 Input Tokens
-
-                      │
-
-                      ▼
-
-          ┌─────────────────────┐
-          │ Transformer Network │
-          │                     │
-          │  Attention Weights  │
-          │  Feed Forward       │
-          │  Embeddings         │
-          │                     │
-          │ Billions of Params  │
-          └─────────────────────┘
-
-                      │
-
-                      ▼
-
-              Predicted Token
-```
-
-The intelligence of a model emerges from the combination of:
-
-```
-        Architecture
-             +
-        Training Data
-             +
-        Optimisation
-             +
-        Parameter Scale
-             +
-        Inference Strategy
-```
-
-## 🧠 From Parameters to Intelligence
-
-A large language model is essentially a massive collection of learned parameters:
-
-```
-Input Text
-    │
-    ▼
-┌─────────────────────┐
-│ Transformer Network │
-│                     │
-│ Millions / Billions │
-│ of Parameters       │
-└─────────────────────┘
-    │
-    ▼
-Predicted Output
-```
-
-The model's capability emerges from:
-
-```
-Architecture
-      +
-Training Data
-      +
-Optimisation
-      +
-Scale of Parameters
-      +
-Inference Strategy
-```
-
-# Why Parameter Count Matters
-
-Parameter count is commonly used as a rough indicator of:
-
-- Model capacity
-- Memory requirements
-- Training compute requirements
-- Inference cost
-- Potential reasoning capability
-
-However:
-
-> More parameters do not automatically mean a better model.
-
-Performance also depends on:
-
-- Training data quality
-- Architecture design
-- Optimisation techniques
-- Alignment methods
-- Fine-tuning strategy
-
----
-
-# Foundation Model Parameter Comparison
-
-| Model Family | Public Parameter Sizes | Notes |
-|---|---|---|
-| GPT (OpenAI) | Not disclosed | Exact parameter counts are proprietary |
-| Claude (Anthropic) | Not disclosed | Anthropic does not publish model sizes |
-| DeepSeek | 7B, 67B, V3 (~671B total MoE) | Open-weight research models; MoE uses sparse activation |
-| Meta Llama | 1B, 3B, 8B, 70B, 405B | Dense transformer models depending on release |
-| Grok (xAI) | Not disclosed | xAI has not published exact counts |
-| Perplexity | Not applicable | Uses multiple underlying foundation models |
-
----
-
-# Dense Models vs Mixture-of-Experts (MoE)
-
-Modern large language models are increasingly moving from purely dense architectures to **Mixture-of-Experts (MoE)** architectures.
-
----
-
-# Dense Transformer Model
-
-A dense model activates all parameters for every token prediction.
-
-```
-              Input Token
-
-                  │
-
-                  ▼
-
-        ┌─────────────────┐
-        │                 │
-        │  Transformer    │
-        │                 │
-        │ ███████████████ │
-        │ All Parameters  │
-        │ Active          │
-        └─────────────────┘
-
-                  │
-
-                  ▼
-
-              Output Token
-```
-
-Example:
-
-```
-70B Dense Model
-
-Every token uses:
-
-70 Billion parameters
-```
-
----
-
-# Mixture-of-Experts (MoE) Model
-
-An MoE model contains multiple expert networks.
-
-A router decides which experts are activated.
-
-```
-                 Input Token
-
-                      │
-
-                      ▼
-
-                  ┌────────┐
-                  │ Router │
-                  └────────┘
-
-          ┌────────┼────────┐
-          │        │        │
-          ▼        ▼        ▼
-
-      Expert 1  Expert 2  Expert 3
-
-          │        │
-          │        │
-          ▼        ▼
-
-      Selected Experts Only
-
-
+         ┌──────────┐
+         │  Input   │
+         └────┬─────┘
+              │
+         ┌────▼────────┐
+         │   Router    │  ← which experts to use?
+         └────┬────────┘
+              │
+         ┌────┴────────────────┐
+         │                     │
+         ▼                     ▼
+    ┌────────┐            ┌────────┐
+    │Expert 1│            │Expert 2│  ← only 2 of 16 active
+    └────┬───┘            └────┬───┘
+         │                     │
+         │  ┌──────────┐   ┌───┘
+         └─►│  Merge   │◄──┘
+            └──────────┘
                  │
-
                  ▼
+            ┌────────────┐
+            │   Output   │
+            └────────────┘
 
-             Output Token
+Total compute cost per token ∝ (active parameters × token)
 ```
 
-Example:
+**Key insight:** The model may have billions of total parameters, but only a fraction are "active" (participate) in any single prediction. This reduces latency and memory pressure per token.
 
-```
-671B Total Parameters
-
-but only:
-
-~37B parameters active per token
-```
-
-This provides:
-
-- Larger total model capacity
-- Lower inference cost
-- Better scaling efficiency
+**Examples:**
+- DeepSeek V3: ~671B total parameters, but ~37B active per token (sparse MoE)
+- Grok-1: Estimated 314B total, ~85B active (sparse MoE)
 
 ---
 
-# Dense vs MoE Comparison
+## When parameter count matters (and when it doesn't)
 
-| Feature | Dense Model | MoE Model |
-|---|---|---|
-| Parameter usage | All parameters active | Subset activated |
-| Memory footprint | Higher | Lower active memory |
-| Compute cost | Higher | More efficient |
-| Architecture | Single network | Multiple expert networks |
-| Routing | Not required | Router selects experts |
-| Scaling | Expensive | More scalable |
+### More parameters generally → greater capacity
 
----
+A larger parameter count means the model has more "knobs to turn" during training. It can represent more complex functions and store more knowledge.
 
-# Parameter Memory Calculation
+### But it's not everything
 
-Model memory depends on:
+| Factor | Importance | Example |
+|:---|:---|:---|
+| **Architecture** | Critical | MoE can be more efficient than dense; Transformer attention mechanisms matter. |
+| **Training data quality** | Critical | A 70B model trained on curated data beats a 405B model trained on noisy data. |
+| **Training time & compute** | Critical | More steps → better convergence (until diminishing returns). |
+| **Parameter count** | Important but not dominant | Capacity, but not destiny. |
 
-\[
-\text{Memory} =
-\text{Number of Parameters}
-\times
-\text{Bytes per Parameter}
-\]
+### Parameter efficiency
 
-Examples:
+A well-trained smaller model can outperform a poorly-trained large model. And modern sparse architectures (MoE) show that you don't need all parameters active for every prediction.
 
-## FP32
+## Key takeaways
 
-```
-1 parameter = 4 bytes
-```
+✓ **Parameters define potential capacity** — a 70B model has more "space to learn" than a 7B model.
 
-A 70B parameter model:
+✓ **Weights are the learned numerical values** — parameters are storage; weights are the data stored after training.
 
-```
-70,000,000,000 × 4 bytes
+✓ **Larger isn't always better** — architecture, data quality, and training matter as much as raw size.
 
-≈ 280 GB memory
-```
+✓ **Modern frontier models use sparse MoE** — only a subset of parameters are active per token, improving efficiency without sacrificing capability.
 
----
+✓ **Proprietary models keep counts secret** — OpenAI (GPT), Anthropic (Claude), and xAI (Grok) do not publish exact parameter counts. Open-weight models (Llama, DeepSeek) are transparent.
 
-## FP16
+✓ **Parameter count ≠ capability** — It's one signal among many. Context window, training process, safety tuning, and deployment efficiency all contribute to real-world performance.
 
-```
-1 parameter = 2 bytes
-```
+## Further reading
 
-70B model:
+- **Transformer paper:** Vaswani et al., "Attention Is All You Need" (2017)  
+  https://arxiv.org/abs/1706.03762
 
-```
-70,000,000,000 × 2 bytes
+- **MoE overview:** Lewis et al., "Base Layers Generalize to Unseen Domains" / Shazeer et al., "Outrageously Large Neural Networks" (2016+)  
+  https://arxiv.org/abs/1701.06538
 
-≈ 140 GB memory
-```
+- **Llama 3.1 technical report:** Meta AI (2024)  
+  https://llama.meta.com/research
+
+- **DeepSeek V3 technical report:** DeepSeek (2024)  
+  https://github.com/deepseek-ai/DeepSeek-V3
 
 ---
 
-## INT8 Quantisation
-
-```
-1 parameter = 1 byte
-```
-
-70B model:
-
-```
-≈ 70 GB memory
-```
-
----
-
-# Key Takeaways
-
-✅ **Parameters define model capacity.**
-
-✅ **Weights are the learned numerical values stored inside parameters.**
-
-✅ **Parameter count is the number of trainable values in a model.**
-
-✅ **Larger parameter counts generally increase model capacity, but architecture and data quality are equally important.**
-
-✅ **Modern frontier models increasingly use sparse Mixture-of-Experts architectures where only a subset of parameters participate in each prediction.**
-
----
-
-# Summary
-
-```
-Parameter
-    │
-    ▼
-Trainable location in the model
-    │
-    ▼
-Stores
-    │
-    ▼
-Weight value after training
-    │
-    ▼
-Used by neural network computation
-```
-
-A model's intelligence is not determined only by the number of parameters, but by the combination of:
-
-```
-Model Architecture
-        +
-Training Data
-        +
-Optimisation
-        +
-Parameter Scale
-        +
-Inference Strategy
-```
+**Last updated:** August 2026  
+**Audience:** Engineers, product managers, and researchers evaluating frontier LLMs
