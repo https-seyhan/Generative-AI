@@ -169,17 +169,16 @@ Where:
 # Parameter Count Calculation
 
 The total number of trainable parameters in a neural network layer is:
-```
+
 \[
 \boxed{
-\mathrm{Total\ Parameters}
-=
+\mathrm{Total\ Parameters} =
 \mathrm{Number\ of\ values\ in}\ W
 +
 \mathrm{Number\ of\ values\ in}\ b
 }
 \]
-```
+
 Where:
 
 - **W** = Weight matrix containing learnable connection values
