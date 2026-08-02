@@ -88,7 +88,6 @@ A neural network learns by updating parameter values through the training proces
 └─────────────────────────┘
 ```
 
-### What Changed?
 
 ## 🔄 What Changes During Training?
 
@@ -96,7 +95,7 @@ During training, the **parameter location remains fixed**, but the **numerical v
 
 Think of a parameter as a container:
 
-```
+
 Before Training              After Training
 
 ┌───────────────┐             ┌───────────────┐
@@ -106,7 +105,7 @@ Before Training              After Training
 └───────────────┘             └───────────────┘
 
       Same Parameter              Updated Weight
-```
+
 
 ---
 
