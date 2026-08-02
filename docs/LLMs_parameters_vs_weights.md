@@ -183,7 +183,7 @@ Where:
 
 - **W** = Weight matrix containing learnable connection values
 - **b** = Bias vector containing learnable offset values
-
+```
 ### Example
 
 For a layer with:
