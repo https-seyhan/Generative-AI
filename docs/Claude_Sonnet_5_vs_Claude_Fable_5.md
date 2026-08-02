@@ -44,9 +44,9 @@ additionally covers biology/life sciences and reasoning extraction.
 -   **Sonnet 5:** Supports Zero Data Retention (eligible organisations).
 -   **Fable 5:** Mandatory 30-day retention.
 
-### Tokenizer
+### Tokeniser
 
-Both models use the newer tokenizer producing approximately **30% more
+Both models use the newer tokeniser producing approximately **30% more
 tokens** than the previous generation.
 
 ### Launch History
