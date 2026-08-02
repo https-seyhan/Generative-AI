@@ -98,7 +98,7 @@ The model updates only the **numerical value stored inside that parameter**.
 Think of a parameter as a **memory location that stores a learned value**.
 
 ### Parameter Update Example
-
+```
 
               Training Process
         (Forward Pass → Loss → Backpropagation)
@@ -115,7 +115,7 @@ Think of a parameter as a **memory location that stores a learned value**.
    Initial Value                    Learned Value
 ```
 The **parameter location remains unchanged**:
-
+```
 
 Parameter #1
      │
