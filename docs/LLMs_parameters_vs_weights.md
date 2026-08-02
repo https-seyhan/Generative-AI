@@ -114,7 +114,6 @@ Think of a parameter as a **memory location that stores a learned value**.
 
    Initial Value                    Learned Value
 
-```
 The **parameter location remains unchanged**:
 
 ```
