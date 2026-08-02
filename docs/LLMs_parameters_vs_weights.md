@@ -80,11 +80,7 @@ A neural network learns by updating parameter values through the training proces
 ```
 ### After Training
 
-┌─────────────────────────┐
-│ Parameter #1            │
-│                         │
-│ Learned Value = 0.823   │
-└─────────────────────────┘
+
 ```
 
 
