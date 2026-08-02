@@ -243,27 +243,7 @@ Neuron 1 → 0.05
 Neuron 2 → 0.12
 ```
 
-Parameter calculation:
 
-```
-Weight Matrix (W)
-
-2 neurons × 3 inputs
-
-= 6 parameters
-
-
-Bias Vector (b)
-
-2 neurons
-
-= 2 parameters
-
-
---------------------------
-
-Total Trainable Parameters = 8
-```
 
 ---
 
