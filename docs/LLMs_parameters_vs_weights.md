@@ -116,7 +116,7 @@ Think of a parameter as a **memory location that stores a learned value**.
 ```
 The **parameter location remains unchanged**:
 
-```
+
 Parameter #1
      │
      ├── Before Training → 0.215
