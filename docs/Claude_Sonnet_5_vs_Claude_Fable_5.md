@@ -25,6 +25,9 @@ between Haiku and Opus, built as the everyday agentic/coding workhorse.
 
 ## Key Takeaways
 
+- _Fable targets the hardest reasoning and long-running agentic tasks._
+- _Sonnet delivers excellent performance for everyday coding, reasoning, and agentic workloads._
+  
 ### Price
 
 Fable runs roughly **3.3×** Sonnet's standard cost (or **5×** the
