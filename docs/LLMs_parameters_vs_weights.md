@@ -168,11 +168,11 @@ Where:
 # Parameter Count Calculation
 
 The total number of trainable parameters in a neural network layer is:
-
+```
 \[
 \boxed{
 \text{Total Parameters}
-\=
+=
 \text{Number of values in } W
 +
 \text{Number of values in } b
