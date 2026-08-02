@@ -90,21 +90,47 @@ A neural network learns by updating parameter values through the training proces
 
 ### What Changed?
 
-| Stage | Parameter Value | Meaning |
-|---|---:|---|
-| Before Training | `0.215` | Initial random or pre-trained value |
-| Training Process | Updated using gradients | Model learns from data |
-| After Training | `0.823` | Learned weight used for predictions |
+## 🔄 What Changes During Training?
 
-> The parameter itself does not change identity — only the numerical value stored inside it changes during training.
+During training, the **parameter location remains fixed**, but the **numerical value stored inside the parameter is updated**.
 
-The parameter location remains the same, but the stored value changes.
+Think of a parameter as a container:
+
+```
+Before Training              After Training
+
+┌───────────────┐             ┌───────────────┐
+│ Parameter #1  │             │ Parameter #1  │
+│               │             │               │
+│ Value: 0.215  │  ───────▶    │ Value: 0.823  │
+└───────────────┘             └───────────────┘
+
+      Same Parameter              Updated Weight
+```
 
 ---
 
-# Mathematical View
+## 📈 Parameter Update Lifecycle
 
-A simple neural network layer:
+| Stage | Parameter State | Description |
+|:---:|---|---|
+| 🟦 **Initialisation** | `Parameter #1 = 0.215` | Initial random value or inherited pre-trained value |
+| 🟨 **Training** | `0.215 → 0.823` | Gradient descent updates the value based on prediction error |
+| 🟩 **After Training** | `Parameter #1 = 0.823` | Learned weight used during inference |
+
+---
+
+> 💡 **Key Concept**  
+> A parameter is the storage location.  
+> A weight is the numerical value stored in that location.
+
+The model does not create a new parameter during training — it only **adjusts the value stored inside existing parameters**.
+
+---
+
+# 🧮 Mathematical View
+
+A simple neural network layer can be represented as:
 
 \[
 y = Wx + b
@@ -112,17 +138,26 @@ y = Wx + b
 
 Where:
 
-| Symbol | Meaning |
-|---|---|
-| `W` | Weight matrix (trainable parameters) |
-| `b` | Bias parameters |
-| `x` | Input vector |
-| `y` | Output vector |
+| Symbol | Component | Description |
+|:---:|---|---|
+| **W** | Weight Matrix | Trainable parameters controlling connections between neurons |
+| **b** | Bias Vector | Additional trainable parameters that shift outputs |
+| **x** | Input Vector | Data entering the neural network layer |
+| **y** | Output Vector | Result produced by the layer |
 
-Total model parameters:
+---
+
+## Parameter Count Calculation
+
+The total number of parameters is:
 
 \[
-\text{Total Parameters} = \text{All Values in } W + \text{All Values in } b
+\boxed{
+\text{Total Parameters} =
+\text{Parameters in } W
++
+\text{Parameters in } b
+}
 \]
 
 Example:
@@ -130,19 +165,63 @@ Example:
 ```
 Weight Matrix (W)
 
-       0.12   -0.45
-W =    0.77    0.91
-       0.33   -0.21
+        Input 1   Input 2   Input 3
+
+Neuron 1   0.12    -0.45      0.77
+Neuron 2   0.91     0.33     -0.21
 
 
-Bias (b)
+Bias Vector (b)
 
-b = [0.05, 0.12]
+Neuron 1 → 0.05
+Neuron 2 → 0.12
 ```
 
-All numerical values contribute to the parameter count.
+Total parameters:
+
+```
+W parameters = 6
+
+b parameters = 2
+
+--------------------
+Total = 8 parameters
+```
 
 ---
+
+## 🧠 From Parameters to Intelligence
+
+A large language model is essentially a massive collection of learned parameters:
+
+```
+Input Text
+    │
+    ▼
+┌─────────────────────┐
+│ Transformer Network │
+│                     │
+│ Millions / Billions │
+│ of Parameters       │
+└─────────────────────┘
+    │
+    ▼
+Predicted Output
+```
+
+The model's capability emerges from:
+
+```
+Architecture
+      +
+Training Data
+      +
+Optimisation
+      +
+Scale of Parameters
+      +
+Inference Strategy
+```
 
 # Why Parameter Count Matters
 
