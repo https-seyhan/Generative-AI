@@ -7,40 +7,21 @@ reasoning and long-horizon agentic work --- the first "Mythos-class"
 model, positioned above Opus. Sonnet 5 sits in the middle of the stack,
 between Haiku and Opus, built as the everyday agentic/coding workhorse.
 
-  -------------------------------------------------------------------------
-  Feature                 Claude Sonnet 5         Claude Fable 5
-  ----------------------- ----------------------- -------------------------
-  Tier                    Mid-tier ("Sonnet")     Flagship ("Mythos-class")
+# 📊 Claude Sonnet 5 vs Claude Fable 5
 
-  Released (GA)           June 30, 2026           June 9, 2026
-
-  Pricing (in / out per   \$3 / \$15 standard;    \$10 / \$50
-  MTok)                   \$2 / \$10 introductory 
-                          through Aug 31, 2026    
-
-  Context window          1M tokens (fixed --- no 1M tokens
-                          smaller option)         
-
-  Max output              128K tokens             128K tokens
-
-  Adaptive thinking       On by default, can be   Always on, cannot be
-                          disabled                disabled
-
-  Manual/budgeted         Not supported (400      Not supported
-  thinking                error)                  
-
-  Comparative latency     Fast                    Slower
-
-  Reliable knowledge      Jan 2026                Jan 2026
-  cutoff                                          
-
-  Safety classifiers      Cybersecurity only      Cybersecurity +
-                                                  biology/life-sciences +
-                                                  reasoning-extraction
-
-  Zero data retention     Supported for eligible  Not eligible (30-day
-                          orgs                    minimum retention)
-  -------------------------------------------------------------------------
+| Feature | 🟦 Claude Sonnet 5 | 🟥 Claude Fable 5 |
+|:--------|:-------------------|:------------------|
+| **Tier** | Mid-tier (**Sonnet**) | Flagship (**Mythos-class**) |
+| **Released (GA)** | 30 June 2026 | 9 June 2026 |
+| **Pricing**<br>*(Input / Output per million tokens)* | **$3 / $15** (Standard)<br>**$2 / $10** introductory until **31 Aug 2026** | **$10 / $50** |
+| **Context Window** | **1M tokens** (fixed – no smaller option) | **1M tokens** |
+| **Maximum Output** | **128K tokens** | **128K tokens** |
+| **Adaptive Thinking** | Enabled by default (can be disabled) | Always enabled (cannot be disabled) |
+| **Manual/Budgeted Thinking** | ❌ Not supported (400 error) | ❌ Not supported |
+| **Latency** | ⚡ Faster | 🐢 Slower |
+| **Knowledge Cut-off** | January 2026 | January 2026 |
+| **Safety Classifiers** | 🛡️ Cybersecurity | 🛡️ Cybersecurity<br>🧬 Biology / Life Sciences<br>🧠 Reasoning Extraction |
+| **Zero Data Retention (ZDR)** | ✅ Supported for eligible organisations | ❌ Not eligible (minimum 30-day retention) |
 
 ## Key Takeaways
 
