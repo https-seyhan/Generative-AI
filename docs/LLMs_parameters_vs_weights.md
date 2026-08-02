@@ -208,7 +208,7 @@ The total trainable parameters are:
 \[
 \text{Total Parameters} = 6 + 2 = 8
 \]
-
+```
 Therefore:
 
 ```
