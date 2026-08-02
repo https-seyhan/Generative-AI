@@ -8,7 +8,7 @@ In deep learning, the terms **parameters** and **weights** are often used interc
 - **Parameter** = a trainable variable that the model learns during training.
 - **Weight** = the numerical value stored inside a parameter after training.
 
-In practice, when people discuss **model size** (for example, a 70B parameter model), they are referring to the total number of trainable parameters.
+**In practice, when people discuss **model size** (for example, a 70B parameter model), they are referring to the total number of trainable parameters.**
 
 ---
 
