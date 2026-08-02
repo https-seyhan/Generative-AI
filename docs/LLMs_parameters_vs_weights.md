@@ -194,7 +194,7 @@ Weight Matrix (W)
 2 neurons × 3 inputs
 
 W = 6 parameters
-```
+
 
 Bias Vector (b)
 
