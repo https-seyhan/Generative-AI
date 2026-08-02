@@ -80,11 +80,11 @@ A neural network learns by updating parameter values through the training proces
 
 After Training
 ┌────────────────────────────┐
-│ Parameter #1 │
+│ Parameter #1               │
 ├────────────────────────────┤
-│ │
-│ Weight Value: 0.823 │
-│ │
+│                            │
+│ Weight Value: 0.823        │
+│                            │
 └────────────────────────────┘
 ```
 
