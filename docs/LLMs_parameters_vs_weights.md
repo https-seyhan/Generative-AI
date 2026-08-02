@@ -123,7 +123,7 @@ Parameter #1
      └── After Training  → 0.823
 ```
 
-Only the stored numerical value is updated.
+**Only the stored numerical value is updated.**
 
 ---
 
