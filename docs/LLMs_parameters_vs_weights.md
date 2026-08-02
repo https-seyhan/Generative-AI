@@ -62,10 +62,10 @@ A neural network learns by updating parameter values through the training proces
 └─────────────────────────┘
 
 
-⬇️
+          ⬇️
 
 
-          Training Process
+       Training Process
 
     ┌───────────────────┐
     │ Forward Pass      │
@@ -75,10 +75,11 @@ A neural network learns by updating parameter values through the training proces
     └───────────────────┘
 
 
-⬇️
+
+          ⬇️
 
 
-After Training
+      After Training
 ┌────────────────────────────┐
 │ Parameter #1               │
 ├────────────────────────────┤
