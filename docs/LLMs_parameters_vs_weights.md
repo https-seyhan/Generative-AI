@@ -65,7 +65,7 @@ A neural network learns by updating parameter values through the training proces
 
 ⬇️
 
-```
+
           Training Process
 
     ┌───────────────────┐
@@ -74,7 +74,7 @@ A neural network learns by updating parameter values through the training proces
     │ Backpropagation   │
     │ Gradient Update   │
     └───────────────────┘
-```
+
 
 ⬇️
 
