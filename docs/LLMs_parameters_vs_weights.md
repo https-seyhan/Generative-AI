@@ -281,7 +281,7 @@ Large Language Models (LLMs) are built from billions of these learned parameters
                       ▼
 
           ┌─────────────────────┐
-          │ Transformer Network  │
+          │ Transformer Network │
           │                     │
           │  Attention Weights  │
           │  Feed Forward       │
