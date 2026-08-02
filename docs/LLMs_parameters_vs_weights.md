@@ -165,9 +165,9 @@ Where:
 
 ---
 
-# 🔢 Parameter Count Calculation
+# Parameter Count Calculation
 
-The total number of trainable parameters is:
+The total number of trainable parameters in a neural network layer is:
 
 \[
 \boxed{
@@ -178,6 +178,44 @@ The total number of trainable parameters is:
 \text{Number of values in } b
 }
 \]
+
+Where:
+
+- **W** = Weight matrix containing learnable connection values
+- **b** = Bias vector containing learnable offset values
+
+### Example
+
+For a layer with:
+
+```
+Weight Matrix (W)
+
+2 neurons × 3 inputs
+
+W = 6 parameters
+
+
+Bias Vector (b)
+
+2 neurons
+
+b = 2 parameters
+```
+
+The total trainable parameters are:
+
+\[
+\text{Total Parameters} = 6 + 2 = 8
+\]
+
+Therefore:
+
+```
+Total Trainable Parameters = 8
+```
+
+> 💡 Every number stored in the weight matrix and bias vector represents a trainable parameter that the model learns during training.
 
 ---
 
