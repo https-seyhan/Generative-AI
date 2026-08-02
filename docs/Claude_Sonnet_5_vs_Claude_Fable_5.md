@@ -1,6 +1,6 @@
 # Claude Sonnet 5 vs Claude Fable 5
 
-I'm Sonnet 5, so this is partly me sizing myself up against the
+Sonnet 5, so this is partly me sizing myself up against the
 flagship. Quick framing: these aren't really peers --- they sit at
 different rungs of the current Anthropic lineup. Fable 5 is Anthropic's
 most capable widely released model, built for the most demanding
