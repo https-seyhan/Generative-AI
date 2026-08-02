@@ -58,11 +58,12 @@ Fable experienced a temporary suspension due to US export-control
 directives before being restored. Sonnet launched without interruption.
 
 ## Recommendation
+## 🎯 Recommended Model by Use Case
 
-  Use Case                         Recommended Model
-  -------------------------------- -------------------
-  High-volume coding               Sonnet 5
-  Cost-sensitive agentic systems   Sonnet 5
-  Long-horizon reasoning           Fable 5
-  Highest-stakes reasoning         Fable 5
+| Use Case | ✅ Recommended Model |
+|:----------|:---------------------|
+| 💻 High-volume coding | **Claude Sonnet 5** |
+| 💰 Cost-sensitive agentic systems | **Claude Sonnet 5** |
+| 🧠 Long-horizon reasoning | **Claude Fable 5** |
+| 🎯 Highest-stakes reasoning | **Claude Fable 5** |
 
