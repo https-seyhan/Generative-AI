@@ -55,13 +55,12 @@ A neural network learns by updating parameter values through the training proces
 
 ### Before Training
 
-```
 ┌─────────────────────────┐
 │ Parameter #1            │
 │                         │
 │ Initial Value = 0.215   │
 └─────────────────────────┘
-```
+
 
 ⬇️
 
