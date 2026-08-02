@@ -201,7 +201,7 @@ Bias Vector (b)
 2 neurons
 
 b = 2 parameters
-```
+
 
 The total trainable parameters are:
 
