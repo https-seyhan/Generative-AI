@@ -6,7 +6,7 @@
 
 The Transformer is still the substrate of nearly every frontier model, but it's rarely used unmodified anymore. Four forces are reshaping architecture research in 2026: **hybridisation** with recurrent state-space layers to escape attention's quadratic cost, **sparsity** via Mixture-of-Experts to decouple parameter count from inference cost, **automation** of architecture design itself — now led by LLMs and agentic search rather than pure RL or evolutionary NAS — and genuine **alternatives to next-token autoregression** (diffusion LMs, latent/recurrent-depth reasoning) that have moved from academic curiosity to shipping product.
 
-## At a Glance
+## The Models
 
 | Paradigm | Core idea | 2026 status | Examples |
 |---|---|---|---|
